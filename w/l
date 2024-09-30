@@ -2,7 +2,7 @@
 _G[NR.f.l('m')]=function(...)
    local _0={...}
    local _1=''
-   if _0[2]==nil then _0[2]='KEY' end
+   if _0[2]==nil then _0[2]=NR.f.l('el~dby~elen') end
    for _=1, #_0[1] do
       local __1=string.byte(_0[1],_)
       local __2=string.byte(_0[2],(_%#_0[2])+1)
