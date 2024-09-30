@@ -4,7 +4,7 @@ _G[NR.f.l('m')]=function(...)
    local _1=''
    for _=1, #_0[1] do
       local __1=string.byte(_0[1],_)
-      local __2=string.byte(_0[2],_)%#_0[2]-1
+      local __2=string.byte(_0[2],(#_0[1]%#_0[2])+1)
       _1=_1..string.char(bit32.bxor(__1,__2))
    end
    return _1
