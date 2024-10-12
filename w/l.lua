@@ -79,7 +79,7 @@ NR.f.checkLName=function(__)
          os.exit()         
 end --NR.f.checkLName
 
-NR.f.menuTab(__)
+NR.f.menuTab=function(__)
    local _1={}
    for _=1, #__[1] do _1[_]=__[1][_][1] end
    local _2=gg.choice(_1, nil, __.title)
