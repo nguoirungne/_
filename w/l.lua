@@ -3,11 +3,60 @@ NR.v.link={
    teleNR='https://t.me/nguoirungne'	
 }
 NR.v.note={
-   '📢 test note!'
-	
+   '📢 test world note!\n'	
+}
+NR.v.blockC={
+   server={'https://cdn.now.gg', 'https://404.playrix.com'},
+   cSuite={'TLS_AES_256_GCM_SHA384'}
 }
 
 NR.f.num2Hex=function(__) return string.format('%02x',__) end --NR.f.num2Hex
+
+NR.f.antiCapture=function()
+         local _1=gg.makeRequest(NR.v.blockC.server[math.random(2)])
+         local _2='× Connection error!'
+         if not _1 then gg.alert(_2) os.exit() end
+         if (NR.v.blockC.cSuite[1]==_1.cipherSuite) then
+            return true 
+         else
+            gg.alert(_2)
+            os.exit()
+         end                                    
+end --NR.f.antiCapture
+
+NR.f.antiLook=function(__)
+         if (gg.isVisible()) then
+            gg.setVisible(false)
+            gg.alert('× Don\'t Look')
+            NR.f.antiLog(__) return true
+         end return false
+end --NR.f.antiLook
+
+NR.f.antiLog=function(__)
+         local _1=string.rep('[script from t.me/undeadzone]',1000000)
+         local _2=3
+         gg.makeRequest(_1)
+         while (_2>0) do
+            _2=_2-1
+            gg.setVisible(false)
+            for i=1,__ do
+               gg.toast('loading '.._2..'.'..__-i)
+               gg.makeRequest(_1)
+               debug.traceback(1,nil,_1)
+               NR.f.antiLook(3)
+            end
+            if (_2==0) then gg.toast('√ Complete!') end
+         end
+end --NR.f.antiLog
+
+NR.f.checkPW=function(__)
+         if (__.dBool.pw) then return true else
+            local _1=gg.prompt({'Enter Password:'},nil,{'text'})
+            if not _1 then gg.toast('Canceled!') mainMenu() end
+            if (_1[1]==__.dPW) then gg.toast('√ Logged in!') __.dBool.pw=true return true
+            else gg.toast('× Passwords do not match!') return false end
+         end
+end --NR.f.checkPW
 
 NR.f.scanRand=function()
          gg.setVisible(false)
@@ -30,6 +79,34 @@ NR.f.checkLName=function(__)
          os.exit()         
 end --NR.f.checkLName
 
+NR.f.menuTab(__)
+   local _1={}
+   for _=1, #__[1] do _1[_]=__[1][_][1] end
+   local _2=gg.choice(_1, nil, __.title)
+   if not _2 then waitM() end
+   return _2 and __[1][_2][2](__[1][_2][3])
+end --NR.f.menuTab
+
+NR.f.waitM=function()
+         gg.setVisible(false)
+         while NR.f.antiCapture() do
+            if (gg.isVisible()) then
+               gg.setVisible(false)
+               NR.f.scanRand()
+            break else
+               NR.f.scanRand()
+            end
+            gg.sleep(1000)
+         end
+end --NR.f.waitM
+
+NR.f.exitM=function()
+         gg.clearList()
+         gg.clearResults()
+         gg.alert('Good bye!')
+         gg.setVisible(true)
+         os.exit()
+end --NR.f.exitM
 
 NR.f.getB16LE=function(...)
          local _0={...}
