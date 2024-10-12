@@ -1,4 +1,11 @@
-
+NR.v.link={
+   teleUZ='https://t.me/undeadzone',
+   teleNR='https://t.me/nguoirungne'	
+}
+NR.v.note={
+   '📢 test note!'
+	
+}
 
 NR.f.num2Hex=function(__) return string.format('%02x',__) end --NR.f.num2Hex
 
@@ -16,12 +23,13 @@ NR.f.scanRand=function()
          gg.clearResults()
 end --NR.f.scanRand
 
-NR.f.checkLName=function()
+NR.f.checkLName=function(__)
          local _1=string.match(gg.getFile(),'[^/]+$')
-         if (_1=='test.lua') then return true end
+         if (_1==__) then return true end
          gg.alert('× Do not change the script name!')
          os.exit()         
 end --NR.f.checkLName
+
 
 NR.f.getB16LE=function(...)
          local _0={...}
