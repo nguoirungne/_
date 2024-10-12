@@ -85,7 +85,7 @@ NR.f.menuTab=function(__)
    local _1={}
    for _=1, #__[1] do _1[_]=__[1][_][1] end
    local _2=gg.choice(_1, nil, __.title)
-   if not _2 then waitM() end
+   if not _2 then NR.f.waitM() end
    return _2 and __[1][_2][2](__[1][_2][3])
 end --NR.f.menuTab
 
