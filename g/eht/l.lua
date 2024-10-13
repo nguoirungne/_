@@ -4,11 +4,45 @@ eht.package='com.superplanet.evilhunter'
 
 eht.menu={
    merge={},
-   tongle={'× ','× ', '× '},
+   tongle={'[×] ','[×] ','[×] ','[×] ','[?] '},
    desc={
-      'Hack 1',
-      'Hack 2',
-      'Exit'
+      'User Manager',
+      'Hunter Manager',
+      'Shop Manager',
+      'Free Material',
+      'Extra'
+   }
+}
+
+eht.userM={
+   merge={},
+   tongle={'[×] ','[×] ','[<] '},
+   desc={
+      'Unlimited Gold',
+      'Unlimited Elemental',
+      'Back'
+   }
+}
+
+eht.hunterM={
+   merge={},
+   tongle={'[×] ','[×] ','[×] ','[<] '},
+   desc={
+      'All Max Level',
+      'Rank Edit',
+      'Secret Tech Edit',
+      'Back'
+   }
+}
+
+eht.shopM={
+   merge={},
+   tongle={'[×] ','[$] ','[$] ','[<] '},
+   desc={
+      'Free Shop',
+      'Free Shop Full',
+      'Get Shop Pack',
+      'Back'
    }
 }
 
@@ -26,7 +60,8 @@ eht.note={
 
 eht.class={
    dataAS={'AdminShopData', 8027758069468193857, '卮潨䑰瑡', 4},
-   dataI={'ItemData', 7022344665498481737, '瑉浥慄慴', 0}
+   dataI={'ItemData', 7022344665498481737, '瑉浥慄慴', 0},
+   dataH={'HunterData', 7022344665498481737, '瑉浥慄慴', 0}
 }
    
 eht.checkUpdate=function()
@@ -37,11 +72,11 @@ eht.checkUpdate=function()
    return true
 end
 
-eht.mergeM=function()
-   for _,__ in ipairs(eht.menu.tongle) do
-      eht.menu.merge[_]=__..eht.menu.desc[_]
+eht.mergeM=function(__)
+   for _,___ in ipairs(__.tongle) do
+      __.merge[_]=___..__.desc[_]
    end
-   return eht.menu.merge
+   return __.merge
 end
 
 
