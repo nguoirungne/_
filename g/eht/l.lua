@@ -6,7 +6,6 @@ eht.check={
    oDate='20241212',
    sName='NEW_SCRIPT.lua',
    dPW='undeadzone',
-   dAD='[NR]@nguoirungne',
    dBool={sn=false,od=false,pw=false,ad=false},
    debug='User'
 }
