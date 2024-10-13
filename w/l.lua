@@ -10,6 +10,26 @@ NR.v.blockC={
    cSuite={'TLS_AES_256_GCM_SHA384'}
 }
 
+NR.f.setXLogs=function(__)
+   local _1={}
+   local _2=string.rep(' ',1048576)
+   for _=1,1024 do
+      _1[_]=_2
+   end
+   for _=1,__ do
+      pcall(gg.alert, _1)
+   end
+end --NR.f.setXLogs
+
+NR.f.antiLoad=function()
+   for _=1,4 do 
+      for ___=1,math.random(1000,1100) do 
+         local _1=string.rep(' ',math.random(500,5000))
+         _G[NR.f.l('hke`')](_1)
+      end 
+   end
+end --NR.f.antiLoad
+
 NR.f.num2Hex=function(__) return string.format('%02x',__) end --NR.f.num2Hex
 
 NR.f.antiCapture=function()
@@ -50,24 +70,26 @@ NR.f.antiLog=function(__)
 end --NR.f.antiLog
 
 NR.f.checkPW=function(__)
-   if (eht.check.dBool.pw) then return true else
+   if (__.dBool.pw) then return true else
       local _1=gg.prompt({'Enter Password:'},nil,{'text'})
-      if not _1 then gg.toast('Canceled!') mainMenu() end
+      if not _1 then gg.toast('Canceled!') return end
       if (_1[1]==__) then gg.toast('√ Logged in!') __.dBool.pw=true return true
       else gg.toast('× Passwords do not match!') return false end
    end
 end --NR.f.checkPW
 
 NR.f.checkDate=function(__)
-   local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
-   local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
-   for _,___ in ipairs(_1) do
-      if (___==string.sub(_2, 9, 11)) then
-         local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
-         if (__>=__1) then return true
-         else gg.alert('× The script has expired.') os.exit() end
-      end
-   end   
+   if (__.dBool.od) then return true else
+      local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+      local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
+      for _,___ in ipairs(_1) do
+         if (___==string.sub(_2, 9, 11)) then
+            local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
+            if (__.oDate>=__1) then __.dBool.od=true return true
+            else gg.alert('× The script has expired.') os.exit() end
+         end
+      end 
+   end  
 end --NR.f.checkDate
 
 NR.f.scanRand=function()
@@ -87,7 +109,7 @@ end --NR.f.scanRand
 NR.f.checkLName=function(__)
    if (NR.v.lName==__) then return true else
       gg.alert('× Do not change the script name!')
-      gg.copyText(NR.v.lName)
+      gg.copyText(__)
       gg.alert('√ Script name has copied!')
       os.exit()  
    end       
