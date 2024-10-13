@@ -58,15 +58,14 @@ NR.f.checkPW=function(__)
    end
 end --NR.f.checkPW
 
-NR.f.checkDate=function(__)
+NR.f.checkDate=function()
    local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
    local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
    for _,___ in ipairs(_1) do
       if (___==string.sub(_2, 9, 11)) then
          local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
          if (__>=__1) then return true
-         elseif (__==-1) then return __1
-         else gg.alert('× Script is outdate!') os.exit() end
+         else gg.alert('× The script has expired.') os.exit() end
       end
    end   
 end --NR.f.checkDate
