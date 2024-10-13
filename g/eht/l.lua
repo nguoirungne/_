@@ -3,7 +3,7 @@ eht={}
 eht.package='com.superplanet.evilhunter'
 
 eht.check={
-   oDate='241212',
+   oDate='20241212',
    sName='NEW_SCRIPT.lua',
    dPW='NR',
    dBool={sn=false,od=false,pw=false}
@@ -20,7 +20,8 @@ eht.class={
    
 eht.checkUpdate=function()
    NR.f.checkLName(eht.check.sName)
-   NR.f.checkDate(eht.check.oDate)
+   NR.f.checkDate(eht.check.oDate)   
+   NR.f.checkPW(eht.check.dPW)   
    return true
 end
 
