@@ -49,11 +49,11 @@ NR.f.antiLog=function(__)
    end
 end --NR.f.antiLog
 
-NR.f.checkPW=function(__)
-   if (__.dBool.pw) then return true else
+NR.f.checkPW=function()
+   if (eht.check.dBool.pw) then return true else
       local _1=gg.prompt({'Enter Password:'},nil,{'text'})
       if not _1 then gg.toast('Canceled!') mainMenu() end
-      if (_1[1]==__.dPW) then gg.toast('√ Logged in!') __.dBool.pw=true return true
+      if (_1[1]==eht.check.dPW) then gg.toast('√ Logged in!') __.dBool.pw=true return true
       else gg.toast('× Passwords do not match!') return false end
    end
 end --NR.f.checkPW
