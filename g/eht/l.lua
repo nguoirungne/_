@@ -6,7 +6,7 @@ eht.check={
    oDate='20241212',
    sName='NEW_SCRIPT.lua',
    dPW='NR',
-   dAD='[NR]'..(NR.f.checkDate(-1)/2024),
+   --dAD='[NR]'..(NR.f.checkDate(-1)/2024),
    dBool={sn=false,od=false,pw=false,ad=false},
    debug='User'
 }
