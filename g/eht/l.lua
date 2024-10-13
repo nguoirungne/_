@@ -5,8 +5,8 @@ eht.package='com.superplanet.evilhunter'
 eht.check={
    oDate='20241212',
    sName='NEW_SCRIPT.lua',
-   dPW='NR',
-   dAD='[NR]'..(NR.f.checkDate(-1)/2024),
+   dPW='undeadzone',
+   dAD='[NR]@nguoirungne',
    dBool={sn=false,od=false,pw=false,ad=false},
    debug='User'
 }
