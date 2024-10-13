@@ -41,6 +41,7 @@ eht.mergeM=function()
    for _,__ in ipairs(eht.menu.tongle) do
       eht.menu.merge[_]=__..eht.menu.desc[_]
    end
+   return eht.menu.merge
 end
 
 
