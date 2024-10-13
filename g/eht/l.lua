@@ -11,9 +11,6 @@ eht.menu={
       'Exit'
    }
 }
-for _,__ in ipairs(eht.menu.tongle) do
-   merge[_]=__..eht.menu.desc[_]
-end
 
 eht.check={
    oDate='20241212',
@@ -40,6 +37,12 @@ eht.checkUpdate=function()
    return true
 end
 
+eht.mergeM=function()
+   for _,__ in ipairs(eht.menu.tongle) do
+      eht.menu.merge[_]=__..eht.menu.desc[_]
+   end
+   return eht.menu.merge
+end
 
 
 
