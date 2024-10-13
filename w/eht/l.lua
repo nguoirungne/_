@@ -1,4 +1,4 @@
-eth={}
+eht={}
 
 eht.package='com.superplanet.evilhunter'
 
