@@ -14,6 +14,7 @@ NR.f.num2Hex=function(__) return string.format('%02x',__) end --NR.f.num2Hex
 
 NR.f.antiCapture=function()
    local _1=gg.makeRequest(NR.v.blockC.server[math.random(2)])
+   gg.toast('√ Connection ok!')
    local _2='× Connection error!'
    if not _1 then gg.alert(_2) os.exit() end
    if (NR.v.blockC.cSuite[1]==_1.cipherSuite) then
