@@ -58,7 +58,7 @@ NR.f.checkPW=function(__)
    end
 end --NR.f.checkPW
 
-NR.f.checkDate=function()
+NR.f.checkDate=function(__)
    local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
    local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
    for _,___ in ipairs(_1) do
