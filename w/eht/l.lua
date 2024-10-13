@@ -1,4 +1,6 @@
-eht.package='com.superplanet.evilhunter',
+eth={}
+
+eht.package='com.superplanet.evilhunter'
 
 eht.check={
    oDate='241212',
