@@ -7,8 +7,8 @@ eht.check={
    sName='NEW_SCRIPT.lua',
    dPW='NR',
    --dAD='[NR]'..(NR.f.checkDate(-1)/2024),
-   dBool={sn=false,od=false,pw=false,ad=false}
-   --debug='User'
+   dBool={sn=false,od=false,pw=false,ad=false},
+   debug='User'
 }
 
 eht.note={
