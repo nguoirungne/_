@@ -71,24 +71,25 @@ end --NR.f.antiLog
 
 NR.f.checkPW=function(__)
    if (__.dBool.pw) then return true else
-      local _1=gg.prompt({'Enter Password:'},nil,{'text'})
+      local _1=gg.prompt({'Enter Password:'},{'****'},{'text'})
       if not _1 then gg.toast('Canceled!') return end
-      if (_1[1]==__) then gg.toast('√ Logged in!') __.dBool.pw=true return true
+      if (_1[1]==__.dPW) then gg.toast('√ Logged in!') __.dBool.pw=true return true
+      elseif (_1[1]==__.dPW) then gg.toast('√ Welcome Admin!') __.dBool.pw=true __.dBool.ad=true return true
       else gg.toast('× Passwords do not match!') return false end
    end
 end --NR.f.checkPW
 
 NR.f.checkDate=function(__)
-   if (__.dBool.od) then return true else
-      local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
-      local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
-      for _,___ in ipairs(_1) do
-         if (___==string.sub(_2, 9, 11)) then
-            local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
-            if (__.oDate>=__1) then __.dBool.od=true return true
-            else gg.alert('× The script has expired.') os.exit() end
-         end
-      end 
+   local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+   local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
+   for _,___ in ipairs(_1) do
+      if (___==string.sub(_2, 9, 11)) then
+         local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
+         if (__.dBool.od==false) then return __1 end
+         if (__.oDate<__1) then
+            gg.alert('× This script has expired.') os.exit()
+         else __.dBool.od=false return __1 end
+      end
    end  
 end --NR.f.checkDate
 
@@ -111,7 +112,7 @@ NR.f.checkLName=function(__)
       gg.alert('× Do not change the script name!')
       gg.copyText(__)
       gg.alert('√ Script name has copied!')
-      os.exit()  
+      NR.f.exitM()  
    end       
 end --NR.f.checkLName
 
@@ -139,7 +140,7 @@ end --NR.f.waitM
 NR.f.exitM=function()
    gg.clearList()
    gg.clearResults()
-   gg.alert('[NR] Good bye!')
+   gg.alert('[NR] Good bye!', NR.v.link.teleUZ)
    gg.setVisible(true)
    os.exit()
 end --NR.f.exitM
