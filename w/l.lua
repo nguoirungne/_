@@ -77,11 +77,10 @@ NR.f.scanRand=function()
    gg.clearResults()
 end --NR.f.scanRand
 
-NR.f.checkLName=function(...)
-   local _0={...}
-   if (_0[1]==_0[2]) then return true else
+NR.f.checkLName=function(__)
+   if (NR.v.lName==__) then return true else
       gg.alert('× Do not change the script name!')
-      gg.copyText(_0[1])
+      gg.copyText(NR.v.lName)
       gg.toast('√ name has copied!')
       os.exit()
    end
