@@ -4,7 +4,6 @@ eht.package='com.superplanet.evilhunter'
 
 eht.check={
    oDate='241212',
-   lName=string.match(gg.getFile(),'[^/]+$'),
    sName='NEW_SCRIPT.lua',
    dPW='NR',
    dBool={sn=false,od=false,pw=false}
@@ -20,7 +19,7 @@ eht.class={
 }
    
 eht.checkUpdate=function()
-   NR.f.checkLName(eht.check.lName, eht.check.sName)
+   NR.f.checkLName(eht.check.sName)
    NR.f.checkDate(eht.check.oDate)
    return true
 end
