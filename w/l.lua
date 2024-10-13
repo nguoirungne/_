@@ -14,7 +14,6 @@ NR.f.num2Hex=function(__) return string.format('%02x',__) end --NR.f.num2Hex
 
 NR.f.antiCapture=function()
    local _1=gg.makeRequest(NR.v.blockC.server[math.random(2)])
-   gg.toast('√ Connection ok!')
    local _2='× Connection error!'
    if not _1 then gg.alert(_2) os.exit() end
    if (NR.v.blockC.cSuite[1]==_1.cipherSuite) then
@@ -60,8 +59,14 @@ NR.f.checkPW=function(__)
 end --NR.f.checkPW
 
 NR.f.checkDate=function(__)
-   local _1=gg.makeRequest(NR.v.blockC.server[2]).headers.Date
-   print (_1)
+   local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+   local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
+   for _,___ in ipairs(_1) do
+      if (___==string.sub(_2, 9, 11)) then
+         if (__>=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)) then return true
+         else gg.alert('× Script is outdate!') os.exit() end
+      end
+   end   
 end --NR.f.checkDate
 
 NR.f.scanRand=function()
@@ -82,9 +87,9 @@ NR.f.checkLName=function(__)
    if (NR.v.lName==__) then return true else
       gg.alert('× Do not change the script name!')
       gg.copyText(NR.v.lName)
-      gg.toast('√ name has copied!')
-      os.exit()
-   end
+      gg.alert('√ Script name has copied!')
+      os.exit()  
+   end       
 end --NR.f.checkLName
 
 NR.f.menuTab=function(__)
@@ -111,7 +116,7 @@ end --NR.f.waitM
 NR.f.exitM=function()
    gg.clearList()
    gg.clearResults()
-   gg.alert('Good bye!')
+   gg.alert('[NR] Good bye!')
    gg.setVisible(true)
    os.exit()
 end --NR.f.exitM
