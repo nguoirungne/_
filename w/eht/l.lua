@@ -1,5 +1,3 @@
-local eht={}
-
 eht.package='com.superplanet.evilhunter',
 
 eht.check={
