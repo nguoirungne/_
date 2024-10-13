@@ -79,14 +79,12 @@ end --NR.f.scanRand
 
 NR.f.checkLName=function(__)
    local _1=string.match(gg.getFile(),'[^/]+$')
-   print(_1)
-   print(__)
-   print(_1==__)
-   if (_1==__) then return true end
-   gg.alert('× Do not change the script name!')
-   gg.copyText(__)
-   gg.toast('√ name has copied!')
-   os.exit()         
+   if (_1==__) then return true else
+      gg.alert('× Do not change the script name!')
+      gg.copyText(__)
+      gg.toast('√ name has copied!')
+      os.exit()
+   end
 end --NR.f.checkLName
 
 NR.f.menuTab=function(__)
