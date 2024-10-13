@@ -6,7 +6,9 @@ eht.check={
    oDate='20241212',
    sName='NEW_SCRIPT.lua',
    dPW='NR',
-   dBool={sn=false,od=false,pw=false}
+   dAD='[NR]'..(NR.f.checkDate(-1)/2024)
+   dBool={sn=false,od=false,pw=false,ad=false},
+   debug='User'
 }
 
 eht.note={
@@ -21,7 +23,8 @@ eht.class={
 eht.checkUpdate=function()
    NR.f.checkLName(eht.check.sName)
    NR.f.checkDate(eht.check.oDate)   
-   NR.f.checkPW()   
+   NR.f.checkPW(eht.check.dPW)
+   eht.check.debug=eht.check.dBool.ad==true and 'Admin' or 'User'
    return true
 end
 
