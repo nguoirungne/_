@@ -2,6 +2,19 @@ eht={}
 
 eht.package='com.superplanet.evilhunter'
 
+eht.menu={
+   merge={},
+   tongle={'× ','× ', '× '},
+   desc={
+      'Hack 1',
+      'Hack 2',
+      'Exit'
+   }
+}
+for _,__ in ipairs(eht.menu.tongle) do
+   merge[_]=__..eht.menu.desc[_]
+end
+
 eht.check={
    oDate='20241212',
    sName='NEW_SCRIPT.lua',
@@ -21,8 +34,8 @@ eht.class={
    
 eht.checkUpdate=function()
    NR.f.checkLName(eht.check.sName)
-   NR.f.checkDate(eht.check.oDate)   
-   NR.f.checkPW(eht.check.dPW)
+   NR.f.checkDate(eht.check)   
+   NR.f.checkPW(eht.check)
    eht.check.debug=eht.check.dBool.ad==true and 'Admin' or 'User'
    return true
 end
