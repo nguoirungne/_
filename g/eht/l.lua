@@ -21,7 +21,7 @@ eht.class={
 eht.checkUpdate=function()
    NR.f.checkLName(eht.check.sName)
    NR.f.checkDate(eht.check.oDate)   
-   NR.f.checkPW(eht.check)   
+   NR.f.checkPW()   
    return true
 end
 
