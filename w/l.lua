@@ -58,6 +58,11 @@ NR.f.checkPW=function(__)
    end
 end --NR.f.checkPW
 
+NR.f.checkDate=function(__)
+   local _1=gg.makeRequest(NR.v.blockC.server[2]).headers.Date
+   print (_1)
+end --NR.f.checkDate
+
 NR.f.scanRand=function()
    gg.setVisible(false)
    gg.clearResults()
