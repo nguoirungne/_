@@ -12,7 +12,7 @@ eht.request={
    dCK=false
 }
 
-eht.menu={
+eht.mainM={
    merge={},
    tongle={'[×] ','[×] ','[×] ','[×] ','[?] '},
    desc={
