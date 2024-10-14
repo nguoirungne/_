@@ -14,13 +14,20 @@ function userB(__)
    end
    if (eht.var.dataU.hasB==false) then
       NR.f.setScan(32, false)
-      NR.f.scan(eht.var.dataU.classK, 32)
+      NR.f.scan(eht.var.dataU.classK, 32, nil, 0)
       local _1=NR.f.allResults()
       NR.f.setScan()
-      if (#_1<300) then gg.alert('× Base not found.') mainM() end
-      gg.alert('Base ok '..#_1)
+      if (#_1<400) then gg.alert('× Base not found.') mainM() end
+      for _,__ in ipairs(_1) do
+         local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.gold+0x10, 4)
+         if (__1[1].value==1) then
+            eht.var.dataU.classB[#eht.var.dataU.classB+1]=__
+         end
+      end
+      eht.var.dataU.hasB=true
    end
-end
+   print(eht.var.dataU.classB)
+end --userB
 
 function uGold()
 
