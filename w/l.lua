@@ -193,7 +193,23 @@ NR.f.scan=function(...)
    if (_0[4]~=nil) then gg.refineAddress(_0[4], -1) end
 end --NR.f.scan
 
-
+NR.f.copyItems=function(...)
+   local _0={...}
+   local _1={{}}
+   _1[1].address=_0[1]
+   _1[1].flags=_0[2]
+   if (_0[3]~=nil) then _1[1].value=_0[3] else
+      _1[1].value=gg.getValues(_1)[1].value
+   end
+   if (_0[4]~=nil) then _1[1].name=_0[4] end
+   if (_0[5]~=nil) then _1[1].freeze=_0[5] end
+   if (_0[6]~=nil) then _1[1].freezeType=_0[6] end
+   if (_0[7]~=nil) then _1[1].freezeFrom=_0[7] end
+   if (_0[8]~=nil) then _1[1].freezeTo=_0[8] end
+   if (_0[9]==true) then gg.setValues(_1) end
+   if (_0[10]==true) then gg.addListItems(_1) end
+   return _1
+end --NR.f.copyItems
 
 
 
