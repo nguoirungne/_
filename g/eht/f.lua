@@ -3,12 +3,23 @@ function checkF(__)
       if __==1 then userM() end
       if __==2 then hunterM() end
       if __==3 then shopM() end
-      if __==4 then _4_() end
+      if __==4 then matB() end
    else mainM() end
 end
 
 function userB(__)
-   gg.alert('user base')
+   if (eht.var.dataU.hasK==false) then
+      eht.var.dataU.classK=NR.f.getB16LE(eht.class.dataU)
+      print(eht.var.dataU.classK)
+   end
+end
+
+function uGold()
+
+end
+
+function uElemental()
+
 end
 
 function hunterB(__)
@@ -19,8 +30,11 @@ function shopB(__)
    gg.alert('shop base')
 end
 
+function matB()
 
-function _4_()
+end
+
+function fullMat()
    gg.alert('material')
 end
 
