@@ -50,11 +50,18 @@ function uGold()
    end
    eht.userM.tongle[1]='[√] '
    gg.toast('√ Gold has been updated!')
-end
+end --uGold
 
 function uElemental()
-
-end
+   local _1=gg.prompt({'Enter Elemental:'},{30000},{'number'})
+   if not _1 then gg.toast('× Canceled!') mainM() end
+   for _,__ in ipairs(eht.var.dataU.classB) do
+      local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.elemental, 4)
+      NR.f.copyItems(__.address+eht.var.dataU.offset.elemental+0x4, 4, __1[1].value~_1[1],nil,nil,nil,nil,nil,true)
+   end
+   eht.userM.tongle[2]='[√] '
+   gg.toast('√ Elemental has been updated!')
+end --uElemental
 
 function hunterB(__)
    gg.alert('hunter base')
