@@ -10,7 +10,15 @@ end
 function userB(__)
    if (eht.var.dataU.hasK==false) then
       eht.var.dataU.classK=NR.f.getB16LE(eht.class.dataU)
-      print(eht.var.dataU.classK)
+      eht.var.dataU.hasK=true
+   end
+   if (eht.var.dataU.hasB==false) then
+      NR.f.setScan(32, false)
+      NR.f.scan(eht.var.dataU.classK, 32)
+      local _1=NR.f.allResults()
+      NR.f.setScan()
+      if (#_1<300) then gg.alert('× Base not found.') mainM() end
+      gg.alert('Base ok '..#_1)
    end
 end
 
