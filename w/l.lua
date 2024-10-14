@@ -79,16 +79,23 @@ NR.f.checkPW=function(__)
    end
 end --NR.f.checkPW
 
+NR.f.makePW=function()
+   local _1=NR.f.checkDate()
+   local _2=string.sub(_1,7,8)
+   return 'NR'..(_1*_2/2212)
+end --NR.f.makePW
+
 NR.f.checkDate=function(__)
    local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
    local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
    for _,___ in ipairs(_1) do
       if (___==string.sub(_2, 9, 11)) then
          local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
-         if (__.dBool.od==false) then return __1 end
-         if (__.oDate<__1) then
-            gg.alert('× This script has expired.') os.exit()
-         else __.dBool.od=false return __1 end
+         if (__.dBool.ad) or (__==nil) then return __1 else
+            if (__.oDate<__1) then
+               gg.alert('× This script has expired.') os.exit()
+            else return __1 end
+         end
       end
    end  
 end --NR.f.checkDate
@@ -140,7 +147,7 @@ end --NR.f.waitM
 NR.f.exitM=function()
    gg.clearList()
    gg.clearResults()
-   gg.alert('[NR] Good bye!', NR.v.link.teleUZ)
+   gg.alert('[NR] See you later!', NR.v.link.teleUZ)
    gg.setVisible(true)
    os.exit()
 end --NR.f.exitM
