@@ -105,6 +105,7 @@ eht.getStart=function()
          for _,__ in ipairs(_1) do
             local __1={{address=__.address+4+(35*2), flags=1}}
             local __2=gg.getValues(__1)[1].value
+            print(string.char(__2), _)
             if (string.char(__2)==';') then
                __1={{address=__.address+4, flags=1}}
                for i=1, 53 do
