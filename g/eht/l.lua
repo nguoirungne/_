@@ -2,6 +2,16 @@ eht={}
 
 eht.package='com.superplanet.evilhunter'
 
+eht.request={
+   host='eh.supermembers.net',
+   cEarn='/game/cash/earn',
+   pInfo='/game/player/info',
+   cookie='',
+   name='',
+   gem=-1,
+   dCK=false
+}
+
 eht.menu={
    merge={},
    tongle={'[×] ','[×] ','[×] ','[×] ','[?] '},
@@ -79,7 +89,11 @@ eht.mergeM=function(__)
    return __.merge
 end
 
-
+eht.getInfo=function()
+   if (eht.request.dCK==false) then
+      
+   end
+end
 
 
 
