@@ -177,10 +177,21 @@ NR.f.getB16LE=function(...)
    end
 end --NR.f.getB16LE
 
+NR.f.setScan=function(...)
+   local _0={...}
+   if (_0[1]~=nil) then gg.setRanges(_0[1]) end
+   if (_0[2]~=nil) then gg.setVisible(_0[2]) end
+   gg.clearResults()
+end --NR.f.setScan
 
+NR.f.allResults=function() return gg.getResults(gg.getResultsCount()) end --NR.f.allResults
 
-
-
+NR.f.scan=function(...)
+   local _0={...}
+   gg.searchNumber(_0[1], _0[2])
+   if (_0[3]~=nil) then gg.refineNumber(_0[3], _0[2]) end
+   if (_0[4]~=nil) then gg.refineAddress(_0[4], -1) end
+end --NR.f.scan
 
 
 
