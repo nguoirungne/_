@@ -91,7 +91,7 @@ NR.f.checkDate=function(__)
    for _,___ in ipairs(_1) do
       if (___==string.sub(_2, 9, 11)) then
          local __1=string.sub(_2, 13, 16)..string.format('%02s',_)..string.sub(_2, 6, 7)
-         if (__.dBool.ad) or (__==nil) then return __1 else
+         if (__==nil) or (__.dBool.ad) then return __1 else
             if (__.oDate<__1) then
                gg.alert('× This script has expired.') os.exit()
             else return __1 end
