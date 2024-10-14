@@ -18,19 +18,38 @@ function userB(__)
       local _1=NR.f.allResults()
       NR.f.setScan()
       if (#_1<400) then gg.alert('× Base not found.') mainM() end
-      for _,__ in ipairs(_1) do
-         local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.gold+0x10, 4)
+      for _,___ in ipairs(_1) do
+         local __1=NR.f.copyItems(___.address+eht.var.dataU.offset.gold+0x10, 4)
          if (__1[1].value==1) then
-            eht.var.dataU.classB[#eht.var.dataU.classB+1]=__
+            eht.var.dataU.classB[#eht.var.dataU.classB+1]=___
          end
       end
       eht.var.dataU.hasB=true
+      eht.mainM.tongle[1]='[>] '
    end
-   print(eht.var.dataU.classB)
+   if (#eht.var.dataU.classB>1) then
+      local _2={}
+      for _,___ in ipairs(eht.var.dataU.classB) do
+         local __1=NR.f.copyItems(___.address+eht.var.dataU.offset.gold+0x10, 4)
+         if (__1[1].value==1) then
+            _2[#_2+1]=___
+         end
+      end
+      eht.var.dataU.classB=_2
+   end
+   if (__==1) then uGold() end
+   if (__==2) then uElemental() end
 end --userB
 
 function uGold()
-
+   local _1=gg.prompt({'Enter Gold:'},{1000000000},{'number'})
+   if not _1 then gg.toast('× Canceled!') mainM() end
+   for _,__ in ipairs(eht.var.dataU.classB) do
+      local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.gold, 4)
+      NR.f.copyItems(__.address+eht.var.dataU.offset.gold+0x8, 32, __1[1].value~_1[1],nil,nil,nil,nil,nil,true)
+   end
+   eht.userM.tongle[1]='[√] '
+   gg.toast('√ Gold has been updated!')
 end
 
 function uElemental()
