@@ -1,6 +1,9 @@
 eht={}
 
 eht.package='com.superplanet.evilhunter'
+eht.label='Evil Hunter Tycoon'
+eht.version='1.377'
+eht.xBit='x64'
 
 eht.request={
    host='eh.supermembers.net',
@@ -9,7 +12,8 @@ eht.request={
    cookie='',
    name='',
    gem=-1,
-   dCK=false
+   nCK=32370124832899125,
+   bCK=false
 }
 
 eht.mainM={
@@ -89,15 +93,35 @@ eht.mergeM=function(__)
    return __.merge
 end
 
-eht.getInfo=function()
-   if (eht.request.dCK==false) then
-      
+eht.getStart=function()
+   if (eht.request.bCK==false) then
+      gg.clearResults()
+      gg.setVisible(''>'')
+      gg.setRanges(32)
+      gg.searchNumber(eht.request.nCK, 32)
+      local _1=gg.getResults(gg.getResultsCount())
+      gg.clearResults()
+      if #_1>0 then
+         for _,__ in ipairs(_1) do
+            local __1={{address=__.address+4+(35*2), flags=1}}
+            local __2=gg.getValues(__1)[1].value
+            if (string.char(__2)==';') then
+               __1={{address=__.address+4, flags=1}}
+               for i=1, 53 do
+                  __2=gg.getValues(__1)[1].value
+                  eht.request.cookie=eht.request.cookie..string.char(__2)
+                  __1[1].address=__1[1].address+2
+               end
+            break end
+         end
+         print(eht.request.cookie)
+      end
    end
 end
 
 
 
-
+--'user_none=srDwr7pLdln7gfjuPnPEtg==; session_none=2394'
 
 
 
