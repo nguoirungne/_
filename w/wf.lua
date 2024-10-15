@@ -133,7 +133,7 @@ end --NR.f.menuTab
 
 NR.f.waitM=function()
    gg.setVisible(false)
-   while NR.f.antiCapture() do
+   while true do --NR.f.antiCapture() do
       if (gg.isVisible()) then
          gg.setVisible(false)
          NR.f.scanRand()
