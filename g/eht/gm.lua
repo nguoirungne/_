@@ -1,6 +1,8 @@
 function mainM()
    gg.setVisible(''>'')
    while true do
+      gg.toast(eht.request.pName)
+      gg.sleep(500)
       local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.note[1]..'[EHT MENU]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.mainM.merge then NR.f.exitM()
