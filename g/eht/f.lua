@@ -76,7 +76,7 @@ function matB()
 end
 
 function fullMat()
-   gg.alert('material')
+   eht.getCookie()
 end
 
 
