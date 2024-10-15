@@ -1,3 +1,4 @@
+--###################################
 function checkF(__)
    if NR.f.checkPW(eht.check) then
       if __==1 then userM() end
@@ -6,7 +7,8 @@ function checkF(__)
       if __==4 then matB() end
    else mainM() end
 end
-
+--###################################
+--###################################
 function userB(__)
    if (eht.var.dataU.hasK==false) then
       eht.var.dataU.classK=NR.f.getB16LE(eht.class.dataU)
@@ -40,7 +42,7 @@ function userB(__)
    if (__==1) then uGold() end
    if (__==2) then uElemental() end
 end --userB
-
+--###################################
 function uGold()
    local _1=gg.prompt({'Enter Gold:'},{1000000000},{'number'})
    if not _1 then gg.toast('× Canceled!') mainM() end
@@ -51,7 +53,7 @@ function uGold()
    eht.userM.tongle[1]='[√] '
    gg.toast('√ Gold has been updated!')
 end --uGold
-
+--###################################
 function uElemental()
    local _1=gg.prompt({'Enter Elemental:'},{30000},{'number'})
    if not _1 then gg.toast('× Canceled!') mainM() end
@@ -62,7 +64,8 @@ function uElemental()
    eht.userM.tongle[2]='[√] '
    gg.toast('√ Elemental has been updated!')
 end --uElemental
-
+--###################################
+--###################################
 function hunterB(__)
    gg.alert('hunter base')
 end

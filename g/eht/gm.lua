@@ -1,7 +1,7 @@
 function mainM()
    gg.setVisible(''>'')
    while true do
-      local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.note[1]..'EHT MENU')
+      local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.note[1]..'[EHT MENU]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.mainM.merge then NR.f.exitM()
       else checkF(_1) end
@@ -10,7 +10,7 @@ end
 
 function userM()
    while true do
-      local _1=gg.choice(eht.mergeM(eht.userM), nil, 'MENU')
+      local _1=gg.choice(eht.mergeM(eht.userM), nil, '[USER MANAGER]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.userM.merge then mainM()
       else userB(_1) end      
@@ -19,7 +19,7 @@ end
 
 function hunterM()
    while true do
-      local _1=gg.choice(eht.mergeM(eht.hunterM), nil, 'MENU')
+      local _1=gg.choice(eht.mergeM(eht.hunterM), nil, '[HUNTER MANAGER]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.hunterM.merge then mainM()
       else hunterB(_1) end
@@ -28,7 +28,7 @@ end
 
 function shopM()
    while true do
-      local _1=gg.choice(eht.mergeM(eht.shopM), nil, 'MENU')
+      local _1=gg.choice(eht.mergeM(eht.shopM), nil, '[SHOP MANAGER]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.shopM.merge then mainM()
       else shopB(_1) end
