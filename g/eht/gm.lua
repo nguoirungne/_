@@ -1,6 +1,7 @@
 function mainM()
    gg.setVisible(''>'')
    eht.getCookie()
+   eht.getPCode()
    while true do
       eht.getPName()
       local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.upName()..'[EHT MENU]')

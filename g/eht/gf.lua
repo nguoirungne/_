@@ -1,6 +1,6 @@
 --###################################
 function checkF(__)
-   if true then --NR.f.checkPW(eht.check) then
+   if NR.f.checkPW(eht.check) then
       if __==1 then userM() end
       if __==2 then hunterM() end
       if __==3 then shopM() end
