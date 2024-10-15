@@ -72,7 +72,7 @@ function shopB(__)
 end
 
 function matB()
-
+   fullMat()
 end
 
 function fullMat()
