@@ -63,7 +63,18 @@ end
 --###################################
 --###################################
 function shopB(__)
-   gg.alert('shop base')
+   if (eht.var.dataAS.hasK==false) then
+      eht.var.dataAS.classK=NR.f.getB16LE(eht.class.dataAS)
+      eht.var.dataAS.hasK=true
+   end
+   if (eht.var.dataAS.hasB==false) then
+      NR.f.setScan(32, false)
+      NR.f.scan(eht.var.dataAS.classK, 32, nil, 0)
+      local _1=NR.f.allResults()
+      NR.f.setScan()
+      if (#_1<500) then gg.alert('× Base not found.') mainM() end
+      print(_1)
+   end
 end
 --###################################
 --###################################
