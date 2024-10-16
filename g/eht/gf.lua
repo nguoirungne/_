@@ -105,14 +105,22 @@ function fullMat()
       local __1=gg.prompt({'Enter Quantity:'},{_2},{'number'})
       if not __1 or (__1[1]=='') then gg.toast('× Canceled!') mainM() end
       _2=tonumber(__1[1])
-   else
-      for _,__ in ipairs(eht.var.dataI.classB) do
-         local __1=NR.f.copyItems(__.address+eht.var.dataI.offset.newCheck, 4)
-         local __2=NR.f.copyItems(__.address+eht.var.dataI.offset.count, 4)
-         NR.f.copyItems(__.address+eht.var.dataI.offset.newCheck+4, 4, __1[1].value~213, nil,nil,nil,nil,nil,true)
-         NR.f.copyItems(__.address+eht.var.dataI.offset.count+8, 32, __2[1].value~_2, nil,nil,nil,nil,nil,true)
-      end   
    end
+   gg.toast('loading new values..')
+   local _3,_4={},{}
+   for _,__ in ipairs(eht.var.dataI.classB) do
+      NR.f.setScan()
+      _3[#_3+1]={address=__.address+eht.var.dataI.offset.newCheck+4, flags=4}
+      _4[#_4+1]={address=__.address+eht.var.dataI.offset.count+8, flags=32}
+   end
+   gg.loadResults(_3)
+   NR.f.allResults()
+   gg.editAll('213X4', 4)
+   NR.setScan(nil, false)
+   gg.loadResults(_4)
+   NR.f.allResults()
+   gg.editAll(_2..'X8', 32)
+   NR.setScan(nil, false)
    eht.mainM.toggle[5]='[+] '
    gg.toast('√ All materials updated!')
 end
