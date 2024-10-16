@@ -5,7 +5,7 @@ function mainM()
    eht.getPCode()
    while true do
       eht.getPName()
-      local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.upName()..'[EHT MENU]')
+      local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.upName()..'[EVIL HUNTER TYCOON MENU]')
       if not _1 then NR.f.waitM() end      
       checkF(_1)
    end
