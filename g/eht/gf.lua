@@ -116,11 +116,11 @@ function fullMat()
    gg.loadResults(_3)
    NR.f.allResults()
    gg.editAll('213X4', 4)
-   NR.setScan(nil, false)
+   NR.f.setScan(nil, false)
    gg.loadResults(_4)
    NR.f.allResults()
    gg.editAll(_2..'X8', 32)
-   NR.setScan(nil, false)
+   NR.f.setScan(nil, false)
    eht.mainM.toggle[5]='[+] '
    gg.toast('√ All materials updated!')
 end
