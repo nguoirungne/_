@@ -50,7 +50,7 @@ function uGold()
       local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.gold, 4)
       NR.f.copyItems(__.address+eht.var.dataU.offset.gold+0x8, 32, __1[1].value~_1[1],nil,nil,nil,nil,nil,true)
    end
-   eht.userM.tongle[1]='[√] '
+   eht.userM.tongle[1]='[+] '
    gg.toast('√ Gold has been updated!')
 end --uGold
 --###################################
@@ -61,7 +61,7 @@ function uElemental()
       local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.elemental, 4)
       NR.f.copyItems(__.address+eht.var.dataU.offset.elemental+0x4, 4, __1[1].value~_1[1],nil,nil,nil,nil,nil,true)
    end
-   eht.userM.tongle[2]='[√] '
+   eht.userM.tongle[2]='[+] '
    gg.toast('√ Elemental has been updated!')
 end --uElemental
 --###################################
