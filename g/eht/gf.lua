@@ -94,6 +94,7 @@ function itemB()
       end
       eht.var.dataI.hasB=true
    end
+   gg.alert('Here')
    fullMat()
 end
 --###################################
