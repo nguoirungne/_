@@ -87,7 +87,7 @@ function itemB()
          NR.f.setScan()
          local __1=NR.f.copyItems(__.address+eht.var.dataI.offset.index, 4)
          local __2=NR.f.copyItems(__.address+eht.var.dataI.offset.index+4, 4)
-         local __3=__1~__2
+         local __3=__1[1].value~__2[1].value
          if (__3>=1 and __3<=131) or (__3>=137 and __3<=eht.var.dataI.maxId) then
             eht.var.dataI.classB[#eht.var.dataI.classB+1]=__
          end
