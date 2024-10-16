@@ -81,7 +81,7 @@ function itemB()
       NR.f.setScan(32, false)
       NR.f.scan(eht.var.dataI.classK, 32, nil, 0)
       local _1=NR.f.allResults()
-      NR.setScan()
+      NR.f.setScan()
       if (#_1<300) then gg.alert('× Base not found.') mainM() end
       for _,__ in ipairs(_1) do
          NR.f.setScan()
@@ -94,7 +94,6 @@ function itemB()
       end
       eht.var.dataI.hasB=true
    end
-   gg.alert('Here')
    fullMat()
 end
 --###################################
