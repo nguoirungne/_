@@ -138,7 +138,6 @@ function paidB(__)
          if (#_1<50) then gg.alert('× Base not found.') mainM() end
          eht.var.dataASCB.classB=_1
          eht.var.dataASCB.hasB=true
-         eht.paidM.toggle[1]='[>] '
       end
       sBoxPack()
    end --dataASCB
