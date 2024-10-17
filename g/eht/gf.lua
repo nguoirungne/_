@@ -290,7 +290,7 @@ function oneB()
       eht.var.oneH.hasB=true
    end
    if (eht.mainM.toggle[7]=='[×] ') then eht.mainM.toggle[7]='[√] ' 
-      print(string.format('%x',eht.var.oneH.addrB[1].value))
+      print(string.format('%x',eht.var.oneH.addrB[1].address))
       --NR.f.copyItems(eht.var.oneH.addrB[1].address+0, 16, 1000000, nil,nil,nil,nil,nil,true)
       --NR.f.copyItems(eht.var.oneH.addrB[1].address+4, 16, 1000000, nil,nil,nil,nil,nil,true)
       --NR.f.copyItems(eht.var.oneH.addrB[1].address+8, 16, 1000000, nil,nil,nil,nil,nil,true)
