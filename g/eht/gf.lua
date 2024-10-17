@@ -147,7 +147,12 @@ end
 function sBoxPack()
    if (eht.check.dBool.ad) then
       eht.paidM.toggle[1]='[+] '
-      local _1=gg.prompt({'Pack ID:', 'Count: [1;1000]',NR.v.link.teleUZ},{eht.var.dataASCB.maxId,1},{'number','number'})
+      local _0=gg.alert('Get list of IDs?', 'ok', 'skip')
+      if (_0==1) then
+         local __1=gg.makeRequest(eht.request.hostSID).content
+         if (__1~=nil) then gg.alert(__1) end
+      end
+      local _1=gg.prompt({'Pack ID:', 'Count: [1;1000]', ''},{eht.var.dataASCB.maxId,1, NR.v.link.teleUZ},{'number','number'})
       if not _1 then gg.toast('× Canceled!') paidM() end
       if (tonumber(_1[1])>eht.var.dataASCB.maxId) then
          gg.toast('ID changed to default >'..eht.var.dataASCB.maxId)
@@ -168,8 +173,12 @@ function sBoxPack()
       NR.f.allResults()
       gg.editAll(_1[2]..'X4', 4)
       NR.f.setScan()
-      local _4=gg.alert('√ Editing complete! Go to shop and open the shiny box.', 'free shop now', 'confirm')
-      if (_4==1) then shopB() end
+      if (eht.var.dataAS.hasF==false) then
+         local _4=gg.alert('√ Editing complete! Go to shop and open the shiny box.', 'free shop now', 'confirm')
+         if (_4==1) then shopB() end
+      else
+         gg.alert('√ Editing complete! Go to shop and open the shiny box.')
+      end
    else
       gg.alert('You need to buy first.')
    end   
