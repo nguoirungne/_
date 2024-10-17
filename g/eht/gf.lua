@@ -82,10 +82,14 @@ end
 function sFree(__)
    if (__==1) then
       if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
-      else eht.shopM.toggle[__]='[×] ' end
+      else eht.shopM.toggle[__]='[×] ' eht.shopM.toggle[2]='[$] ' end
    else
-      if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
-      else eht.shopM.toggle[__]='[$] ' eht.shopM.toggle[1]='[×] ' end
+      if (eht.check.dBool.ad) then 
+         if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
+         else eht.shopM.toggle[__]='[$] ' eht.shopM.toggle[1]='[×] ' end
+      else
+         gg.alert('You need to buy first.')
+      end
    end
 
    
