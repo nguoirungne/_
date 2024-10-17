@@ -80,15 +80,15 @@ function shopB(__)
 end
 --###################################
 function sFree(__)
-   if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
-   
+   if (__==1) then
+      if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
+      else eht.shopM.toggle[__]='[×] ' end
    else
-      local _1='[$] '
-      if (__==1) then _1='[×] ' end
-      eht.shopM.toggle[__]=_1
-      
-   
+      if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
+      else eht.shopM.toggle[__]='[$] ' eht.shopM.toggle[1]='[×] ' end
    end
+
+   
 end
 --###################################
 --###################################
