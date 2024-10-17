@@ -287,24 +287,33 @@ function oneB()
          eht.var.oneH.addrB[3]={address=__.address+8, 16}
          eht.var.oneH.addrB[4]={address=__.address+12, 16}
          eht.var.oneH.addrB[5]={address=__.address+16, 16}
+         local __1=NR.f.copyItems(__.address, 16)
+         local __2=NR.f.copyItems(__.address+4, 16)
+         local __3=NR.f.copyItems(__.address+8, 16)
+         local __4=NR.f.copyItems(__.address+12, 16)
+         local __5=NR.f.copyItems(__.address+16, 16)
+         eht.var.oneH.value[1]=__1[1].value
+         eht.var.oneH.value[2]=__1[2].value
+         eht.var.oneH.value[3]=__1[3].value
+         eht.var.oneH.value[4]=__1[4].value
+         eht.var.oneH.value[5]=__1[5].value
       end
       eht.var.oneH.hasB=true
    end
-   print(string.format('%x',eht.var.oneH.addrB[1].address), 'addrB 2')
    if (eht.mainM.toggle[7]=='[×] ') then eht.mainM.toggle[7]='[√] ' 
-      NR.f.copyItems(eht.var.oneH.addrB[1].address, 16, 1000000, nil,nil,nil,nil,nil,true)
-      NR.f.copyItems(eht.var.oneH.addrB[2].address, 16, 1000000, nil,nil,nil,nil,nil,true)
-      NR.f.copyItems(eht.var.oneH.addrB[3].address, 16, 1000000, nil,nil,nil,nil,nil,true)
-      NR.f.copyItems(eht.var.oneH.addrB[4].address, 16, 1000000, nil,nil,nil,nil,nil,true)
-      NR.f.copyItems(eht.var.oneH.addrB[5].address, 16, 1000000, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[2].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[3].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[4].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[5].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
       NR.f.setScan(nil, false)
-      gg.toast('√ ###1Hit Kill Enable!')
+      gg.toast('√ 1Hit Kill Enable!')
    else eht.mainM.toggle[7]='[×] ' 
-      --NR.f.copyItems(eht.var.oneH.addrB[1].address+0, 16, eht.var.oneH.value[1], nil,nil,nil,nil,nil,true)
-      --NR.f.copyItems(eht.var.oneH.addrB[1].address+4, 16, eht.var.oneH.value[2], nil,nil,nil,nil,nil,true)
-      --NR.f.copyItems(eht.var.oneH.addrB[1].address+8, 16, eht.var.oneH.value[3], nil,nil,nil,nil,nil,true)
-      --NR.f.copyItems(eht.var.oneH.addrB[1].address+12, 16, eht.var.oneH.value[4], nil,nil,nil,nil,nil,true)
-      --NR.f.copyItems(eht.var.oneH.addrB[1].address+16, 16, eht.var.oneH.value[5], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address, 16, eht.var.oneH.value[1], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[2].address, 16, eht.var.oneH.value[2], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[3].address, 16, eht.var.oneH.value[3], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[4].address, 16, eht.var.oneH.value[4], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[5].address, 16, eht.var.oneH.value[5], nil,nil,nil,nil,nil,true)
       NR.f.setScan(nil, false)
       gg.toast('√ 1Hit Kill Disable!')
    end
