@@ -138,6 +138,7 @@ function paidB(__)
          if (#_1<50) then gg.alert('× Base not found.') mainM() end
          eht.var.dataASCB.classB=_1
          eht.var.dataASCB.hasB=true
+         eht.mainM.toggle[3]='[>] '
       end
       sBoxPack()
    end --dataASCB
@@ -153,7 +154,7 @@ function sBoxPack()
       end
       local _1=gg.prompt({'Pack ID:', 'Count: [1;1000]', ''},{eht.var.dataASCB.maxId,1, NR.v.link.teleUZ},{'number','number'})
       if not _1 then gg.toast('× Canceled!') paidM() end
-      if (tonumber(_1[1])>eht.var.dataASCB.maxId) then
+      if (tonumber(_1[1])>eht.var.dataASCB.maxId) or (tonumber(_1[1])<0) then
          gg.toast('ID changed to default >'..eht.var.dataASCB.maxId)
          _1[1]=eht.var.dataASCB.maxId
       end
@@ -233,8 +234,8 @@ function fullMat()
    NR.f.allResults()
    gg.editAll(_2..'X8', 32)
    NR.f.setScan(nil, false)
-   eht.mainM.toggle[5]='[+] '
-   gg.toast('√ All materials updated!')
+   eht.mainM.toggle[4]='[+] ' 
+   gg.toast('√ All Materials Updated!')
 end
 --###################################
 --###################################
@@ -244,8 +245,39 @@ function extraR(__)
 end
 --###################################
 --###################################
-
-
+function speedB()
+   if (eht.var.speedG.hasB==false) then
+      NR.f.setScan(32, false)
+      NR.f.scan(eht.var.speedG.scan, 32)
+      local _1=NR.f.allResults()
+      NR.f.setScan()
+      if (#_1<1) then gg.alert('× Value not found.') mainM() end
+      eht.var.speedG.addrB=_1
+      eht.var.speedG.hasB=true
+   end
+   local _1=gg.prompt({'Speed Game: [1;'..eht.var.speedG.maxS..']'},{eht.var.speedG.value},{'number'})
+   if not _1 then gg.toast('× Canceled!') mainM() end
+   eht.var.speedG.value=tonumber(_1[1])
+   NR.f.copyItems(eht.var.speedG.addrB[1].address-4, 16, eht.var.speedG.value, nil,nil,nil,nil,nil,true)
+   if (eht.var.speedG.value==1) then eht.mainM.toggle[6]='[×] ' 
+   else eht.mainM.toggle[6]='[+] ' end
+   gg.toast('√ Game Speed Updated!')
+end
+--###################################
+--###################################
+function oneB()
+   if (eht.var.oneH.hasB==false) then
+      NR.f.setScan(32, false)
+      NR.f.scan(eht.var.oneH.scan, 32)
+      local _1=NR.f.allResults()
+      NR.f.setScan()
+      if (#_1<1) then gg.alert('× Value not found.') mainM() end
+      eht.var.oneH.addrB=_1
+      eht.var.oneH.hasB=true
+   end
+end
+--###################################
+--###################################
 
 
 

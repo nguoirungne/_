@@ -18,7 +18,9 @@ function checkF(__)
       if __==3 then paidM() end
       if __==4 then itemB() end
       if __==5 then shopB() end
-      if __==6 then extraM() end
+      if __==6 then speedB() end
+      if __==7 then oneB() end
+      if __==8 then extraM() end
    else mainM() end
 end
 --###################################
