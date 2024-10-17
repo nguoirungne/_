@@ -66,12 +66,81 @@ function hunterB(__)
       eht.var.dataH.classK=NR.f.getB16LE(eht.class.dataH)
       eht.var.dataH.hasK=true
    end
+   eht.var.dataH.classB={}
    NR.f.setScan(32, false)
    NR.f.scan(eht.var.dataH.classK, 32, nil, 0)
    local _1=NR.f.allResults()
-   --NR.f.setScan()
-   if (#_1<1) then gg.alert('× Base not found.') mainM() end
-   
+   NR.f.setScan()
+   if (#_1<100) then gg.alert('× Base not found.') mainM() end
+   for _,___ in ipairs(_1) do
+      NR.f.setScan(nil, false)
+      local __1=NR.f.copyItems(___.address+eht.var.dataH.offset.job+8, 4)
+      if (__1[1].value==1) then
+         eht.var.dataH.classB[#eht.var.dataH.classB+1]=___
+      end
+   end
+   local _2=gg.prompt({'Enter Hunter Gold:'},{eht.var.dataH.goldH},{'number'})
+   if not _2 or (_2[1]=='') then gg.toast('× Canceled!') mainM() end
+   eht.var.dataH.goldH=tonumber(_2[1])
+   for _,___ in ipairs(eht.var.dataH.classB) do
+      NR.f.setScan(nil, false)
+      local __1=NR.f.copyItems(___.address+eht.var.dataH.offset.money, 4)
+      local __2=NR.f.copyItems(___.address+eht.var.dataH.offset.money+8, 32)
+      if (__1[1].value~__2[1].value==eht.var.dataH.goldH) then
+         eht.var.dataH.hunB[1]=___
+      break end
+   end
+   if (__==1) then hunIdx() end
+   if (__==2) then hunRank() end
+   if (__==3) then hunCostume() end
+   if (__==4) then hunSTech() end
+   if (__==5) then hunMaxA() end   
+end
+--###################################
+function hunIdx()
+   local _1_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.money, 4)
+   local _1_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.money+8, 32)
+   local _2_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.job, 4)
+   local _2_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.job+4, 4)
+   local _3_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.level, 4)
+   local _3_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.level+4, 4)
+   local _4_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.personality, 4)
+   local _4_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.personality+4, 4)
+   local _5_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.revive, 4)
+   local _5_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.revive+4, 4)
+   local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex, 4)
+   local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex+4, 4)   
+   local _1=gg.prompt(
+      {'gold: ', 'job: [0;3]', 'level: [0;99]', 'personality: [0;45]', 'revive: [0;4]', 'bodyIndex: [0;200]'},
+      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value},
+      {'number','number', 'number', 'number', 'number', 'number'}
+   )
+   if not _1 then gg.toast('× Canceled!') hunterM() end
+   NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_4_2[1].address, 4, _4_1[1].value~_1[4], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_5_2[1].address, 4, _5_1[1].value~_1[5], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
+   NR.f.setScan(nil, false)
+   eht.hunterM.toggle[1]='[+] ' 
+   gg.toast('√ Hunter Idx Updated!')
+end
+--###################################
+function hunRank()
+
+end
+--###################################
+function hunCostume()
+
+end
+--###################################
+function hunSTech()
+
+end
+--###################################
+function hunMaxA()
+
 end
 --###################################
 --###################################
