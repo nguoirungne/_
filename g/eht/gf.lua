@@ -138,6 +138,7 @@ function paidB(__)
          if (#_1<50) then gg.alert('× Base not found.') mainM() end
          eht.var.dataASCB.classB=_1
          eht.var.dataASCB.hasB=true
+         eht.paidM.toggle[1]='[>] '
       end
       sBoxPack()
    end --dataASCB
@@ -146,9 +147,29 @@ end
 function sBoxPack()
    if (eht.check.dBool.ad) then
       eht.paidM.toggle[1]='[+] '
-      local _1=gg.prompt({'Pack ID: [1;'..eht.var.dataASCB.maxId..']', 'Count: [1;1000]'},{1,1},{'number','number'})
+      local _1=gg.prompt({'Pack ID:', 'Count: [1;1000]',NR.v.link.teleUZ},{eht.var.dataASCB.maxId,1},{'number','number'})
       if not _1 then gg.toast('× Canceled!') paidM() end
-      print(eht.var.dataASCB.classB)
+      if (tonumber(_1[1])>eht.var.dataASCB.maxId) then
+         gg.toast('ID changed to default >'..eht.var.dataASCB.maxId)
+         _1[1]=eht.var.dataASCB.maxId
+      end
+      local _2,_3={},{}
+      for _,__ in ipairs(eht.var.dataASCB.classB) do
+         NR.f.setScan(nil, false)
+         _2[#_2+1]={address=__.address+eht.var.dataASCB.offset.rewardIdx+4, flags=4}
+         _3[#_3+1]={address=__.address+eht.var.dataASCB.offset.rewardCnt+4, flags=4}
+      end 
+      NR.f.setScan(nil, false)
+      gg.loadResults(_2)
+      NR.f.allResults()
+      gg.editAll(_1[1]..'X4', 4)
+      NR.f.setScan(nil, false)
+      gg.loadResults(_3)
+      NR.f.allResults()
+      gg.editAll(_1[2]..'X4', 4)
+      NR.f.setScan()
+      local _4=gg.alert('√ Editing complete! Go to shop and open the shiny box.', 'free shop now', 'confirm')
+      if (_4==1) then shopB() end
    else
       gg.alert('You need to buy first.')
    end   
