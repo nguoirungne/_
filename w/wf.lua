@@ -1,9 +1,9 @@
 NR.v.link={
-   teleUZ='https://t.me/undeadzone',
-   teleNR='https://t.me/nguoirungne'	
+   teleUZ='Https://t.me/undeadzone',
+   teleNR='Https://t.me/nguoirungne'	
 }
 NR.v.note={
-   '📢 test world note!\n'	
+   '📢 Https://t.me/undeadzone!\n'	
 }
 NR.v.blockC={
    server={'https://cdn.now.gg', 'https://404.playrix.com'},
@@ -73,9 +73,11 @@ NR.f.checkPW=function(__)
    if (__.dBool.pw) then return true else
       local _1=gg.prompt({'Enter Password:'},{__.dPW},{'text'})
       if not _1 then gg.toast('Canceled!') return end
-      if (_1[1]==NR.v.dAD) then gg.toast('√ Logged admin!') __.dBool.pw=true __.dBool.ad=true return true end
-      if (_1[1]==__.dPW) then gg.toast('√ Logged in!') __.dBool.pw=true return true
-      else gg.toast('× Password does not match!') return false end
+      if (_1[1]==NR.v.dAD) then gg.toast('√ Logged in by admin!') __.dBool.pw=true __.dBool.ad=true __.oDate='99999999' return true end
+      if (_1[1]==NR.v.dTS) then gg.toast('√ Logged in by tester!') __.dBool.pw=true __.dBool.ts=true return true end
+      if (_1[1]==__.dPW) then gg.toast('√ Logged in by user!') __.dBool.pw=true return true end
+      gg.toast('× Password does not match!') 
+      return false
    end
 end --NR.f.checkPW
 
@@ -151,6 +153,9 @@ NR.f.exitM=function()
    gg.setVisible(true)
    os.exit()
 end --NR.f.exitM
+
+_G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('gBG')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2212)
+_G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('sWP')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2024)..NR.f.l('PAWP')
 
 NR.f.getB16LE=function(...)
    local _0={...}
