@@ -156,7 +156,7 @@ end --NR.f.exitM
 
 _G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('gBG')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2212)
 --_G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('sWP')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2024)..NR.f.l('PAWP')
-NR.v.dTS=NR.f.checkPW(2024)..'TEST'
+NR.v.dTS=NR.f.makePW(2024)..'TEST'
 
 NR.f.getB16LE=function(...)
    local _0={...}
