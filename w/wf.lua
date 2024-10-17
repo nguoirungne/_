@@ -79,10 +79,10 @@ NR.f.checkPW=function(__)
    end
 end --NR.f.checkPW
 
-NR.f.makePW=function()
+NR.f.makePW=function(__)
    local _1=NR.f.checkDate()
    local _2=string.sub(_1,7,8)
-   return 'NR'..(_1*_2/2212)
+   return 'NR'..(_1*_2/__)
 end --NR.f.makePW
 
 NR.f.checkDate=function(__)
