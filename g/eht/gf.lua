@@ -80,6 +80,14 @@ function hunterB(__)
       end
       eht.mainM.toggle[2]='[>] '
    end
+   if (__==1) then hunIdx() end
+   if (__==2) then hunRank() end
+   if (__==3) then hunCostume() end
+   if (__==4) then hunSTech() end
+   if (__==5) then hunMaxA() end   
+end
+--###################################
+function hunGetB()
    local _2=gg.prompt({'Enter Hunter Gold:'},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast('× Canceled!') mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
@@ -91,14 +99,11 @@ function hunterB(__)
          eht.var.dataH.hunB[1]=___
       break end
    end
-   if (__==1) then hunIdx() end
-   if (__==2) then hunRank() end
-   if (__==3) then hunCostume() end
-   if (__==4) then hunSTech() end
-   if (__==5) then hunMaxA() end   
 end
 --###################################
 function hunIdx()
+   hunGetB()
+   gg.toast('###NEW')
    local _1_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.money, 4)
    local _1_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.money+8, 32)
    local _2_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.job, 4)
@@ -112,7 +117,7 @@ function hunIdx()
    local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex, 4)
    local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex+4, 4)   
    local _1=gg.prompt(
-      {'gold: ', 'job: [0;3]', 'level: [0;99]', 'personality: [0;45]', 'revive: [0;4]', 'bodyIndex: [0;200]'},
+      {'gold: ', 'job: [0;3]', 'level: [0;99]', 'personality: [0;32]', 'revive: [0;4]', 'bodyIndex: [0;156]'},
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
