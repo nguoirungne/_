@@ -38,10 +38,12 @@ function uGold()
    local _1=gg.prompt({'Enter Gold:'},{1000000000},{'number'})
    if not _1 then gg.toast('× Canceled!') userM() end
    for _,__ in ipairs(eht.var.dataU.classB) do
+      NR.f.setScan(nil, false)
       local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.gold, 4)
       NR.f.copyItems(__.address+eht.var.dataU.offset.gold+0x8, 32, __1[1].value~_1[1],nil,nil,nil,nil,nil,true)
    end
    eht.userM.toggle[1]='[+] '
+   NR.f.setScan(nil, false)
    gg.toast('√ Gold has been updated!')
 end --uGold
 --###################################
@@ -49,10 +51,12 @@ function uElemental()
    local _1=gg.prompt({'Enter Elemental:'},{30000},{'number'})
    if not _1 then gg.toast('× Canceled!') userM() end
    for _,__ in ipairs(eht.var.dataU.classB) do
+      NR.f.setScan(nil, false)
       local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.elemental, 4)
       NR.f.copyItems(__.address+eht.var.dataU.offset.elemental+0x4, 4, __1[1].value~_1[1],nil,nil,nil,nil,nil,true)
    end
    eht.userM.toggle[2]='[+] '
+   NR.f.setScan(nil, false)
    gg.toast('√ Elemental has been updated!')
 end --uElemental
 --###################################
@@ -117,8 +121,10 @@ function sFree()
          NR.f.setScan()
       end
       eht.mainM.toggle[5]='[√] '
+      NR.f.setScan(nil, false)
       gg.toast('√ Free Shop Enable!')
    else
+      NR.f.setScan(nil, false)
       gg.toast('! You need re-open the game to restore shop.')
    end
 end
@@ -180,7 +186,8 @@ function sBoxPack()
          gg.alert('√ Editing complete! Go to shop and open the shiny box.')
       end
    else
-      gg.alert('You need to buy first.')
+      NR.f.setScan(nil, false)
+      gg.toast('! You need to buy first.')
    end   
 end
 --###################################
@@ -197,7 +204,7 @@ function itemB()
       NR.f.setScan()
       if (#_1<300) then gg.alert('× Base not found.') mainM() end
       for _,__ in ipairs(_1) do
-         NR.f.setScan()
+         NR.f.setScan(nil, false)
          local __1=NR.f.copyItems(__.address+eht.var.dataI.offset.index, 4)
          local __2=NR.f.copyItems(__.address+eht.var.dataI.offset.index+4, 4)
          local __3=__1[1].value~__2[1].value
@@ -222,7 +229,7 @@ function fullMat()
    gg.toast('loading new values..')
    local _3,_4={},{}
    for _,__ in ipairs(eht.var.dataI.classB) do
-      NR.f.setScan()
+      NR.f.setScan(nil, false)
       _3[#_3+1]={address=__.address+eht.var.dataI.offset.newCheck+4, flags=4}
       _4[#_4+1]={address=__.address+eht.var.dataI.offset.count+8, flags=32}
    end
@@ -235,6 +242,7 @@ function fullMat()
    gg.editAll(_2..'X8', 32)
    NR.f.setScan(nil, false)
    eht.mainM.toggle[4]='[+] ' 
+   NR.f.setScan(nil, false)
    gg.toast('√ All Materials Updated!')
 end
 --###################################
@@ -260,7 +268,8 @@ function speedB()
    eht.var.speedG.value=tonumber(_1[1])
    NR.f.copyItems(eht.var.speedG.addrB[1].address-4, 16, eht.var.speedG.value, nil,nil,nil,nil,nil,true)
    if (eht.var.speedG.value==1) then eht.mainM.toggle[6]='[×] ' 
-   else eht.mainM.toggle[6]='[+] ' end
+   else eht.mainM.toggle[6]='[√] ' end
+   NR.f.setScan(nil, false)
    gg.toast('√ Game Speed Updated!')
 end
 --###################################
@@ -273,7 +282,29 @@ function oneB()
       NR.f.setScan()
       if (#_1<1) then gg.alert('× Value not found.') mainM() end
       eht.var.oneH.addrB=_1
+      for _=1, 5 do
+         local __1=NR.f.copyItems(_1[1].address, 16)
+         eht.var.oneH.value[#eht.var.oneH.value+1]=__1[1].value
+         _1[1].address=_1[1].address+4
+      end
       eht.var.oneH.hasB=true
+   end
+   if (eht.mainM.toggle[7]=='[×] ') then eht.mainM.toggle[7]='[√] ' 
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+0, 16, 1000000, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+4, 16, 1000000, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+8, 16, 1000000, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+12, 16, 1000000, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+16, 16, 1000000, nil,nil,nil,nil,nil,true)
+      NR.f.setScan(nil, false)
+      gg.toast('√ 1Hit Kill Enable!')
+   else eht.mainM.toggle[7]='[×] ' 
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+0, 16, eht.var.oneH.value[1], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+4, 16, eht.var.oneH.value[2], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+8, 16, eht.var.oneH.value[3], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+12, 16, eht.var.oneH.value[4], nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(eht.var.oneH.addrB[1].address+16, 16, eht.var.oneH.value[5], nil,nil,nil,nil,nil,true)
+      NR.f.setScan(nil, false)
+      gg.toast('√ 1Hit Kill Disable!')
    end
 end
 --###################################
