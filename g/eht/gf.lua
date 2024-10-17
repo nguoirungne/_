@@ -122,14 +122,14 @@ function hunIdx()
    )
    if not _1 then gg.toast('× Canceled!') mainM() end
    NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
-   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~(_1[2]-1), nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_4_2[1].address, 4, _4_1[1].value~_1[4], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_5_2[1].address, 4, _5_1[1].value~_1[5], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[1]='[+] ' 
-   gg.toast('√ Hunter Idx Updated!')
+   gg.toast('√ #Hunter Idx Updated!')
 end
 --###################################
 function hunRank()
