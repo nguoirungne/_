@@ -62,7 +62,16 @@ end --uElemental
 --###################################
 --###################################
 function hunterB(__)
-   gg.alert('hunter base')
+   if (eht.var.dataH.hasK==false) then
+      eht.var.dataH.classK=NR.f.getB16LE(eht.class.dataH)
+      eht.var.dataH.hasK=true
+   end
+   NR.f.setScan(32, false)
+   NR.f.scan(eht.var.dataH.classK, 32, nil, 0)
+   local _1=NR.f.allResults()
+   --NR.f.setScan()
+   if (#_1<1) then gg.alert('× Base not found.') mainM() end
+   
 end
 --###################################
 --###################################
