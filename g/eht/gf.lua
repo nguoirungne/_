@@ -282,11 +282,11 @@ function oneB()
       NR.f.setScan()
       if (#_1<1) then gg.alert('× Value not found.') mainM() end
       for _,__ in ipairs(_1) do
-         eht.var.oneH.addrB[1]={address=__.address+0, 16}
-         eht.var.oneH.addrB[2]={address=__.address+4, 16}
-         eht.var.oneH.addrB[3]={address=__.address+8, 16}
-         eht.var.oneH.addrB[4]={address=__.address+12, 16}
-         eht.var.oneH.addrB[5]={address=__.address+16, 16}
+         eht.var.oneH.addrB[1]={address=__.address+0, flags=16}
+         eht.var.oneH.addrB[2]={address=__.address+4, flags=16}
+         eht.var.oneH.addrB[3]={address=__.address+8, flags=16}
+         eht.var.oneH.addrB[4]={address=__.address+12, flags=16}
+         eht.var.oneH.addrB[5]={address=__.address+16, flags=16}
          local __1=NR.f.copyItems(__.address, 16)
          local __2=NR.f.copyItems(__.address+4, 16)
          local __3=NR.f.copyItems(__.address+8, 16)
@@ -307,7 +307,7 @@ function oneB()
       NR.f.copyItems(eht.var.oneH.addrB[4].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
       NR.f.copyItems(eht.var.oneH.addrB[5].address, 16, eht.var.oneH.mulV, nil,nil,nil,nil,nil,true)
       NR.f.setScan(nil, false)
-      gg.toast('√ 1Hit Kill Enable!')
+      gg.toast('√ #_#1Hit Kill Enable!')
    else eht.mainM.toggle[7]='[×] ' 
       NR.f.copyItems(eht.var.oneH.addrB[1].address, 16, eht.var.oneH.value[1], nil,nil,nil,nil,nil,true)
       NR.f.copyItems(eht.var.oneH.addrB[2].address, 16, eht.var.oneH.value[2], nil,nil,nil,nil,nil,true)
