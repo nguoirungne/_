@@ -78,6 +78,7 @@ function hunterB(__)
       if (__1[1].value==1) then
          eht.var.dataH.classB[#eht.var.dataH.classB+1]=___
       end
+      eht.mainM.toggle[2]='[>] '
    end
    local _2=gg.prompt({'Enter Hunter Gold:'},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast('× Canceled!') mainM() end
@@ -115,7 +116,7 @@ function hunIdx()
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
-   if not _1 then gg.toast('× Canceled!') hunterM() end
+   if not _1 then gg.toast('× Canceled!') mainM() end
    NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
