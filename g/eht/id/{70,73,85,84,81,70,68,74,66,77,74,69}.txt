@@ -1,0 +1,320 @@
+t.me/undeadzone
+Evil Hunter Tycoon
+Shop Special ID
+
+/////////////////////////////
+Package Chest List
+
+48:Hero Special Package
+53:Special Enhancement Package
+74:Heart Pounding Package 5( Priority )
+80:Heart Pounding Package 3( Priority )
+88:Summer Limited Package
+89:Weekly Characteristics Elixir Package
+90:Autumn Limited Package
+93:Heart Pounding Package 1( Priority )
+94:Heart Pounding Package 2( Priority )
+95:Heart Pounding Package 4( Priority )
+96:Heart Pounding Package 6( Priority )
+97:Heart Pounding Package 7( Priority )
+98:Winter Limited Package
+130:Town Chief's Treasure Chest( Priority )
+132:Monthly VERY AWESOME Special Package
+135:Spring Limited Package
+150:Normal Difficulty Unlocking Package
+151:Expert Difficulty Unlocking Package
+152:Torment Difficulty Unlocking Package
+154:Summer limited Package
+163:Legendary Package( Priority )
+165:Fall Limited Package
+197:Winter Limited Package
+210:Beginner Adventure Chest
+211:Intermediate Adventure Chest
+212:Advance Adventure Chest( Priority )
+213-216:( Lava Chest I to IV )
+217-220:( Ice Chest I to IV )
+221-224:( Ivy Chest I to IV )
+225-228:( Grave Chest I to IV )
+235:Weekly Gladiator's Growth Stone Package
+236:Ad Skip Ticket
+237:Ad Skip Ticket Chest
+238:Big Ad Skip Ticket Chest( Priority )
+239:Newbie Chief Package
+240:Veteran Chief Package
+241:Hard Difficulty Unlocking Package
+242:Nightmare Difficulty Unlocking Package
+243:Strong Town Guardian Package( Priority )
+244:Gold Tier Achievement Package( Priority )
+245:Platinum Tier Achievement Package( Priority )
+248:Summer Limited Package #2
+256:Superior Awakening Stone Package
+257:Heroic Awakening Stone Package
+258:Legendary Awakening Stone Package
+281:Limited Great-Cost Package A
+282:Limited Great-Cost Package B
+283:Limited Great-Cost Package C
+284:Autumn Limited Package #2
+328:New Legendary Package( Priority )
+329:Hunter Family Pack #1
+330:Hunter Family Pack #2
+331:Summer Limited Pack #3
+334:Hot Summer Pack #1
+335:Hot Summer Pack #2
+350:Weekly Champion Growth Stone
+364:Grandmaster Gold Package( Priority )
+365:Grandmaster Platinum Package( Priority )
+366:Grandmaster Diamond Package( Priority )
+369:Autumn Limited Package #3
+370:Harvest Festival Package #1
+371:Harvest Festival Package #2
+373:Elite League Limited Pack #1
+374:Elite League Limited Pack #2
+375:Elite League Limited Pack #3
+376:Happy Halloween Pack #1
+377:Happy Halloween Pack #2
+381:Winter Package #1
+382:Winter Package #2
+406:Merry X-Mas Package #1
+407:Merry X-Mas Package #2
+410:Happy New Year Package #1
+411:Happy New Year Package #2
+414:Winter Limited Package #3
+433:Purple Costume Chest
+435:Purple Costume Pack( Priority )
+457:Special Hunter Package #1
+458:Special Hunter Package #2
+459:Advance Shiny Gems Package
+460:Shiny Gems Package
+461:3rd Anniversary Pack
+462:Spring Limited Package #4
+465:New Journey Pack
+466:Journey Lv.4 Pack
+467:Journey Lv.7 Pack( Priority )
+468:Big Sale Package
+469:Hot Summer Pack #2
+470:Hot Summer Hunter Pack #2
+471:High-Class Gems & Elixir Pack
+472:Gems & Elixir Pack
+473:Summer Limited Package #4
+485:Wisdom Tooth Lv.1 Package
+486:Wisdom Tooth Lv.5 Package
+487:Wisdom Tooth Lv.10 Package( Priority )
+488:Wings of Light Package( Priority )
+495:Hunter Fest Pack #1
+496:Hunter Fest Pack #2
+499:High-Class Gems & Treasure Chest
+500:Gems & Treasure Chest Pack
+501:Fall Limited Pack #4
+505:Creepy Pack #1
+508:Town Chief's Secret Chest( Priority )
+
+////////////////////
+Costume List
+
+9:Assassin Costume 
+10:Devil Costume 
+11:Black Kitty Costume 
+41:Korean Costume
+71:Guardian Angel Costume
+72:White Uniform Costume 
+75:Gladiator Master Costume 
+76:Gladiator Costume 
+82:Scary Costume 
+83:Chef Costume 
+84:Sailor School Costume 
+85:Beachwear Costume 
+91:Hollowen Costume 
+99:Santa Costume 
+100:Rudolph Costume 
+109:Archangel's Sword Costume 
+110:Archangel's Hammer Costume 
+111:Archangel's Bow Costume 
+112:Archangel's Staff Costume 
+113:Fresh Carrot Weapon Costume 
+114:Icebar Weapon Costume 
+115:Seahorse Weapon Costume 
+116:Lollipop Weapon Costume 
+117:Butterfly's Wing Costume 
+118:Raven's Wing Costume 
+119:Fairy's Wing Costume 
+120:Garden Party Costume 
+121:Fighter's Costume 
+122:Cake Costume
+129:Oriental Noble's Costume 
+138:Red Uniform Costume
+153:Bear Costume
+156:Vacation Costume
+157:The Medal of Fear
+158:The Medal of Hell
+159:The Medal of Darkness
+160:The Medal of Deception
+161:The Prince of Darkness's Medal
+166:Trench Coat Costume
+168:Gabriel's Wing Costume
+171:Pink Rabbit Costume
+172:Ginger Cookies Costume
+173:Tomato Costume
+174:Pineapple Costume
+175:Flower Costume
+176:Child Costume
+177:Pirate Costume
+178:Cow-Boy Costume
+179:Pink School Uniform Costume
+180:Evening Party Costume
+181:King of the North Costume
+182:Force Blade Costume
+183:Chainsaw Weapon Costume
+184:Violen Weapon Costume
+185:Force Hammer Costume
+186:Hammer Weapon Costume
+187:Electric Guitar Weapon Costume
+188:Force Bow Costume
+189:Scissors Weapon Costume
+190:Harp Weapon Costume
+191:Force Lord Costume
+192:Spanner Weapon Costume
+193:Mike Weapon Costume
+196:Academy Uniform Costume
+198:Holidays Costume
+200:Winter Suit Costume
+201:Golden Guardian Angel's Armor Costume
+202:Golden Guardian Angel's Medal
+203:Golden Guardian Angel Wings Costume
+204:Archangel's Armor Costume
+209:New Year Costume Costume
+233:Spring Dress Costume
+246:Guardian Costume
+247:Platinum Costume
+249:Pink Pool Float Costume
+254:Victor Wings Costume
+255:Victor Medals
+285:Cool Autumn Costume
+287:Uriel's Armor Costume
+291:Pumpkin Wizard Costume 
+294:Year-End Party Costume 
+297:Santa Fairy Costume 
+298:Conqueror's Bow Costume 
+299:Conqueror's Hammer Costume 
+300:Conqueror's Bow Costume 
+301:Conqueror's Staff Costume 
+302:Conqueror's Costume 
+306:Black Tiger Costume 
+309:Sweet Candy Costume 
+311:Ruler's Sword Costume 
+312:Ruler's Hammer Costume 
+313:Ruler's Bow Costume 
+314:Ruler's Staff Costume 
+315:Ruler Costume 
+320:The Original Medal
+332:Summer Sailor Costume
+353:Grandmaster's Costume 
+354:Grandmaster's Sword Costume 
+355:Grandmaster's Hammer Costume 
+356:Grandmaster's Bow Costume 
+357:Grandmaster's Staff Costume 
+358:Grandmaster's Wings Costume 
+359:Grandmaster's Medal 
+367:Space Rabbit Costume
+372:Black Witch Costume
+415:Holiday Suit Costume
+417:Black Rabbit Costume
+422:Poison Hydra Costume 
+423:Lich Lord Costume 
+425:Korean Costume
+436:Cat Maid Costume
+437:Jiangshi Costume 
+438:Tree Frog Costume 
+439:Prince & Princess Costume
+440:Pajama Costume
+441:Great Devil's Sword Costume 
+442:Great Devil's Hammer Costume 
+443:Great Devil's Bow Costume 
+444:Great Devil's Staff Costume 
+445:Sausage Weapon Costume 
+446:Lamb Chop Weapon Costume
+447:Pretzel Weapon Costume
+448:Roll Cake Weapon Costume
+449:Lunch Pack Costume
+450:Heart Ballon Costume
+451:Hospital IV Costume
+463:Spring Outing Costume
+474:Summer Holiday Costume
+476:Revengeful Spirit Medal
+478:Challenger's Sword Costume
+479:Challenger's Hammer Costume
+480:Challenger's Bow Costume
+481:Challenger's Staff Costume
+482:Challenger Costume
+483:Wings of Light
+484:Vengeful Spirit Fire Wings Costume
+502:Acorn Costume
+504:Raphael's Armor Costume
+510:Chaos Dragon's Wing Costume
+511:Frosty Wings Costume
+512:Dreamy Wings Costume
+513:Orange Pajama Costume
+514:Bee Costume
+515:Old School Uniform Costume
+516:Lovely Sword Costume
+517:Lovely Hammer Costume
+518:Lovely Bow Costume
+519:Lovely Staff Costume
+520:Fork Weapon Costume
+521:Pastry Weapon Costume
+522:Shrimp Weapon Costume
+523:Marshmallow Weapon Costume
+524:Ghost Balloon Costume
+525:Pumpkin Balloon Costume
+526:Noble's Winter Costume
+529:Prince Dark Grey Wing
+530:Prince Dark Fire Wing
+531:Prince Medal 
+534:Festive Cat Costume
+537:Summon White Rodulp
+544:Blue Dragon Costume 
+555:Blue Dragon Sword Costume
+556:Blue Dragon Hammer Costume
+557:Blue Dragon Bow Costume
+558:Blue Dragon Lord Staff Costume
+
+////////////////////////
+Important Items
+
+12:Vampire Bat Adoption Paper
+13:Dark Fox Adoption Paper
+14:Baby Dragon Adoption Paper
+20:VIP 30 Days
+21:Name Change( Town Chief )
+22:Name Change( Hunter )
+23:Appearance Change( Hunter )
+24:EXP Buff Scroll
+26:Item Drop Scroll 
+42:Grand Gem Chest
+47:Random Characteristic Elixir
+52:Colosseum Premium 30 Days
+70:Legendary Hunter Invitation
+79:Awakening Crystal
+87:Reclaim Equipment Scroll
+102:Class Change Reset Elixir
+106:Ultimate Quality Scroll
+125:Special Chest of Shadow Souls
+128:Special Bundle of Secret Technique Books
+162:Summon The Molar
+164:Powerful Option Removal Scroll
+230:Special Golden Statue
+235:Weekly Gladiator's Growth Stone Package
+277:Ultimate Awakening Stone
+316:Brown Pomeranian Adoption Paper
+317:Black Cat Adoption Paper
+322:Sacred V Equipment Enhance Scroll
+324:Little Golem Adoption Paper
+360:Summon Blue Baby Dragon
+361:Summon Battle Raptor Companion
+362:Snow Hare Adoption Paper
+363:Option Removal Reset Ticket 
+
+
+
+
+
+
