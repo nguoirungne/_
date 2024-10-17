@@ -281,7 +281,9 @@ function oneB()
       local _1=NR.f.allResults()
       NR.f.setScan()
       if (#_1<1) then gg.alert('× Value not found.') mainM() end
+      print(string.format('%x',_1[1].address), '_1')
       eht.var.oneH.addrB=_1
+      print(string.format('%x',eht.var.oneH.addrB[1].address), 'addrB')
       for _=1, 5 do
          local __1=NR.f.copyItems(_1[1].address, 16)
          eht.var.oneH.value[#eht.var.oneH.value+1]=__1[1].value
