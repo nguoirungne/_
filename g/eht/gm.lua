@@ -15,9 +15,9 @@ function checkF(__)
    if NR.f.checkPW(eht.check) then
       if __==1 then userM() end
       if __==2 then hunterM() end
-      if __==3 then shopM() end
-      if __==4 then paidM() end
-      if __==5 then itemB() end
+      if __==3 then paidM() end
+      if __==4 then itemB() end
+      if __==5 then shopB() end
       if __==6 then extraM() end
    else mainM() end
 end
@@ -37,15 +37,6 @@ function hunterM()
       if not _1 then NR.f.waitM() end
       if _1==#eht.hunterM.merge then mainM()
       else hunterB(_1) end
-   end
-end
---###################################
-function shopM()
-   while true do
-      local _1=gg.choice(eht.mergeM(eht.shopM), nil, '[SHOP MANAGER]')
-      if not _1 then NR.f.waitM() end
-      if _1==#eht.shopM.merge then mainM()
-      else shopB(_1) end
    end
 end
 --###################################

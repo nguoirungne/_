@@ -75,35 +75,25 @@ function shopB(__)
       if (#_1<500) then gg.alert('× Base not found.') mainM() end
       eht.var.dataAS.classB=_1
       eht.var.dataAS.hasB=true
-      eht.mainM.toggle[3]='[>] '
    end
-   sFree(__)
+   sFree()
 end
 --###################################
-function sFree(__)
-   if (__==1) then
-      if (eht.shopM.toggle[1]~='[√] ') then eht.shopM.toggle[1]='[√] ' end
-   end
-   if (__==2) then
-      if (eht.check.dBool.ad) then 
-         if (eht.shopM.toggle[2]~='[√] ') then 
-            eht.shopM.toggle[2]='[√] ' 
-            eht.shopM.toggle[1]='[√] '
-         end
-      else
-         gg.alert('You need to buy first.')
-      end         
-   end
-   --###NR###
-   local _1,_2,_3,_4={},{},{},{}    
-   for _,__ in ipairs(eht.var.dataAS.classB) do
-      NR.f.setScan(nil, false)
-      _1[#_1+1]={address=__.address+eht.var.dataAS.offset.priceIdx+4, flags=4}
-      _2[#_2+1]={address=__.address+eht.var.dataAS.offset.price+4, flags=4}
-      _3[#_3+1]={address=__.address+eht.var.dataAS.offset.count+4, flags=4}
-      _4[#_4+1]={address=__.address+eht.var.dataAS.offset.visible+4, flags=4}
-   end
-   if (eht.shopM.toggle[__]=='[√] ') then
+function sFree()
+   if (eht.mainM.toggle[5]~='[√] ') then
+      local _0=false
+      if (eht.check.dBool.ad) then
+         local __1=gg.alert('Get free shop full?', 'ok', 'just normal')
+         if (__1==1) then _0=true end
+      end
+      local _1,_2,_3,_4={},{},{},{}    
+      for _,__ in ipairs(eht.var.dataAS.classB) do
+         NR.f.setScan(nil, false)
+         _1[#_1+1]={address=__.address+eht.var.dataAS.offset.priceIdx+4, flags=4}
+         _2[#_2+1]={address=__.address+eht.var.dataAS.offset.price+4, flags=4}
+         _3[#_3+1]={address=__.address+eht.var.dataAS.offset.count+4, flags=4}
+         _4[#_4+1]={address=__.address+eht.var.dataAS.offset.visible+4, flags=4}
+      end
       NR.f.setScan(nil, false)
       gg.loadResults(_1)
       NR.f.allResults()
@@ -119,16 +109,17 @@ function sFree(__)
       NR.f.allResults()
       gg.editAll('0X4', 4)
       NR.f.setScan()
-      if (eht.check.dBool.ad) then
+      if (_0) then
          NR.f.setScan(nil, false)
          gg.loadResults(_4)
          NR.f.allResults()
          gg.editAll('1X4', 4)
          NR.f.setScan()
       end
-      gg.toast('√ Free shop enable!')
+      eht.mainM.toggle[5]='[√] '
+      gg.toast('√ Free Shop Enable!')
    else
-      gg.toast('You need to re-open the game.')
+      gg.toast('! You need re-open the game to restore shop.')
    end
 end
 --###################################
