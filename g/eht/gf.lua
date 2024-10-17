@@ -73,7 +73,21 @@ function shopB(__)
       local _1=NR.f.allResults()
       NR.f.setScan()
       if (#_1<500) then gg.alert('× Base not found.') mainM() end
-      print(_1)
+      eht.var.dataAS.classB=_1
+      eht.var.dataAS.hasB=true
+   end
+   sFree(__)
+end
+--###################################
+function sFree(__)
+   if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
+   
+   else
+      local _1='[$] '
+      if (__==1) then _1='[×] ' end
+      eht.shopM.toggle[__]=_1
+      
+   
    end
 end
 --###################################
