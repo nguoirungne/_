@@ -90,6 +90,7 @@ function sFree(__)
          end
       else
          gg.alert('You need to buy first.')
+         shopM()
       end         
    end
    --###NR###
