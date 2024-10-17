@@ -98,7 +98,7 @@ function sFree(__)
    for _,__ in ipairs(eht.var.dataAS.classB) do
       NR.f.setScan(nil, false)
       _1[#_1+1]={address=__.address+eht.var.dataAS.offset.priceIdx+4, flags=4}
-      _2[#_2+1]={address=__.address+eht.var.dataAS.offset.pricex+4, flags=4}
+      _2[#_2+1]={address=__.address+eht.var.dataAS.offset.price+4, flags=4}
       _3[#_3+1]={address=__.address+eht.var.dataAS.offset.count+4, flags=4}
       _4[#_4+1]={address=__.address+eht.var.dataAS.offset.visible+4, flags=4}
    end
