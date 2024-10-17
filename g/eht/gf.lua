@@ -97,8 +97,11 @@ function hunGetB()
       local __2=NR.f.copyItems(___.address+eht.var.dataH.offset.money+8, 32)
       if (__1[1].value~__2[1].value==eht.var.dataH.goldH) then
          eht.var.dataH.hunB[1]=___
+         eht.var.dataH.hasB=true
       break end
    end
+   if (eht.var.dataH.hasB==false) then gg.alert('× No hunter found with the same amount of gold.') mainM() end
+   eht.var.dataH.hasB=false
 end
 --###################################
 function hunIdx()
