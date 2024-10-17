@@ -75,6 +75,7 @@ function shopB(__)
       if (#_1<500) then gg.alert('× Base not found.') mainM() end
       eht.var.dataAS.classB=_1
       eht.var.dataAS.hasB=true
+      eht.mainM.toggle[3]='[>] '
    end
    sFree(__)
 end
@@ -82,7 +83,8 @@ end
 function sFree(__)
    if (__==1) then
       if (eht.shopM.toggle[1]~='[√] ') then eht.shopM.toggle[1]='[√] ' end
-   else
+   end
+   if (__==2) then
       if (eht.check.dBool.ad) then 
          if (eht.shopM.toggle[2]~='[√] ') then 
             eht.shopM.toggle[2]='[√] ' 
@@ -90,7 +92,6 @@ function sFree(__)
          end
       else
          gg.alert('You need to buy first.')
-         shopM()
       end         
    end
    --###NR###
