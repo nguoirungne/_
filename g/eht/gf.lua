@@ -116,21 +116,24 @@ function hunIdx()
    local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex, 4)
    local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex+4, 4)
    local _2={_1_1[1].value~_1_2[1].value, (_2_1[1].value~_2_2[1].value)+1, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value}
+   print(_2_1[1].value~_2_2[1].value, ('value')   
+   print(_2[2], 'value +1')
    local _1=gg.prompt(
       {'gold: ', 'job: [0;3]', 'level: [1;100]', 'personality: [0;32]', 'revive: [0;5]', 'bodyIndex: [0;156]'},
       {_2[1], _2[2], _2[3], _2[4], _2[5], _2[6]},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
+   print(_2[2], 'value output')
    if not _1 then gg.toast('× Canceled!') mainM() end
    NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
-   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~(_1[2]-1), nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_4_2[1].address, 4, _4_1[1].value~_1[4], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_5_2[1].address, 4, _5_1[1].value~_1[5], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[1]='[+] ' 
-   gg.toast('√ #Hunter Idx Updated!')
+   gg.toast('√ Hunter Idx Updated!')
 end
 --###################################
 function hunRank()
