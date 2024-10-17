@@ -113,7 +113,7 @@ function sFree()
          NR.f.setScan(nil, false)
          gg.loadResults(_4)
          NR.f.allResults()
-         gg.editAll('1X4', 4)
+         gg.editAll('0X4', 4)
          NR.f.setScan()
       end
       eht.mainM.toggle[5]='[√] '
