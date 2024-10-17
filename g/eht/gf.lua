@@ -117,7 +117,7 @@ function hunIdx()
    local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex+4, 4)   
    local _1=gg.prompt(
       {'gold: ', 'job: [0;3]', 'level: [1;100]', 'personality: [0;32]', 'revive: [0;5]', 'bodyIndex: [0;156]'},
-      {_1_1[1].value~_1_2[1].value, (_2_1[1].value~_2_2[1].value)+1, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value},
+      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
    if not _1 then gg.toast('× Canceled!') mainM() end
@@ -129,7 +129,7 @@ function hunIdx()
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[1]='[+] ' 
-   gg.toast('√ #Hunter Idx Updated!')
+   gg.toast('√ ##Hunter Idx Updated!')
 end
 --###################################
 function hunRank()
