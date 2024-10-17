@@ -81,18 +81,53 @@ end
 --###################################
 function sFree(__)
    if (__==1) then
-      if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
-      else eht.shopM.toggle[__]='[×] ' eht.shopM.toggle[2]='[$] ' end
+      if (eht.shopM.toggle[1]~='[√] ') then eht.shopM.toggle[1]='[√] ' end
    else
       if (eht.check.dBool.ad) then 
-         if (eht.shopM.toggle[__]~='[√] ') then eht.shopM.toggle[__]='[√] '
-         else eht.shopM.toggle[__]='[$] ' eht.shopM.toggle[1]='[×] ' end
+         if (eht.shopM.toggle[2]~='[√] ') then 
+            eht.shopM.toggle[2]='[√] ' 
+            eht.shopM.toggle[1]='[√] '
+         end
       else
          gg.alert('You need to buy first.')
-      end
+      end         
    end
-
-   
+   --###NR###
+   local _1,_2,_3,_4={},{},{},{}    
+   for _,__ in ipairs(eht.var.dataAS.classB) do
+      NR.f.setScan(nil, false)
+      _1[#_1+1]={address=__.address+eht.var.dataAS.offset.priceIdx+4, flags=4}
+      _2[#_2+1]={address=__.address+eht.var.dataAS.offset.pricex+4, flags=4}
+      _3[#_3+1]={address=__.address+eht.var.dataAS.offset.count+4, flags=4}
+      _4[#_4+1]={address=__.address+eht.var.dataAS.offset.visible+4, flags=4}
+   end
+   if (eht.shopM.toggle[__]=='[√] ') then
+      NR.f.setScan(nil, false)
+      gg.loadResults(_1)
+      NR.f.allResults()
+      gg.editAll('1X4', 4)
+      NR.f.setScan()
+      NR.f.setScan(nil, false)
+      gg.loadResults(_2)
+      NR.f.allResults()
+      gg.editAll('1X4', 4)
+      NR.f.setScan()
+      NR.f.setScan(nil, false)
+      gg.loadResults(_3)
+      NR.f.allResults()
+      gg.editAll('0X4', 4)
+      NR.f.setScan()
+      if (eht.check.dBool.ad) then
+         NR.f.setScan(nil, false)
+         gg.loadResults(_4)
+         NR.f.allResults()
+         gg.editAll('1X4', 4)
+         NR.f.setScan()
+      end
+      gg.toast('√ Free shop enable!')
+   else
+      gg.toast('You need to re-open the game.')
+   end
 end
 --###################################
 --###################################
