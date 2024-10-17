@@ -125,7 +125,33 @@ end
 --###################################
 --###################################
 function paidB(__)
-   gg.alert('paid base')
+   if (__==1) then
+      if (eht.var.dataASCB.hasK==false) then
+         eht.var.dataASCB.classK=NR.f.getB16LE(eht.class.dataASCB)
+         eht.var.dataASCB.hasK=true
+      end
+      if (eht.var.dataASCB.hasB==false) then
+         NR.f.setScan(32, false)
+         NR.f.scan(eht.var.dataASCB.classK, 32, nil, 0)
+         local _1=NR.f.allResults()
+         NR.f.setScan()
+         if (#_1<50) then gg.alert('× Base not found.') mainM() end
+         eht.var.dataASCB.classB=_1
+         eht.var.dataASCB.hasB=true
+      end
+      sBoxPack()
+   end --dataASCB
+end
+--###################################
+function sBoxPack()
+   if (eht.check.dBool.ad) then
+      eht.paidM.toggle[1]='[+] '
+      local _1=gg.prompt({'Pack ID: [1;'..eht.var.dataASCB.maxId..']', 'Count: [1;1000]'},{1,1},{'number','number'})
+      if not _1 then gg.toast('× Canceled!') paidM() end
+      print(eht.var.dataASCB.classB)
+   else
+      gg.alert('You need to buy first.')
+   end   
 end
 --###################################
 --###################################
