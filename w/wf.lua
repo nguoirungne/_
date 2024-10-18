@@ -16,9 +16,12 @@ NR.v.set={
 }
 
 NR.f.translate=function(__)
+   print(__)
+   print(NR.v.set.autoT)
    if (__==nil) then return NR.v.link.teleUZ else
       if (NR.v.set.autoT) then
          gg.sleep(200)
+         print('ok')
          local _1=gg.getLocale()
          local _2=gg.makeRequest(NR.v.link.googleT.._1..'&dt=t&q={'..__..'}', NR.v.link.userA).content
          if (_2) then
