@@ -85,6 +85,7 @@ function hunterB(__)
    if (__==3) then hunCostume() end
    if (__==4) then hunSTech() end
    if (__==5) then hunMaxA() end   
+   if (__==6) then hunDSoul() end   
 end
 --###################################
 function hunGetB()
@@ -180,15 +181,50 @@ function hunRank()
 end
 --###################################
 function hunCostume()
-
+   hunGetB()
+   local _1_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.costumeIndex, 4)
+   local _1_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.costumeIndex+4, 4)
+   local _2_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.fairyIndex, 4)
+   local _2_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.fairyIndex+4, 4)
+   local _3_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.weaponCostumeIndex, 4)
+   local _3_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.weaponCostumeIndex+4, 4)
+   local _4_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.wingCostumeIndex, 4)
+   local _4_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.wingCostumeIndex+4, 4)
+   local _5_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.sealCostumeIndex, 4)
+   local _5_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.sealCostumeIndex+4, 4)
+   local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.RamblePetIndex, 4)
+   local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.RamblePetIndex+4, 4)
+   local _1=gg.prompt(
+      {'costumeIndex: ', 'fairyIndex: ', 'weaponCostumeIndex: ', 'wingCostumeIndex: ', 'sealCostumeIndex: ', 'RamblePetIndex: ', ''},
+      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, (_3_1[1].value~_3_2[1].value)+1, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, NR.v.link.teleUZ},
+      {'number','number', 'number', 'number', 'number', 'number'}
+   )
+   if not _1 then gg.toast('× Canceled!') mainM() end
+   NR.f.copyItems(_1_2[1].address, 4, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_4_2[1].address, 4, _4_1[1].value~_1[4], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_5_2[1].address, 4, _5_1[1].value~_1[5], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
+   NR.f.setScan(nil, false)
+   eht.hunterM.toggle[3]='[+] ' 
+   NR.f.setScan(nil, false)
+   gg.toast('√ Hunter Costume Updated!')
 end
 --###################################
 function hunSTech()
-
+   hunGetB()
+   
 end
 --###################################
 function hunMaxA()
-
+   hunGetB()
+   
+end
+--###################################
+function hunDSoul()
+   hunGetB()
+   
 end
 --###################################
 --###################################
