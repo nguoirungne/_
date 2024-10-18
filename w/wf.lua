@@ -17,7 +17,7 @@ NR.v.set={
 
 NR.f.translate=function(__)
    if (__==nil) then return NR.v.link.teleUZ else
-      if (autoT) then
+      if (NR.v.set.autoT) then
          gg.sleep(200)
          local _1=gg.getLocale()
          local _2=gg.makeRequest(NR.v.link.googleT.._1..'&dt=t&q={'..__..'}', NR.v.link.userA).content
@@ -26,7 +26,7 @@ NR.f.translate=function(__)
          end
       end return __
    end
-end
+end --NR.f.translate
 
 NR.f.setXLogs=function(__)
    local _1={}
