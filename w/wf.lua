@@ -22,13 +22,12 @@ NR.f.translate=function(__)
          local _1=gg.getLocale()
          local _2=gg.makeRequest(NR.v.link.googleT.._1..'&dt=t&q={'..__..'}', NR.v.link.userA).content
          if (_2) then
-            print(_2) 
             local __1=''
             for _=6, #_2 do
-               if (string.sub(_2, _,_+2)=='},{') then break 
+               if (string.sub(_2,_,_+4)=='}\",\"{') then break else 
                   __1=__1..string.sub(_2,_,_)
                end
-            end print(__1) return __1
+            end return __1
          end
       end return __
    end
