@@ -35,7 +35,7 @@ function userB(__)
 end --userB
 --###################################
 function uGold()
-   local _1=gg.prompt({'Enter Gold:', ''},{1000000000, NR.v.link.teleUZ},{'number'})
+   local _1=gg.prompt({'Enter Gold: '..NR.v.link.teleUZ},{1000000000},{'number'})
    if not _1 then gg.toast('× Canceled!') userM() end
    for _,__ in ipairs(eht.var.dataU.classB) do
       NR.f.setScan(nil, false)
@@ -48,7 +48,7 @@ function uGold()
 end --uGold
 --###################################
 function uElemental()
-   local _1=gg.prompt({'Enter Elemental:', ''},{30000, NR.v.link.teleUZ},{'number'})
+   local _1=gg.prompt({'Enter Elemental: '..NR.v.link.teleUZ},{30000},{'number'})
    if not _1 then gg.toast('× Canceled!') userM() end
    for _,__ in ipairs(eht.var.dataU.classB) do
       NR.f.setScan(nil, false)
@@ -88,7 +88,7 @@ function hunterB(__)
 end
 --###################################
 function hunGetB()
-   local _2=gg.prompt({'Enter Hunter Gold:', ''},{eht.var.dataH.goldH, NR.v.link.teleUZ},{'number'})
+   local _2=gg.prompt({'Enter Hunter Gold: '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast('× Canceled!') mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
    for _,___ in ipairs(eht.var.dataH.classB) do
@@ -348,7 +348,7 @@ function fullMat()
    if not _1 then gg.toast('× Canceled!') mainM() end
    local _2=math.random(800000,1000000)
    if (_1==1) then
-      local __1=gg.prompt({'Enter Quantity:', ''},{_2, NR.v.link.teleUZ},{'number'})
+      local __1=gg.prompt({'Enter Quantity: '..NR.v.link.teleUZ},{_2},{'number'})
       if not __1 or (__1[1]=='') then gg.toast('× Canceled!') mainM() end
       _2=tonumber(__1[1])
    end
@@ -389,7 +389,7 @@ function speedB()
       eht.var.speedG.addrB=_1
       eht.var.speedG.hasB=true
    end
-   local _1=gg.prompt({'Speed Game: [1;'..eht.var.speedG.maxS..']', ''},{eht.var.speedG.value, NR.v.link.teleUZ},{'number'})
+   local _1=gg.prompt({'Speed Game: '..NR.v.link.teleUZ..'[1;'..eht.var.speedG.maxS..']'},{eht.var.speedG.value},{'number'})
    if not _1 then gg.toast('× Canceled!') mainM() end
    eht.var.speedG.value=tonumber(_1[1])
    NR.f.copyItems(eht.var.speedG.addrB[1].address-4, 16, eht.var.speedG.value, nil,nil,nil,nil,nil,true)
