@@ -12,7 +12,7 @@ NR.v.blockC={
    cSuite={'TLS_AES_256_GCM_SHA384'}
 }
 NR.v.set={
-   autoT=false   
+   autoT=true   
 }
 
 NR.f.translate=function(__)
