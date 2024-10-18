@@ -132,11 +132,51 @@ function hunIdx()
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[1]='[+] ' 
+   NR.f.setScan(nil, false)
    gg.toast('√ Hunter Idx Updated!')
 end
 --###################################
 function hunRank()
-
+   hunGetB()
+   local _1_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankHp, 4)
+   local _1_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankHp+4, 4)
+   local _2_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankDamage, 4)
+   local _2_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankDamage+4, 4)
+   local _3_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankArmor, 4)
+   local _3_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankArmor+4, 4)
+   local _4_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankCritical, 4)
+   local _4_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankCritical+4, 4)
+   local _5_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankAttackSpeed, 4)
+   local _5_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankAttackSpeed+4, 4)
+   local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankDodge, 4)
+   local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankDodge+4, 4)
+   local _7_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankHungry, 4)
+   local _7_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankHungry+4, 4)
+   local _8_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankFeel, 4)
+   local _8_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankFeel+4, 4)
+   local _9_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTire, 4)
+   local _9_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTire+4, 4)
+   local _10_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTotal, 4)
+   local _10_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTotal+4, 4)
+   local _1=gg.prompt(
+      {'rankHp: [0;3]', 'rankDamage: [0;3]', 'rankArmor: [0;3]', 'rankCritical: [0;3]', 'rankAttackSpeed: [0;3]', 'rankDodge: [0;3]', 'rankHungry: [0;3]', 'rankFeel: [0;3]', 'rankTire: [0;3]'}, 
+      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, _7_1[1].value~_7_2[1].value, _8_1[1].value~_8_2[1].value, _9_1[1].value~_9_2[1].value}, 
+      {'number','number', 'number', 'number', 'number', 'number', 'number', 'number', 'number'}
+   )
+   if not _1 then gg.toast('× Canceled!') mainM() end
+   NR.f.copyItems(_1_2[1].address, 4, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_4_2[1].address, 4, _4_1[1].value~_1[4], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_5_2[1].address, 4, _5_1[1].value~_1[5], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_7_2[1].address, 4, _7_1[1].value~_1[7], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_8_2[1].address, 4, _8_1[1].value~_1[8], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_9_2[1].address, 4, _9_1[1].value~_1[9], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_10_2[1].address, 4, _10_1[1].value~(_1[1]+_1[2]+_1[3]+_1[4]+_1[5]+_1[6]+_1[7]+_1[8]+_1[9]), nil,nil,nil,nil,nil,true)
+   eht.hunterM.toggle[2]='[+] ' 
+   NR.f.setScan(nil, false)
+   gg.toast('√ Hunter Rank Updated!')
 end
 --###################################
 function hunCostume()
