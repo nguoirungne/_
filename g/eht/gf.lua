@@ -196,7 +196,7 @@ function hunCostume()
    local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.RamblePetIndex+4, 4)
    local _1=gg.prompt(
       {'costumeIndex: ', 'fairyIndex: ', 'weaponCostumeIndex: ', 'wingCostumeIndex: ', 'sealCostumeIndex: ', 'RamblePetIndex: ', ''},
-      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, (_3_1[1].value~_3_2[1].value)+1, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, NR.v.link.teleUZ},
+      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, NR.v.link.teleUZ},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
    if not _1 then gg.toast('× Canceled!') mainM() end
