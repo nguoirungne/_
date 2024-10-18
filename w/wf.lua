@@ -1,6 +1,8 @@
 NR.v.link={
    teleUZ='Https://t.me/undeadzone',
-   teleNR='Https://t.me/nguoirungne'	
+   teleNR='Https://t.me/nguoirungne',
+   googleT='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=',
+   userA={['User-Agent'] = 'GoogleTranslate/6.3.0.RC06.277163268 Linux; U; Android 14; A201SO Build/64.2.E.2.140'}
 }
 NR.v.note={
    '📢 Https://t.me/undeadzone!\n'	
@@ -9,6 +11,22 @@ NR.v.blockC={
    server={'https://cdn.now.gg', 'https://404.playrix.com'},
    cSuite={'TLS_AES_256_GCM_SHA384'}
 }
+NR.v.set={
+   autoT=false   
+}
+
+NR.f.translate=function(__)
+   if (__==nil) then return NR.v.link.teleUZ else
+      if (autoT) then
+         gg.sleep(200)
+         local _1=gg.getLocale()
+         local _2=gg.makeRequest(NR.v.link.googleT.._1..'&dt=t&q={'..__..'}', NR.v.link.userA).content
+         if (_2) then
+            gg.alert(_2) 
+         end
+      end return __
+   end
+end
 
 NR.f.setXLogs=function(__)
    local _1={}
