@@ -23,7 +23,7 @@ NR.v.blockC={
    cSuite={'TLS_AES_256_GCM_SHA384'}
 }
 NR.v.set={
-   autoT=true   
+   autoT=false   
 }
 --###################################
 --###################################
