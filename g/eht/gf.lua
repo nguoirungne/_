@@ -30,13 +30,14 @@ function userB(__)
       end
       eht.var.dataU.classB=_2
    end
+   eht.getDesc(eht.var.dataU)
    if (__==1) then uGold() end
    if (__==2) then uElemental() end
 end --userB
 --###################################
 function uGold()
-   local _1=gg.prompt({'Enter Gold: '..NR.v.link.teleUZ},{1000000000},{'number'})
-   if not _1 then gg.toast('× Canceled!') userM() end
+   local _1=gg.prompt({eht.var.dataU.descT[1]..' '..NR.v.link.teleUZ},{1000000000},{'number'})
+   if not _1 then gg.toast(NR.v.link.teleUZ) userM() end
    for _,__ in ipairs(eht.var.dataU.classB) do
       NR.f.setScan(nil, false)
       local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.gold, 4)
@@ -48,8 +49,8 @@ function uGold()
 end --uGold
 --###################################
 function uElemental()
-   local _1=gg.prompt({'Enter Elemental: '..NR.v.link.teleUZ},{30000},{'number'})
-   if not _1 then gg.toast('× Canceled!') userM() end
+   local _1=gg.prompt({eht.var.dataU.descT[2]..' '..NR.v.link.teleUZ},{30000},{'number'})
+   if not _1 then gg.toast(NR.v.link.teleUZ) userM() end
    for _,__ in ipairs(eht.var.dataU.classB) do
       NR.f.setScan(nil, false)
       local __1=NR.f.copyItems(__.address+eht.var.dataU.offset.elemental, 4)
@@ -91,7 +92,7 @@ end
 function hunGetB()
    eht.getDesc(eht.var.dataH)
    local _2=gg.prompt({'Enter Hunter Gold: '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
-   if not _2 or (_2[1]=='') then gg.toast('× Canceled!') mainM() end
+   if not _2 or (_2[1]=='') then gg.toast(NR.v.link.teleUZ) mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
    for _,___ in ipairs(eht.var.dataH.classB) do
       NR.f.setScan(nil, false)
@@ -165,7 +166,7 @@ function hunRank()
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, _7_1[1].value~_7_2[1].value, _8_1[1].value~_8_2[1].value, _9_1[1].value~_9_2[1].value, NR.v.link.teleUZ}, 
       {'number','number', 'number', 'number', 'number', 'number', 'number', 'number', 'number'}
    )
-   if not _1 then gg.toast('× Canceled!') mainM() end
+   if not _1 then gg.toast(NR.v.link.teleUZ) mainM() end
    NR.f.copyItems(_1_2[1].address, 4, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
@@ -196,11 +197,11 @@ function hunCostume()
    local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.RamblePetIndex, 4)
    local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.RamblePetIndex+4, 4)
    local _1=gg.prompt(
-      {'costumeIndex: ', 'fairyIndex: ', 'weaponCostumeIndex: ', 'wingCostumeIndex: ', 'sealCostumeIndex: ', 'RamblePetIndex: ', ''},
+      {eht.var.dataH.descT[17], eht.var.dataH.descT[18], eht.var.dataH.descT[19], eht.var.dataH.descT[20], eht.var.dataH.descT[21], eht.var.dataH.descT[22], ''},
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, NR.v.link.teleUZ},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
-   if not _1 then gg.toast('× Canceled!') mainM() end
+   if not _1 then gg.toast(NR.v.link.teleUZ) mainM() end
    NR.f.copyItems(_1_2[1].address, 4, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_1[3], nil,nil,nil,nil,nil,true)
@@ -322,7 +323,7 @@ function sBoxPack()
          if (__1~=nil) then gg.alert(__1) end
       end
       local _1=gg.prompt({'Pack ID:', 'Count: [1;1000]', ''},{eht.var.dataASCB.maxId,1, NR.v.link.teleUZ},{'number','number'})
-      if not _1 then gg.toast('× Canceled!') paidM() end
+      if not _1 then gg.toast(NR.v.link.teleUZ) paidM() end
       if (tonumber(_1[1])>eht.var.dataASCB.maxId) or (tonumber(_1[1])<0) then
          gg.toast('ID changed to default >'..eht.var.dataASCB.maxId)
          _1[1]=eht.var.dataASCB.maxId
@@ -382,7 +383,7 @@ end
 --###################################
 function fullMat()
    local _1=gg.alert('Do you want to enter quantity?', 'input', 'random')
-   if not _1 then gg.toast('× Canceled!') mainM() end
+   if not _1 then gg.toast(NR.v.link.teleUZ) mainM() end
    local _2=math.random(800000,1000000)
    if (_1==1) then
       local __1=gg.prompt({'Enter Quantity: '..NR.v.link.teleUZ},{_2},{'number'})
@@ -438,7 +439,7 @@ function speedB()
       eht.var.speedG.hasB=true
    end
    local _1=gg.prompt({'Speed Game: '..NR.v.link.teleUZ..'[1;'..eht.var.speedG.maxS..']'},{eht.var.speedG.value},{'number'})
-   if not _1 then gg.toast('× Canceled!') mainM() end
+   if not _1 then gg.toast(NR.v.link.teleUZ) mainM() end
    eht.var.speedG.value=tonumber(_1[1])
    NR.f.copyItems(eht.var.speedG.addrB[1].address-4, 16, eht.var.speedG.value, nil,nil,nil,nil,nil,true)
    if (eht.var.speedG.value==1) then eht.mainM.toggle[6]='[×] ' 
