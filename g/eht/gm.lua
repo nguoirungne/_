@@ -1,9 +1,8 @@
 --###################################
 function mainM()
    gg.setVisible(false)
-   gg.alert('new menu')
    while true do
-      local _1=gg.choice(eht.mergeM(eht.mainM), nil, eht.upName()..'[EVIL HUNTER TYCOON MENU]')
+      local _1=gg.choice(eht.mergeM(eht.mainM), nil, NR.v.note[1]..eht.note[1]..eht.upName()..'[EVIL HUNTER TYCOON MENU]')
       if not _1 then NR.f.waitM() end      
       checkF(_1)
    end
