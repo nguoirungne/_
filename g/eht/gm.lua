@@ -2,7 +2,7 @@
 function mainM()
    gg.setVisible(false)
    while true do
-      local _1=gg.choice({'test'}, nil, eht.upName()..'[EVIL HUNTER TYCOON MENU]')
+      local _1=gg.choice({'test'}, nil, '[EVIL HUNTER TYCOON MENU]')
       if not _1 then NR.f.waitM() end      
       checkF(_1)
    end
