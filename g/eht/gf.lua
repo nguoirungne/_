@@ -161,7 +161,7 @@ function hunRank()
    local _10_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTotal, 4)
    local _10_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTotal+4, 4)
    local _1=gg.prompt(
-      {'rankHp: [0;3]', 'rankDamage: [0;3]', 'rankArmor: [0;3]', 'rankCritical: [0;3]', 'rankAttackSpeed: [0;3]', 'rankDodge: [0;3]', 'rankHungry: [0;3]', 'rankFeel: [0;3]', 'rankTire: [0;3]', ''}, 
+      {eht.var.dataH.desc[2][1]..' [0;3]', eht.var.dataH.desc[2][2]..' [0;3]', eht.var.dataH.desc[2][3]..' [0;3]', eht.var.dataH.desc[2][4]..' [0;3]', eht.var.dataH.desc[2][5]..' [0;3]', eht.var.dataH.desc[2][6]..' [0;3]', eht.var.dataH.desc[2][7]..' [0;3]', eht.var.dataH.desc[2][8]..' [0;3]', eht.var.dataH.desc[2][9]..' [0;3]', ''}, 
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, _7_1[1].value~_7_2[1].value, _8_1[1].value~_8_2[1].value, _9_1[1].value~_9_2[1].value, NR.v.link.teleUZ}, 
       {'number','number', 'number', 'number', 'number', 'number', 'number', 'number', 'number'}
    )
