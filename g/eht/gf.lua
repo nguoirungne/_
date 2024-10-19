@@ -89,6 +89,7 @@ function hunterB(__)
 end
 --###################################
 function hunGetB()
+   eht.getDesc(eht.var.dataH)
    local _2=gg.prompt({'Enter Hunter Gold: '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast('× Canceled!') mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
@@ -120,7 +121,7 @@ function hunIdx()
    local _6_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex, 4)
    local _6_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.bodyIndex+4, 4)
    local _1=gg.prompt(
-      {eht.var.dataH.desc[1][1], eht.var.dataH.desc[1][2]..' [0;3]', eht.var.dataH.desc[1][3]..' [1;100]', eht.var.dataH.desc[1][4]..' [0;32]', eht.var.dataH.desc[1][5]..' [0;5]', eht.var.dataH.desc[1][6]..' [0;156]', ''},
+      {eht.var.dataH.descT[1], eht.var.dataH.descT[2]..' [0;3]', eht.var.dataH.descT[3]..' [1;100]', eht.var.dataH.descT[4]..' [0;32]', eht.var.dataH.descT[5]..' [0;5]', eht.var.dataH.descT[6]..' [0;156]', ''},
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, (_3_1[1].value~_3_2[1].value)+1, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, NR.v.link.teleUZ},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
@@ -160,7 +161,7 @@ function hunRank()
    local _10_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTotal, 4)
    local _10_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.rankTotal+4, 4)
    local _1=gg.prompt(
-      {eht.var.dataH.desc[2][1]..' [0;3]', eht.var.dataH.desc[2][2]..' [0;3]', eht.var.dataH.desc[2][3]..' [0;3]', eht.var.dataH.desc[2][4]..' [0;3]', eht.var.dataH.desc[2][5]..' [0;3]', eht.var.dataH.desc[2][6]..' [0;3]', eht.var.dataH.desc[2][7]..' [0;3]', eht.var.dataH.desc[2][8]..' [0;3]', eht.var.dataH.desc[2][9]..' [0;3]', ''}, 
+      {eht.var.dataH.descT[7]..' [0;3]', eht.var.dataH.descT[8]..' [0;3]', eht.var.dataH.descT[9]..' [0;3]', eht.var.dataH.descT[10]..' [0;3]', eht.var.dataH.descT[11]..' [0;3]', eht.var.dataH.descT[12]..' [0;3]', eht.var.dataH.descT[13]..' [0;3]', eht.var.dataH.descT[14]..' [0;3]', eht.var.dataH.descT[15]..' [0;3]', ''}, 
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, _7_1[1].value~_7_2[1].value, _8_1[1].value~_8_2[1].value, _9_1[1].value~_9_2[1].value, NR.v.link.teleUZ}, 
       {'number','number', 'number', 'number', 'number', 'number', 'number', 'number', 'number'}
    )
