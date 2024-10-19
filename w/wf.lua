@@ -24,32 +24,6 @@ NR.v.set={
    autoT=true   
 }
 
-NR.f.extractText(__)
-    local _1={}
-    local _2=false
-    local _3=''
-    for _ in __:gmatch("(.)") do
-        if (_=='(') then
-            _2=true
-        elseif (_2) and (_==')') then
-            _2=false
-            table.insert(_1, _3)
-            _3=''
-        elseif (_2) then
-            _3=_3.._
-        end
-    end return _1
-end --NR.f.extractText
-
-NR.f.transCut(__)
-   local __1=''
-   for _=4, #__ do
-      if (string.sub(__,_,_+2)=='\",\"') then break else 
-         __1=__1..string.sub(__,_,_)
-      end
-   end return __1
-   return __
-end --NR.f.transCut
 
 NR.f.translate=function(__)
    if (__==nil) then return NR.v.link.teleUZ else
@@ -57,7 +31,7 @@ NR.f.translate=function(__)
          gg.sleep(math.random(100,150))
          local _1=gg.getLocale()
          local _2=gg.makeRequest(NR.v.translate.host[math.random(#NR.v.translate.host)]..NR.v.translate.path[1]..NR.v.translate.client[1]..NR.v.translate.clientP[1]..NR.v.translate.param[1]..NR.v.translate.param[2].._1..NR.v.translate.param[3]..NR.v.translate.param[4]..__, NR.v.translate.userA).content
-         if (_2) then return NR.f.transCut(_2) end
+         if (_2) then return _2 end
       end return __
    end
 end --NR.f.translate
