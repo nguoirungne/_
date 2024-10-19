@@ -23,7 +23,7 @@ end
 --###################################
 function userM()
    while true do
-      local _1=gg.choice(eht.mergeM(eht.userM), nil, '[USER MANAGER]')
+      local _1=gg.choice(eht.mergeM(eht.userM), nil, '[USER MANAGEMENT]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.userM.merge then mainM()
       else userB(_1) end      
@@ -32,7 +32,7 @@ end
 --###################################
 function hunterM()
    while true do
-      local _1=gg.choice(eht.mergeM(eht.hunterM), nil, '[HUNTER MANAGER]')
+      local _1=gg.choice(eht.mergeM(eht.hunterM), nil, '[HUNTER MANAGEMENT]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.hunterM.merge then mainM()
       else hunterB(_1) end
@@ -41,7 +41,7 @@ end
 --###################################
 function paidM()
    while true do
-      local _1=gg.choice(eht.mergeM(eht.paidM), nil, '[PAID MANAGER]')
+      local _1=gg.choice(eht.mergeM(eht.paidM), nil, '[PAID MANAGEMENT]')
       if not _1 then NR.f.waitM() end
       if _1==#eht.paidM.merge then mainM()
       else paidB(_1) end
