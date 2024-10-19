@@ -1,3 +1,5 @@
+--###################################
+--###################################
 NR.v.link={
    teleUZ='Https://t.me/undeadzone',
    teleNR='Https://t.me/nguoirungne',
@@ -23,19 +25,46 @@ NR.v.blockC={
 NR.v.set={
    autoT=true   
 }
-
+--###################################
+--###################################
+NR.f.extractText=function(__)
+    local _1={}
+    local _2=false
+    local _3=''
+    for _ in __:gmatch("(.)") do
+        if (_=='(') then
+            _2=true
+        elseif (_2) and (_==')') then
+            _2=false
+            table.insert(_1, _3)
+            _3=''
+        elseif (_2) then
+            _3=_3.._
+        end
+    end return _1
+end --NR.f.extractText
+--###################################
+NR.f.transCut=function(__)
+   local __1=''
+   for _=4, #__ do
+      if (string.sub(__,_,_+2)=='\",\"') then break else 
+         __1=__1..string.sub(__,_,_)
+      end
+   end 
+   return __1   
+end --NR.f.transCut
+--###################################
 NR.f.translate=function(__)
    if (__==nil) then return NR.v.link.teleUZ else
       if (NR.v.set.autoT) then
          gg.sleep(math.random(100,150))
          local _1=gg.getLocale()
-         print(NR.v.translate.host[math.random(#NR.v.translate.host)]..NR.v.translate.path[1]..NR.v.translate.client[1]..NR.v.translate.clientP[1]..NR.v.translate.param[1]..NR.v.translate.param[2].._1..NR.v.translate.param[3]..NR.v.translate.param[4]..__)
          local _2=gg.makeRequest(NR.v.translate.host[math.random(#NR.v.translate.host)]..NR.v.translate.path[1]..NR.v.translate.client[1]..NR.v.translate.clientP[1]..NR.v.translate.param[1]..NR.v.translate.param[2].._1..NR.v.translate.param[3]..NR.v.translate.param[4]..__, NR.v.translate.userA).content
-         if (_2) then return _2 end
+         if (_2) then return NR.f.transCut(_2) end
       end return __
    end
 end --NR.f.translate
-
+--###################################
 NR.f.setXLogs=function(__)
    local _1={}
    local _2=string.rep(' ',1048576)
@@ -46,7 +75,7 @@ NR.f.setXLogs=function(__)
       pcall(gg.alert, _1)
    end
 end --NR.f.setXLogs
-
+--###################################
 NR.f.antiLoad=function()
    for _=1,4 do 
       for ___=1,math.random(1000,1100) do 
@@ -55,9 +84,9 @@ NR.f.antiLoad=function()
       end 
    end
 end --NR.f.antiLoad
-
+--###################################
 NR.f.num2Hex=function(__) return string.format('%02x',__) end --NR.f.num2Hex
-
+--###################################
 NR.f.antiCapture=function()
    local _1=gg.makeRequest(NR.v.blockC.server[math.random(2)])
    local _2='× Connection error!'
@@ -69,7 +98,7 @@ NR.f.antiCapture=function()
       os.exit()
    end                                    
 end --NR.f.antiCapture
-
+--###################################
 NR.f.antiLook=function(__)
    if (gg.isVisible()) then
       gg.setVisible(false)
@@ -77,7 +106,7 @@ NR.f.antiLook=function(__)
       NR.f.antiLog(__) return true
    end return false
 end --NR.f.antiLook
-
+--###################################
 NR.f.antiLog=function(__)
    local _1=string.rep('[script from t.me/undeadzone]',1000000)
    local _2=3
@@ -94,7 +123,7 @@ NR.f.antiLog=function(__)
       if (_2==0) then gg.toast('√ Complete!') end
    end
 end --NR.f.antiLog
-
+--###################################
 NR.f.checkPW=function(__)
    if (__.dBool.pw) then return true else
       local _1=gg.prompt({'Enter Password:'},{__.dPW},{'text'})
@@ -106,13 +135,13 @@ NR.f.checkPW=function(__)
       return false
    end
 end --NR.f.checkPW
-
+--###################################
 NR.f.makePW=function(__)
    local _1=NR.f.checkDate()
    local _2=string.sub(_1,7,8)
    return 'NR'..(_1*_2/__)
 end --NR.f.makePW
-
+--###################################
 NR.f.checkDate=function(__)
    local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
    local _2=gg.makeRequest(NR.v.blockC.server[2]).headers.Date[1]
@@ -127,7 +156,7 @@ NR.f.checkDate=function(__)
       end
    end  
 end --NR.f.checkDate
-
+--###################################
 NR.f.scanRand=function()
    gg.setVisible(false)
    gg.clearResults()
@@ -141,24 +170,16 @@ NR.f.scanRand=function()
    gg.getResults(gg.getResultsCount())
    gg.clearResults()
 end --NR.f.scanRand
-
+--###################################
 NR.f.checkLName=function(__)
    if (NR.v.lName==__) then return true else
       gg.alert('× Do not change the script name!')
       gg.copyText(__)
-      gg.alert('√ Script name has copied!')
+      gg.alert('√ Script name copied!')
       NR.f.exitM()  
    end       
 end --NR.f.checkLName
-
-NR.f.menuTab=function(__)
-   local _1={}
-   for _=1, #__[1] do _1[_]=__[1][_][1] end
-   local _2=gg.choice(_1, nil, __.title)
-   if not _2 then NR.f.waitM() end
-   return _2 and __[1][_2][2](__[1][_2][3])
-end --NR.f.menuTab
-
+--###################################
 NR.f.waitM=function()
    gg.setVisible(false)
    while true do --NR.f.antiCapture() do
@@ -171,7 +192,7 @@ NR.f.waitM=function()
       gg.sleep(1000)
    end
 end --NR.f.waitM
-
+--###################################
 NR.f.exitM=function()
    gg.clearList()
    gg.clearResults()
@@ -179,10 +200,10 @@ NR.f.exitM=function()
    gg.setVisible(true)
    os.exit()
 end --NR.f.exitM
-
+--###################################
 _G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('gBG')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2212)
 _G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('sWP')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2024)
-
+--###################################
 NR.f.getB16LE=function(...)
    local _0={...}
    gg.clearResults()
@@ -207,23 +228,23 @@ NR.f.getB16LE=function(...)
       end
    end
 end --NR.f.getB16LE
-
+--###################################
 NR.f.setScan=function(...)
    local _0={...}
    if (_0[1]~=nil) then gg.setRanges(_0[1]) end
    if (_0[2]~=nil) then gg.setVisible(_0[2]) end
    gg.clearResults()
 end --NR.f.setScan
-
+--###################################
 NR.f.allResults=function() return gg.getResults(gg.getResultsCount()) end --NR.f.allResults
-
+--###################################
 NR.f.scan=function(...)
    local _0={...}
    gg.searchNumber(_0[1], _0[2])
    if (_0[3]~=nil) then gg.refineNumber(_0[3], _0[2]) end
    if (_0[4]~=nil) then gg.refineAddress(_0[4], -1) end
 end --NR.f.scan
-
+--###################################
 NR.f.copyItems=function(...)
    local _0={...}
    local _1={{}}
@@ -241,7 +262,7 @@ NR.f.copyItems=function(...)
    if (_0[10]==true) then gg.addListItems(_1) end
    return _1
 end --NR.f.copyItems
-
+--###################################
 
 
 
