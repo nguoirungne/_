@@ -4,6 +4,15 @@ NR.v.link={
    googleT='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=',
    userA={['User-Agent'] = 'GoogleTranslate/6.3.0.RC06.277163268 Linux; U; Android 14; A201SO Build/64.2.E.2.140'}
 }
+NR.v.translate={
+   host={'https://translate.googleapis.com/','https://clients1.google.com/', 'https://clients2.google.com/','https://clients3.google.com/', 'https://clients4.google.com/', 'https://clients5.google.com/'}, 
+   path={'translate_a/'},
+   client={'t?client=', 'single?client='},
+   clientP={'gtx', 'dict-chrome-ex'},
+   param={'&sl=auto', '&tl=', '&dt=t', '&q='},
+   targetL='vi_VN',
+   userA={['User-Agent']='GoogleTranslate/6.3.0.RC06.277163268 Linux; U; Android 14; A201SO Build/64.2.E.2.140'}
+}
 NR.v.note={
    '📢 Https://t.me/undeadzone!\n'	
 }
@@ -18,17 +27,10 @@ NR.v.set={
 NR.f.translate=function(__)
    if (__==nil) then return NR.v.link.teleUZ else
       if (NR.v.set.autoT) then
-         gg.sleep(200)
+         gg.sleep(math.random(100,150))
          local _1=gg.getLocale()
-         local _2=gg.makeRequest(NR.v.link.googleT.._1..'&dt=t&q={'..__..'}', NR.v.link.userA).content
-         if (_2) then
-            local __1=''
-            for _=6, #_2 do
-               if (string.sub(_2,_,_+4)=='}\",\"{') then break else 
-                  __1=__1..string.sub(_2,_,_)
-               end
-            end return __1
-         end
+         local _2=gg.makeRequest(NR.v.translate.host[math.random(#NR.v.translate.host)]..NR.v.translate.path[1]..NR.v.translate.client[1]..NR.v.translate.clientP[1]..NR.v.translate.param[1]..NR.v.translate.param[2].._1..NR.v.translate.param[3]..NR.v.translate.param[4]..__, NR.v.translate.userA).content
+         if (_2) then return _2 end
       end return __
    end
 end --NR.f.translate
