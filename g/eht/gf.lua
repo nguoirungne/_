@@ -107,7 +107,6 @@ end
 --###################################
 function hunIdx()
    hunGetB()
-   eht.transCheck(eht.var.dataH, 1)
    local _1_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.money, 4)
    local _1_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.money+8, 32)
    local _2_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.job, 4)
