@@ -412,7 +412,18 @@ end
 --###################################
 function extraR(__)
    if (__==1) then NR.f.exitM() end
+   if (__==2) then mainM() end
+   if (__==3) then mainM() end
+   if (__==4) then transToggle() end
    if (__==5) then mainM() end
+end
+--###################################
+function transToggle()
+   if (eht.extraM.toggle[4]=='[×] ') then eht.extraM.toggle[4]='[√] ' 
+      NR.v.set.autoT=true 
+   else eht.extraM.toggle[4]='[×] ' 
+      NR.v.set.autoT=false
+   end
 end
 --###################################
 --###################################
