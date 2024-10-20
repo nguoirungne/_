@@ -279,7 +279,18 @@ end
 --###################################
 function hunDSoul()
    hunGetB()
-   
+   local _1_1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.DSoul, 4)
+   local _1_2=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.DSoul+8, 32)
+   local _1=gg.prompt(
+      {eht.var.dataH.descT[23]..' '..NR.v.link.teleUZ},
+      {_1_1[1].value~_1_2[1].value},
+      {'number'}
+   )
+   if not _1 then gg.toast(NR.v.link.teleUZ) mainM() end
+   NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
+   NR.f.setScan(nil, false)
+   eht.hunterM.toggle[6]='[+] ' 
+   gg.toast('√ Hunter Dark Soul Updated!')
 end
 --###################################
 --###################################
