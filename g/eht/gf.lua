@@ -273,6 +273,7 @@ function hunSTech()
 end
 --###################################
 function hunMaxA()
+   print(eht.var.dataH.descT)
    for _,__ in ipairs(eht.var.dataH.classB) do
       local __1=NR.f.copyItems(__.address+eht.var.dataH.offset.level, 4)
       NR.f.copyItems(__.address+eht.var.dataH.offset.level+4, 4, __1[1].value~99, nil,nil,nil,nil,nil,true)
