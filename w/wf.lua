@@ -32,9 +32,9 @@ NR.f.extractText=function(__)
     local _2=false
     local _3=''
     for _ in __:gmatch("(.)") do
-        if (_=='(') then
+        if (_=='_') then
             _2=true
-        elseif (_2) and (_==')') then
+        elseif (_2) and (_=='*') then
             _2=false
             table.insert(_1, _3)
             _3=''
