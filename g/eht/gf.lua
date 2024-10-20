@@ -91,6 +91,7 @@ end
 --###################################
 function hunGetB()
    eht.getDesc(eht.var.dataH)
+   print(eht.var.dataH.descT)
    local _2=gg.prompt({eht.var.dataH.descT[40]..' '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast(NR.v.link.teleUZ) mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
@@ -280,7 +281,7 @@ function hunMaxA()
    end  
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[5]='[+] ' 
-   gg.toast('√ '..#eht.var.dataH.classB..' '..eht.var.dataH.descT[46]) 
+   gg.toast('√ '..eht.var.dataH.descT[46]) 
 end
 --###################################
 function hunDSoul()
