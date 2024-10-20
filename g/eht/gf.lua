@@ -274,7 +274,7 @@ end
 --###################################
 function hunMaxA()
    gg.alert(#eht.var.dataH.classB..' hunters')
-   for _,___ in ipairs(eht.var.dataH.classB) do
+   for _,__ in ipairs(eht.var.dataH.classB) do
       local __1=NR.f.copyItems(__.address+eht.var.dataH.offset.level, 4)
       NR.f.copyItems(__.address+eht.var.dataH.offset.level+4, 4, _1[1].value~99, nil,nil,nil,nil,nil,true)
    end  
