@@ -273,10 +273,10 @@ function hunSTech()
 end
 --###################################
 function hunMaxA()
-   gg.alert(#eht.var.dataH.classB..' hunters')
+   gg.alert('updated!')
    for _,__ in ipairs(eht.var.dataH.classB) do
       local __1=NR.f.copyItems(__.address+eht.var.dataH.offset.level, 4)
-      NR.f.copyItems(__.address+eht.var.dataH.offset.level+4, 4, _1[1].value~99, nil,nil,nil,nil,nil,true)
+      NR.f.copyItems(__.address+eht.var.dataH.offset.level+4, 4, __1[1].value~99, nil,nil,nil,nil,nil,true)
    end  
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[5]='[+] ' 
