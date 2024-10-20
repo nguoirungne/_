@@ -91,7 +91,7 @@ end
 --###################################
 function hunGetB()
    eht.getDesc(eht.var.dataH)
-   local _2=gg.prompt({'Enter Gold Of Hunter: '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
+   local _2=gg.prompt({eht.var.dataH.descT[40]..' '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast(NR.v.link.teleUZ) mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
    for _,___ in ipairs(eht.var.dataH.classB) do
@@ -103,7 +103,7 @@ function hunGetB()
          eht.var.dataH.hasB=true
       break end
    end
-   if (eht.var.dataH.hasB==false) then gg.alert('× No hunter found with the same amount of gold.') mainM() end
+   if (eht.var.dataH.hasB==false) then gg.alert('× '..eht.var.dataH.descT[41]) mainM() end
    eht.var.dataH.hasB=false
 end
 --###################################
@@ -135,7 +135,7 @@ function hunIdx()
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[1]='[+] ' 
-   gg.toast('√ Hunter Idx Updated!')
+   gg.toast('√ '..eht.var.dataH.descT[42])
 end
 --###################################
 function hunRank()
@@ -178,7 +178,7 @@ function hunRank()
    NR.f.copyItems(_10_2[1].address, 4, _10_1[1].value~(_1[1]+_1[2]+_1[3]+_1[4]+_1[5]+_1[6]+_1[7]+_1[8]+_1[9]), nil,nil,nil,nil,nil,true)
    eht.hunterM.toggle[2]='[+] ' 
    NR.f.setScan(nil, false)
-   gg.toast('√ Hunter Rank Updated!')
+   gg.toast('√ '..eht.var.dataH.descT[43])
 end
 --###################################
 function hunCostume()
@@ -209,7 +209,7 @@ function hunCostume()
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[3]='[+] ' 
-   gg.toast('√ Hunter Costume Updated!')
+   gg.toast('√ '..eht.var.dataH.descT[44])
 end
 --###################################
 function hunSTech()
@@ -269,18 +269,17 @@ function hunSTech()
    NR.f.copyItems(_15_2[1].address, 4, _15_1[1].value~_3[15], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[4]='[+] ' 
-   gg.toast('√ Hunter Property Updated!')
+   gg.toast('√ '..eht.var.dataH.descT[45])
 end
 --###################################
 function hunMaxA()
-   gg.alert('updated!')
    for _,__ in ipairs(eht.var.dataH.classB) do
       local __1=NR.f.copyItems(__.address+eht.var.dataH.offset.level, 4)
       NR.f.copyItems(__.address+eht.var.dataH.offset.level+4, 4, __1[1].value~99, nil,nil,nil,nil,nil,true)
    end  
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[5]='[+] ' 
-   gg.toast('√ '..#eht.var.dataH.classB..' Hunters have reached max level!') 
+   gg.toast('√ '..#eht.var.dataH.classB..' '..eht.var.dataH.descT[46]) 
 end
 --###################################
 function hunDSoul()
@@ -296,7 +295,7 @@ function hunDSoul()
    NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[6]='[+] ' 
-   gg.toast('√ Hunter Dark Soul Updated!')
+   gg.toast('√ '..eht.var.dataH.descT[47])
 end
 --###################################
 --###################################
