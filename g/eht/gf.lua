@@ -273,8 +273,10 @@ function hunSTech()
 end
 --###################################
 function hunMaxA()
-   hunGetB()
+   gg.alert(#eht.var.dataH.classB..' hunters')
+   for _,___ in ipairs(eht.var.dataH.classB) do
    
+   end   
 end
 --###################################
 function hunDSoul()
