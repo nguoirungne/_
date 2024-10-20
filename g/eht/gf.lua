@@ -91,7 +91,7 @@ end
 --###################################
 function hunGetB()
    eht.getDesc(eht.var.dataH)
-   local _2=gg.prompt({'Enter Hunter Gold: '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
+   local _2=gg.prompt({'Enter Gold Of Hunter: '..NR.v.link.teleUZ},{eht.var.dataH.goldH},{'number'})
    if not _2 or (_2[1]=='') then gg.toast(NR.v.link.teleUZ) mainM() end
    eht.var.dataH.goldH=tonumber(_2[1])
    for _,___ in ipairs(eht.var.dataH.classB) do
@@ -126,7 +126,7 @@ function hunIdx()
       {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, (_3_1[1].value~_3_2[1].value)+1, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, NR.v.link.teleUZ},
       {'number','number', 'number', 'number', 'number', 'number'}
    )
-   if not _1 then gg.toast('× Canceled!') mainM() end
+   if not _1 then gg.toast(NR.v.link.teleUZ) mainM() end
    NR.f.copyItems(_1_2[1].address, 32, _1_1[1].value~_1[1], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_1[2], nil,nil,nil,nil,nil,true)
    NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~(_1[3]-1), nil,nil,nil,nil,nil,true)
@@ -135,7 +135,6 @@ function hunIdx()
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[1]='[+] ' 
-   NR.f.setScan(nil, false)
    gg.toast('√ Hunter Idx Updated!')
 end
 --###################################
@@ -210,13 +209,67 @@ function hunCostume()
    NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_1[6], nil,nil,nil,nil,nil,true)
    NR.f.setScan(nil, false)
    eht.hunterM.toggle[3]='[+] ' 
-   NR.f.setScan(nil, false)
    gg.toast('√ Hunter Costume Updated!')
 end
 --###################################
 function hunSTech()
    hunGetB()
-   
+   local _1=NR.f.copyItems(eht.var.dataH.hunB[1].address+eht.var.dataH.offset.GUP_Property_LV, 32)
+   local _2=NR.f.copyItems(_1[1].value, 32)
+   local _1_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o1, 4)
+   local _1_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o1+4, 4)
+   local _2_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o2, 4)
+   local _2_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o2+4, 4)
+   local _3_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o3, 4)
+   local _3_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o3+4, 4)
+   local _4_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o4, 4)
+   local _4_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o4+4, 4)
+   local _5_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o5, 4)
+   local _5_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o5+4, 4) 
+   local _6_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o6, 4)
+   local _6_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o6+4, 4)
+   local _7_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o7, 4)
+   local _7_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o7+4, 4)
+   local _8_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o8, 4)
+   local _8_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o8+4, 4)
+   local _9_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o9, 4)
+   local _9_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o9+4, 4)
+   local _10_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o10, 4)
+   local _10_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o10+4, 4)
+   local _11_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o11, 4)
+   local _11_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o11+4, 4)
+   local _12_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o12, 4)
+   local _12_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o12+4, 4)
+   local _13_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o13, 4)
+   local _13_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o13+4, 4)
+   local _14_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o14, 4)
+   local _14_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o14+4, 4)
+   local _15_1=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o15, 4)
+   local _15_2=NR.f.copyItems(_2[1].address+eht.var.dataH.offsetGPL.o15+4, 4)
+   local _3=gg.prompt(
+      {eht.var.dataH.descT[25]..' [0;100]', eht.var.dataH.descT[26]..' [0;100]', eht.var.dataH.descT[27]..' [0;100]', eht.var.dataH.descT[28]..' [0;100]', eht.var.dataH.descT[29]..' [0;100]', eht.var.dataH.descT[30]..' [0;100]', eht.var.dataH.descT[31]..' [0;100]', eht.var.dataH.descT[32]..' [0;100]', eht.var.dataH.descT[33]..' [0;100]', eht.var.dataH.descT[34]..' [0;100]', eht.var.dataH.descT[35]..' [0;100]', eht.var.dataH.descT[36]..' [0;100]', eht.var.dataH.descT[37]..' [0;100]', eht.var.dataH.descT[38]..' [0;100]', eht.var.dataH.descT[39]..' [0;100]', ''},
+      {_1_1[1].value~_1_2[1].value, _2_1[1].value~_2_2[1].value, _3_1[1].value~_3_2[1].value, _4_1[1].value~_4_2[1].value, _5_1[1].value~_5_2[1].value, _6_1[1].value~_6_2[1].value, _7_1[1].value~_7_2[1].value, _8_1[1].value~_8_2[1].value, _9_1[1].value~_9_2[1].value, _10_1[1].value~_10_2[1].value, _11_1[1].value~_11_2[1].value, _12_1[1].value~_12_2[1].value, _13_1[1].value~_13_2[1].value, _14_1[1].value~_14_2[1].value, _15_1[1].value~_15_2[1].value, NR.v.link.teleUZ},
+      {'number','number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number', 'number'}
+   )
+   if not _3 then gg.toast(NR.v.link.teleUZ) mainM() end
+   NR.f.copyItems(_1_2[1].address, 4, _1_1[1].value~_3[1], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_2_2[1].address, 4, _2_1[1].value~_3[2], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_3_2[1].address, 4, _3_1[1].value~_3[3], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_4_2[1].address, 4, _4_1[1].value~_3[4], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_5_2[1].address, 4, _5_1[1].value~_3[5], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_6_2[1].address, 4, _6_1[1].value~_3[6], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_7_2[1].address, 4, _7_1[1].value~_3[7], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_8_2[1].address, 4, _8_1[1].value~_3[8], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_9_2[1].address, 4, _9_1[1].value~_3[9], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_10_2[1].address, 4, _10_1[1].value~_3[10], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_11_2[1].address, 4, _11_1[1].value~_3[11], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_12_2[1].address, 4, _12_1[1].value~_3[12], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_13_2[1].address, 4, _13_1[1].value~_3[13], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_14_2[1].address, 4, _14_1[1].value~_3[14], nil,nil,nil,nil,nil,true)
+   NR.f.copyItems(_15_2[1].address, 4, _15_1[1].value~_3[15], nil,nil,nil,nil,nil,true)
+   NR.f.setScan(nil, false)
+   eht.hunterM.toggle[4]='[+] ' 
+   gg.toast('√ Hunter Property Updated!')
 end
 --###################################
 function hunMaxA()
@@ -387,7 +440,7 @@ function fullMat()
    local _2=math.random(800000,1000000)
    if (_1==1) then
       local __1=gg.prompt({'Enter Quantity: '..NR.v.link.teleUZ},{_2},{'number'})
-      if not __1 or (__1[1]=='') then gg.toast('× Canceled!') mainM() end
+      if not __1 or (__1[1]=='') then gg.toast(NR.v.link.teleUZ) mainM() end
       _2=tonumber(__1[1])
    end
    gg.toast('loading new values..')
