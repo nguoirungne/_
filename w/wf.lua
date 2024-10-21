@@ -6,7 +6,7 @@ NR.v.link={
    googleT='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=',
    userA={['User-Agent'] = 'GoogleTranslate/6.3.0.RC06.277163268 Linux; U; Android 14; A201SO Build/64.2.E.2.140'}
 }
-NR.v.translate={
+NR.v.translate={ --https://translate.google.so/translate_a/t?client=any_client_id_works&sl=auto&tl=ru&q=wrapper&tbb=1&ie=UTF-8&oe=UTF-8
    host={'https://translate.googleapis.com/','https://clients1.google.com/', 'https://clients2.google.com/','https://clients3.google.com/', 'https://clients4.google.com/', 'https://clients5.google.com/'}, 
    path={'translate_a/'},
    client={'t?client=', 'single?client='},
