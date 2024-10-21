@@ -526,7 +526,7 @@ function transToggle()
 end
 --###################################
 function postAddGems()
-   local _0=eht.check.dBool.ad and 20 or 1
+   local _0=eht.check.dBool.ad and '20' or '1'
    eht.request.bGuild=false
    eht.getPCode()
    local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
@@ -543,7 +543,7 @@ function postAddGems()
       else
          gg.toast('√ Successfully! '.._)
       end
-      gg.sleep(3000)
+      gg.sleep(1000)
    end
    eht.paidM.toggle[3]='[+] ' 
 end
@@ -572,7 +572,18 @@ function claimCoupon()
       end
    end
    if (_2==2) then 
-   
+      local __1=gg.prompt({'Coupon Code', 'Player Code'},{_1[#_1], eht.request.pCode},{'text','text'})
+      if not __1 then gg.toast(NR.v.link.teleUZ) return end
+      gg.makeRequest(eht.request.host3..__1[1]..eht.request.pathGift[1]..__1[2])
+      gg.sleep(500)
+      local __2=gg.makeRequest(eht.request.host3..__1[1]..eht.request.pathGift[1]..__1[2]..eht.request.pathGift[2]).content
+      if (__2~=nil) then
+         if (string.find(__2, 'setFailPopUp')==nil) then
+            gg.toast(__1[1]..'\n√ successfully!')
+         else
+            gg.toast(__1[1]..'\n× '..NR.f.findText(__2, 'setFailPopUp', 29, '\"', 0))
+         end
+      end
    end    
 end
 --###################################
