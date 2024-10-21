@@ -430,17 +430,22 @@ end
 function postGLevel()
    if (eht.request.bCK) then
       if (eht.check.dBool.ad~=true) then gg.toast('! You need to buy first.') return end
-      eht.request.bGuild=false 
+      eht.request.bGuild=false
+      eht.request.gCode=0 
       eht.getPCode()
       if(eht.request.gCode~=0) then
          local _1=gg.makeRequest(eht.request.host..eht.request.pathGM, {['cookie']=eht.request.cookie}, 'Exp=304500').code
-         if (_1==200) then gg.toast('√ Guild Level Updated.!') else
+         if (_1==200) then
+            eht.paidM.toggle[2]='[√] ' 
+            gg.toast('√ Guild Level Updated.!') 
+         else
+            eht.paidM.toggle[2]='[!!] ' 
             gg.toast('× Error '.._1)
          end
          gg.sleep(200)
          _1=gg.makeRequest(eht.request.host..eht.request.pathGM2, {['cookie']=eht.request.cookie}, 'Buf0=5&Buf1=5&Buf2=5&Buf3=5&Buf4=5&Buf5=5&Level=30')
-         eht.paidM.toggle[2]='[√] ' 
       else
+         eht.paidM.toggle[2]='[×] ' 
          gg.alert('× No guild found.')
       end
    else gg.toast(NR.v.link.teleUZ) end
