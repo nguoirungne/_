@@ -526,13 +526,15 @@ function transToggle()
 end
 --###################################
 function postAddGems()
-   local _0=eht.check.dBool.ad and '20' or '1'
+   local _0=eht.check.dBool.ad and '20' or '2'
    eht.request.bGuild=false
    eht.getPCode()
    local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
    if not _1 then gg.toast(NR.v.link.teleUZ) return end
    if (eht.check.dBool.ad) then else 
-      if (tonumber(_1[1])+tonumber(eht.request.gem)>4800) then
+   print(eht.request.gem)
+   print(type(eht.request.gem))
+      if (tonumber(_1[1])+tonumber(eht.request.gem)*tonumber(_1[2])>10000) then
          gg.toast('× Cannot get more gems!') return
       end
    end
@@ -553,7 +555,7 @@ function claimCoupon()
       eht.request.bGuild=false
       eht.getPCode()
    end
-   local _1={'MINERPUBLI', 'BOOMERANGCAT', 'EVILCONQUEROR', 'ATTACKDARKLORD', 'YOURETHEBEST'}
+   local _1={'MINERPUBLI', 'EVILCONQUEROR', 'ATTACKDARKLORD', 'YOURETHEBEST'}
    local _2=gg.alert('Enter coupon code:', 'auto', 'input')
    if not _2 then gg.toast(NR.v.link.teleUZ) return end
    if (_2==1) then 
