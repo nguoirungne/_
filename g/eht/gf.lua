@@ -469,7 +469,8 @@ function postAddGems()
          else
             gg.toast('√ Successfully! '.._)
          end
-         gg.sleep(1000)
+         _1[1]=_1[1]..' '
+         gg.sleep(3000)
       end
       local _4=_3-_2*_1[1]
       gg.alert('Get '.._4..' gems successfully. And '.._3-_4..' gems failed.')
