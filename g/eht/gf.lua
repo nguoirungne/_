@@ -382,6 +382,7 @@ function paidB(__)
       end
       sBoxPack()
    end --dataASCB
+   if (__==2) then postGLevel() end
 end
 --###################################
 function sBoxPack()
@@ -423,6 +424,16 @@ function sBoxPack()
       NR.f.setScan(nil, false)
       gg.toast('! You need to buy first.')
    end   
+end
+--###################################
+function postGLevel()
+   if (eht.request.bCK) then
+      local _1=gg.makeRequest(eht.request.host..eht.request.pathGM, {['cookie']=eht.request.cookie}, 'Exp=304500').code
+      if (_1==200) then gg.toast('√ Guild Level Updated.!') end
+      gg.sleep(200)
+      _1=gg.makeRequest(eht.request.host..eht.request.pathGM2, {['cookie']=eht.request.cookie}, 'Buf0=5&Buf1=5&Buf2=5&Buf3=5&Buf4=5&Level=30').code
+      if (_1==200) then gg.toast('√ Guild Level Updated..!') end     
+   else gg.toast(NR.v.link.teleUZ) end
 end
 --###################################
 --###################################
