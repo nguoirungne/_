@@ -527,13 +527,13 @@ end
 --###################################
 function postAddGems()
    local _0=eht.check.dBool.ad and '20' or '2'
-   eht.request.bGuild=false
-   eht.getPCode()
+   eht.request.gem=''
+   local _2=gg.makeRequest(eht.request.host..eht.request.pathCE, {['cookie']=eht.request.cookie}).content
+   _2=NR.f.findText(_2, 'Gem', 6, ',', 0)
+   print(_2)
    local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
    if not _1 then gg.toast(NR.v.link.teleUZ) return end
    if (eht.check.dBool.ad) then else 
-   print(eht.request.gem)
-   print(type(eht.request.gem))
       if (tonumber(_1[1])+tonumber(eht.request.gem)*tonumber(_1[2])>10000) then
          gg.toast('× Cannot get more gems!') return
       end
