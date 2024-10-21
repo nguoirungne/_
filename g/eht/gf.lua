@@ -383,7 +383,6 @@ function paidB(__)
       sBoxPack()
    end --dataASCB
    if (__==2) then postGLevel() end
-   if (__==3) then postAddGems() end
 end
 --###################################
 function sBoxPack()
@@ -454,32 +453,6 @@ function postGLevel()
    end
 end
 --###################################
-function postAddGems()
-   if (eht.check.dBool.ad) or (eht.check.dBool.st) or (eht.check.dBool.sb) then
-      local _0=eht.check.dBool.ad and 1000 or 20
-      local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
-      if not _1 then gg.toast(NR.v.link.teleUZ) return end
-      local _2=0
-      local _3=_1[1]*_1[2]
-      for _=1, tonumber(_1[2]) do
-         local __1=gg.makeRequest(eht.request.host..eht.request.pathCE, {['cookie']=eht.request.cookie}, 'amount='.._1[1]).code
-         if (__1~=200) then 
-            _2=_2+1 
-            gg.toast('× Failed! '.._)
-         else
-            gg.toast('√ Successfully! '.._)
-         end
-         gg.sleep(2000)
-      end
-      local _4=_3-_2*_1[1]
-      gg.alert('Get '.._4..' gems successfully. And '.._3-_4..' gems failed.')
-      eht.paidM.toggle[3]='[+] ' 
-   else
-      gg.toast('! You need to buy first.')
-      return
-   end
-end
---###################################
 --###################################
 function itemB()
    if (eht.var.dataI.hasK==false) then
@@ -538,8 +511,8 @@ end
 --###################################
 function extraR(__)
    if (__==1) then NR.f.exitM() end
-   if (__==2) then mainM() end
-   if (__==3) then mainM() end
+   if (__==2) then claimCoupon() end
+   if (__==3) then postAddGems() end
    if (__==4) then transToggle() end
    if (__==5) then mainM() end
 end
@@ -550,6 +523,55 @@ function transToggle()
    else eht.extraM.toggle[4]='[×] ' 
       NR.v.set.autoT=false
    end
+end
+--###################################
+function postAddGems()
+   local _0=eht.check.dBool.ad and 20 or 1
+   eht.request.bGuild=false
+   eht.getPCode()
+   local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
+   if not _1 then gg.toast(NR.v.link.teleUZ) return end
+   if (eht.check.dBool.ad) then else 
+      if (tonumber(_1[1])+tonumber(eht.request.gem)>4800) then
+         gg.toast('× Cannot get more gems!') return
+      end
+   end
+   for _=1, tonumber(_1[2]) do
+      local __1=gg.makeRequest(eht.request.host..eht.request.pathCE, {['cookie']=eht.request.cookie}, 'amount='.._1[1]).code
+      if (__1~=200) then 
+         gg.toast('× Failed! '.._)
+      else
+         gg.toast('√ Successfully! '.._)
+      end
+      gg.sleep(3000)
+   end
+   eht.paidM.toggle[3]='[+] ' 
+end
+--###################################
+function claimCoupon()
+   if (pCode=='') then
+      eht.request.bGuild=false
+      eht.getPCode()
+   end
+   local _1={'code1'}
+   local _2=gg.alert('Enter coupon code:', 'auto', 'input')
+   if not _2 then gg.toast(NR.v.link.teleUZ) return end
+   if (_2==1) then 
+      for _,__ in ipairs(_1) do
+         local __1=gg.makeRequest(host3..__..pathGift[1]..eht.request.pCode..pathGift[2]).content
+         if (__1~=nil) then
+            if (string.find(__1, 'setFailPopUp')~=nil) then
+               gg.toast('√ Successfully! '.._)
+            else
+               gg.toast('× Failed! '.._)
+            end
+         end
+         gg.sleep(1000)
+      end
+   end
+   if (_2==2) then 
+   
+   end    
 end
 --###################################
 --###################################
