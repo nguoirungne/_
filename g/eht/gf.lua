@@ -558,7 +558,7 @@ function claimCoupon()
    if not _2 then gg.toast(NR.v.link.teleUZ) return end
    if (_2==1) then 
       for _,__ in ipairs(_1) do
-         local __1=gg.makeRequest(host3..__..pathGift[1]..eht.request.pCode..pathGift[2]).content
+         local __1=gg.makeRequest(eht.request.host3..__..eht.request.pathGift[1]..eht.request.pCode..eht.request.pathGift[2]).content
          if (__1~=nil) then
             if (string.find(__1, 'setFailPopUp')~=nil) then
                gg.toast('√ Successfully! '.._1[_])
