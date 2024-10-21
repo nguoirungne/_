@@ -553,7 +553,7 @@ function claimCoupon()
       eht.request.bGuild=false
       eht.getPCode()
    end
-   local _1={'code1'}
+   local _1={'MINERPUBLI', 'BOOMERANGCAT', 'EVILCONQUEROR', 'ATTACKDARKLORD', 'YOURETHEBEST'}
    local _2=gg.alert('Enter coupon code:', 'auto', 'input')
    if not _2 then gg.toast(NR.v.link.teleUZ) return end
    if (_2==1) then 
@@ -561,9 +561,9 @@ function claimCoupon()
          local __1=gg.makeRequest(host3..__..pathGift[1]..eht.request.pCode..pathGift[2]).content
          if (__1~=nil) then
             if (string.find(__1, 'setFailPopUp')~=nil) then
-               gg.toast('√ Successfully! '.._)
+               gg.toast('√ Successfully! '.._1[_])
             else
-               gg.toast('× Failed! '.._)
+               gg.toast('× Failed! '.._1[_])
             end
          end
          gg.sleep(1000)
