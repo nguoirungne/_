@@ -420,6 +420,7 @@ function sBoxPack()
       else
          gg.alert('√ Editing complete! Go to shop and open the shiny box.')
       end
+      eht.paidM.toggle[1]='[+] ' 
    else
       NR.f.setScan(nil, false)
       gg.toast('! You need to buy first.')
@@ -427,12 +428,17 @@ function sBoxPack()
 end
 --###################################
 function postGLevel()
-   if (eht.request.bCK) then
-      local _1=gg.makeRequest(eht.request.host..eht.request.pathGM, {['cookie']=eht.request.cookie}, 'Exp=304500').code
-      if (_1==200) then gg.toast('√ Guild Level Updated.!') end
-      gg.sleep(200)
-      _1=gg.makeRequest(eht.request.host..eht.request.pathGM2, {['cookie']=eht.request.cookie}, 'Buf0=5&Buf1=5&Buf2=5&Buf3=5&Buf4=5&Level=30').code
-      if (_1==200) then gg.toast('√ Guild Level Updated..!') end     
+   if (eht.request.bCK) and (eht.request.bGuild) then
+      if(eht.request.gCode~=0) then
+         local _1=gg.makeRequest(eht.request.host..eht.request.pathGM, {['cookie']=eht.request.cookie}, 'Exp=304500').code
+         if (_1==200) then gg.toast('√ Guild Level Updated.!') end
+         gg.sleep(200)
+         _1=gg.makeRequest(eht.request.host..eht.request.pathGM2, {['cookie']=eht.request.cookie}, 'Buf0=5&Buf1=5&Buf2=5&Buf3=5&Buf4=5&Buf5=5&Level=30').code
+         if (_1==200) then gg.toast('√ Guild Level Updated..!') end     
+         eht.paidM.toggle[2]='[√] ' 
+      else
+         gg.alert('× No guild found.')
+      end
    else gg.toast(NR.v.link.teleUZ) end
 end
 --###################################
