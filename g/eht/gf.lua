@@ -530,9 +530,11 @@ function postAddGems()
    eht.request.gem=''
    local _2=gg.makeRequest(eht.request.host..eht.request.pathCE, {['cookie']=eht.request.cookie}).content
    eht.request.gem=NR.f.findText(_2, 'Gem', 5, ',', 0)
-   eht.request.gem=NR.f.findText(eht.request.gem, 'Gem', 5, '}', 0)
+   if (string.sub(eht.request.gem,#eht.request.gem,#eht.request.gem)=='}') then
+      eht.request.gem=string.sub(eht.request.gem,1,#eht.request.gem-1)
+   end
    print(eht.request.gem)
-   print('updated')
+   print('updated 2')
    local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
    if not _1 then gg.toast(NR.v.link.teleUZ) return end
    if (eht.check.dBool.ad) then else 
