@@ -433,7 +433,7 @@ function postGLevel()
       eht.request.bGuild=false
       eht.request.gCode=0 
       eht.getPCode()
-      if(eht.request.gCode~=0) then
+      if(tonumber(eht.request.gCode)~=0) then
          local _1=gg.makeRequest(eht.request.host..eht.request.pathGM, {['cookie']=eht.request.cookie}, 'Exp=304500').code
          if (_1==200) then
             eht.paidM.toggle[2]='[√] ' 
