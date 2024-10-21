@@ -533,8 +533,6 @@ function postAddGems()
    if (string.sub(eht.request.gem,#eht.request.gem,#eht.request.gem)=='}') then
       eht.request.gem=string.sub(eht.request.gem,1,#eht.request.gem-1)
    end
-   print(eht.request.gem)
-   print('updated 2')
    local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
    if not _1 then gg.toast(NR.v.link.teleUZ) return end
    if (eht.check.dBool.ad) then else 
@@ -551,7 +549,7 @@ function postAddGems()
       end
       gg.sleep(1000)
    end
-   eht.paidM.toggle[3]='[+] ' 
+   eht.extraM.toggle[3]='[+] ' 
 end
 --###################################
 function claimCoupon()
@@ -590,7 +588,8 @@ function claimCoupon()
             gg.toast(__1[1]..'\n× '..NR.f.findText(__2, 'setFailPopUp', 29, '\"', 0))
          end
       end
-   end    
+   end  
+   eht.extraM.toggle[2]='[+] '   
 end
 --###################################
 --###################################
