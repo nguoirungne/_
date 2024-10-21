@@ -557,13 +557,15 @@ function claimCoupon()
    local _2=gg.alert('Enter coupon code:', 'auto', 'input')
    if not _2 then gg.toast(NR.v.link.teleUZ) return end
    if (_2==1) then 
+      gg.makeRequest(eht.request.host3.._1[#_1]..eht.request.pathGift[1]..eht.request.pCode)
+      gg.sleep(500)
       for _,__ in ipairs(_1) do
          local __1=gg.makeRequest(eht.request.host3..__..eht.request.pathGift[1]..eht.request.pCode..eht.request.pathGift[2]).content
          if (__1~=nil) then
-            if (string.find(__1, 'setFailPopUp')~=nil) then
+            if (string.find(__1, 'setFailPopUp')==nil) then
                gg.toast('√ Successfully! '.._1[_])
             else
-               gg.toast('× Failed! '.._1[_])
+               gg.toast('× Failed! '.._1[_]..NR.f.findText(__1, 'setFailPopUp', 29, '\"', 0))
             end
          end
          gg.sleep(1000)
