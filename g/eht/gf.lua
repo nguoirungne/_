@@ -563,9 +563,9 @@ function claimCoupon()
          local __1=gg.makeRequest(eht.request.host3..__..eht.request.pathGift[1]..eht.request.pCode..eht.request.pathGift[2]).content
          if (__1~=nil) then
             if (string.find(__1, 'setFailPopUp')==nil) then
-               gg.toast('√ Successfully! '.._1[_])
+               gg.toast(_1[_]..'\n√ successfully!')
             else
-               gg.toast('× Failed! '.._1[_]..NR.f.findText(__1, 'setFailPopUp', 29, '\"', 0))
+               gg.toast(_1[_]..'\n× '..NR.f.findText(__1, 'setFailPopUp', 29, '\"', 0))
             end
          end
          gg.sleep(1000)
