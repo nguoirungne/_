@@ -532,6 +532,7 @@ function postAddGems()
    eht.request.gem=NR.f.findText(_2, 'Gem', 5, ',', 0)
    eht.request.gem=NR.f.findText(eht.request.gem, 'Gem', 5, '}', 0)
    print(eht.request.gem)
+   print('updated')
    local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
    if not _1 then gg.toast(NR.v.link.teleUZ) return end
    if (eht.check.dBool.ad) then else 
