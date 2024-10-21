@@ -383,10 +383,11 @@ function paidB(__)
       sBoxPack()
    end --dataASCB
    if (__==2) then postGLevel() end
+   if (__==3) then postAddGems() end
 end
 --###################################
 function sBoxPack()
-   if (eht.check.dBool.ad) then
+   if (eht.check.dBool.ad) or (eht.check.dBool.st) or (eht.check.dBool.sb) then
       eht.paidM.toggle[1]='[+] '
       local _0=gg.alert('Get list of IDs?', 'ok', 'skip')
       if (_0==1) then
@@ -422,14 +423,13 @@ function sBoxPack()
       end
       eht.paidM.toggle[1]='[+] ' 
    else
-      NR.f.setScan(nil, false)
       gg.toast('! You need to buy first.')
+      return
    end   
 end
 --###################################
 function postGLevel()
-   if (eht.request.bCK) then
-      if (eht.check.dBool.ad~=true) then gg.toast('! You need to buy first.') return end
+   if (eht.check.dBool.ad) or (eht.check.dBool.st) or (eht.check.dBool.sb) then
       eht.request.bGuild=false
       eht.request.gCode=0 
       eht.getPCode()
@@ -448,7 +448,36 @@ function postGLevel()
          eht.paidM.toggle[2]='[×] ' 
          gg.alert('× No guild found.')
       end
-   else gg.toast(NR.v.link.teleUZ) end
+   else
+      gg.toast('! You need to buy first.')
+      return
+   end
+end
+--###################################
+function postAddGems()
+   if (eht.check.dBool.ad) or (eht.check.dBool.st) or (eht.check.dBool.sb) then
+      local _0=eht.check.dBool.ad and 1000 or 20
+      local _1=gg.prompt({'Enter Gem Amount [1;4800]', 'Repeat [1;'.._0..']'},{500,1},{'number','number'})
+      if not _1 then gg.toast(NR.v.link.teleUZ) return end
+      local _2=0
+      local _3=_1[1]*_1[2]
+      for _=1, tonumber(_1[2]) do
+         local __1=gg.makeRequest(eht.request.host..eht.request.pathCE, {['cookie']=eht.request.cookie}, 'amount='.._1[1]).code
+         if (__1~=200) then 
+            _2=_2+1 
+            gg.toast('× Failed! '.._)
+         else
+            gg.toast('√ Successfully! '.._)
+         end
+         gg.sleep(1000)
+      end
+      local _4=_3-_2*_1[1]
+      gg.alert('Get '.._4..' gems successfully. And '.._3-_4..' gems failed.')
+      eht.paidM.toggle[3]='[+] ' 
+   else
+      gg.toast('! You need to buy first.')
+      return
+   end
 end
 --###################################
 --###################################
