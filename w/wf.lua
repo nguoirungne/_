@@ -32,7 +32,7 @@ NR.f.findText=function(...) --(text,textFind,offset,charEnd,sub from i to i+?)
    local _1='' 
    local _2=string.find(_0[1], _0[2])
    if (_2==nil) then gg.toast('× Text not found.') return else
-      for _=1+_0[3], #_0[1] do
+      for _=_2+_0[3], #_0[1] do
          if (string.sub(_0[1],_,_+_0[5])==_0[4]) then break else
             _1=_1..string.sub(_0[1],_,_)
          end
