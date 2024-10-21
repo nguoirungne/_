@@ -428,7 +428,9 @@ function sBoxPack()
 end
 --###################################
 function postGLevel()
-   if (eht.request.bCK) and (eht.request.bGuild) then
+   if (eht.request.bCK) then
+      eht.request.bGuild=false 
+      eht.getPCode()
       if(eht.request.gCode~=0) then
          local _1=gg.makeRequest(eht.request.host..eht.request.pathGM, {['cookie']=eht.request.cookie}, 'Exp=304500').code
          if (_1==200) then gg.toast('√ Guild Level Updated.!') end
