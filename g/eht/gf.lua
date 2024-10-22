@@ -487,25 +487,25 @@ function fullMat()
       local __1=gg.prompt({'Enter Quantity: '..NR.v.link.teleUZ},{_2},{'number'})
       if not __1 or (__1[1]=='') then gg.toast(NR.v.link.teleUZ) mainM() end
       _2=tonumber(__1[1])
-   end
-   gg.toast('loading new values..')
-   local _3,_4={},{}
-   for _,__ in ipairs(eht.var.dataI.classB) do
+      gg.toast('loading new values..')
+      local _3,_4={},{}
+      for _,__ in ipairs(eht.var.dataI.classB) do
+         NR.f.setScan(nil, false)
+         _3[#_3+1]={address=__.address+eht.var.dataI.offset.newCheck+4, flags=4}
+         _4[#_4+1]={address=__.address+eht.var.dataI.offset.count+8, flags=32}
+      end
+      gg.loadResults(_3)
+      NR.f.allResults()
+      gg.editAll('213X4', 4)
       NR.f.setScan(nil, false)
-      _3[#_3+1]={address=__.address+eht.var.dataI.offset.newCheck+4, flags=4}
-      _4[#_4+1]={address=__.address+eht.var.dataI.offset.count+8, flags=32}
-   end
-   gg.loadResults(_3)
-   NR.f.allResults()
-   gg.editAll('213X4', 4)
-   NR.f.setScan(nil, false)
-   gg.loadResults(_4)
-   NR.f.allResults()
-   gg.editAll(_2..'X8', 32)
-   NR.f.setScan(nil, false)
-   eht.mainM.toggle[4]='[+] ' 
-   NR.f.setScan(nil, false)
-   gg.toast('√ All Materials Updated!')
+      gg.loadResults(_4)
+      NR.f.allResults()
+      gg.editAll(_2..'X8', 32)
+      NR.f.setScan(nil, false)
+      eht.mainM.toggle[4]='[+] ' 
+      NR.f.setScan(nil, false)
+      gg.toast('√ All Materials Updated!')
+   else gg.toast(NR.v.link.teleUZ) mainM() end
 end
 --###################################
 --###################################
@@ -514,7 +514,7 @@ function extraR(__)
    if (__==2) then claimCoupon() end
    if (__==3) then postAddGems() end
    if (__==4) then transToggle() end
-   if (__==5) then mainM() end
+   if (__==5) then buyVIP() end
 end
 --###################################
 function transToggle()
@@ -590,6 +590,26 @@ function claimCoupon()
       end
    end  
    eht.extraM.toggle[2]='[+] '   
+end
+--###################################
+function buyVIP()
+   local _1=gg.alert('To buy VIP key please contact '..NR.v.link.teleNR, 'enter key', 'copy link')
+   if (_1==1) then
+      if (eht.check.dBool.ad) or (eht.check.dBool.st) or (eht.check.dBool.sb) then
+         gg.toast('√ You are using VIP key!')
+      else
+         local __1=gg.prompt({'Enter Key '..NR.v.link.teleUZ},nil,{'text'})
+         if not __1 then gg.toast(NR.v.link.teleNR) extraM() end
+         NR.f.showUserPrompt()
+         --@@@@@@@@@@@@
+      end
+   elseif (_1==2) then
+      gg.copyText(NR.v.link.teleNR)
+      gg.toast('√ Link has copied!')
+   else
+      gg.toast(NR.v.link.teleNR)
+      extraM()
+   end
 end
 --###################################
 --###################################
