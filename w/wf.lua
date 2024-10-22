@@ -36,8 +36,7 @@ NR.f.findText=function(...) --(text,textFind,offset,charEnd,sub from i to i+?)
          if (string.sub(_0[1],_,_+_0[5])==_0[4]) then break else
             _1=_1..string.sub(_0[1],_,_)
          end
-      end
-      return _1
+      end return _1
    end
 end
 --###################################
@@ -47,7 +46,7 @@ NR.f.extractText=function(__)
     local _3=''
     for _ in __:gmatch("(.)") do
         if (_=='_') then
-            _2=true
+           _2=true
         elseif (_2) and (_=='*') then
             _2=false
             table.insert(_1, _3)
@@ -69,14 +68,12 @@ NR.f.transCut=function(__)
 end --NR.f.transCut
 --###################################
 NR.f.translate=function(__)
-   if (__==nil) then return NR.v.link.teleUZ else
-      if (NR.v.set.autoT) then
-         gg.sleep(math.random(100,150))
-         local _1=gg.getLocale()
-         local _2=gg.makeRequest(NR.v.translate.host[math.random(#NR.v.translate.host)]..NR.v.translate.path[1]..NR.v.translate.client[1]..NR.v.translate.clientP[1]..NR.v.translate.param[1]..NR.v.translate.param[2].._1..NR.v.translate.param[3]..NR.v.translate.param[4]..__, NR.v.translate.userA).content
-         if (_2) then return NR.f.transCut(_2) end
-      end return __
-   end
+   if (__==nil) then return NR.v.link.teleUZ else     
+      gg.sleep(math.random(100,150))
+      local _1=gg.getLocale()
+      local _2=gg.makeRequest(NR.v.translate.host[math.random(#NR.v.translate.host)]..NR.v.translate.path[1]..NR.v.translate.client[1]..NR.v.translate.clientP[1]..NR.v.translate.param[1]..NR.v.translate.param[2].._1..NR.v.translate.param[3]..NR.v.translate.param[4]..__, NR.v.translate.userA).content
+      if (_2) then return NR.f.transCut(_2) end
+  end
 end --NR.f.translate
 --###################################
 NR.f.setXLogs=function(__)
