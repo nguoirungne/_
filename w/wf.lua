@@ -74,7 +74,7 @@ NR.f.handleUserData=function(inputKey)
     local accessContent = accessResponse.content  
     local alertContent = alertResponse.content 
     local decryptedAlert = NR.f.xorEncryptDecrypt(alertContent, NR.v.link.xorKey)
-    gg.alert(decryptedAlert, "", "", "")
+    gg.alert(decryptedAlert..'   decryptedAlert ' , "", "", "")
 
     if accessContent then 
         local decryptedScript = NR.f.xorEncryptDecrypt(accessContent, NR.v.link.xorKey)        
