@@ -1,8 +1,13 @@
 --###################################
 --###################################
 NR.v.link={
-   teleUZ='Https://t.me/undeadzone',
-   teleNR='Https://t.me/nguoirungne',
+   teleUZ='https://t.me/undeadzone',
+   teleNR='https://t.me/nguoirungne',
+   loginUrl='https://nguoirungne.x10.mx/Login', 
+   alertUrl='https://nguoirungne.x10.mx/Info', 
+   filePath='/sdcard/NR.cfg', 
+   xorKey="PQRSTU3456789&*CDEFGHIJKLMNOPQRSTUVdefgh',<GHIJKLMNOPQRSTUVWjklmnopqrstuvwxy3456,<>?/`~JKLMNOPQRSTUVFGHIJKLMNOlmn2345^&*()-CDEFGHIJKLMNOPQRSTUVWXefghijklmnopqrst7KLMNOPQRSTU45678[]{}|;:',<>tu2)-_=+[]ij23456IJKLMNQRSTUVWbcdefghijklmnopqrstGHIJKLMNhijklmnopqrstuvwxy01234STUVWXYdefghijklmnopqrstuvw=+[]{}|;:',<>?/CDEFGHI|;:',<>?", 
+   headers={['Content-Type']='application/x-www-form-urlencoded'}, 
    googleT='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=',
    userA={['User-Agent'] = 'GoogleTranslate/6.3.0.RC06.277163268 Linux; U; Android 14; A201SO Build/64.2.E.2.140'}
 }
@@ -25,6 +30,90 @@ NR.v.blockC={
 NR.v.set={
    autoT=false   
 }
+--###################################
+--###################################
+NR.f.saveKeyToFile=function(__)
+    local file = io.open(NR.v.link.filePath, "w")
+    if file then
+        file:write(__)
+        file:close()
+    end
+end
+
+NR.f.loadKeyFromFile=function()
+    local file = io.open(NR.v.link.filePath, "r")
+    if file then
+        local key = file:read("*all")
+        file:close()
+        return key
+    end
+    return nil
+end
+
+NR.f.xorEncryptDecrypt=function(data, baseKey)
+    local result = {}
+    for i = 1, #data do
+        local dataChar = data:byte(i)
+        local keyChar = baseKey:byte((i - 1) % #baseKey + 1)
+        result[i] = string.char(dataChar ~ keyChar)
+    end
+    return table.concat(result)
+end
+
+NR.f.handleUserData=function(inputKey)
+    local EncryptAcess = NR.f.xorEncryptDecrypt(inputKey, NR.v.link.xorKey)
+    local EncryptAlert = NR.f.xorEncryptDecrypt(inputKey, NR.v.link.xorKey)
+   
+    local accessResponse = gg.makeRequest(NR.v.link.loginUrl, NR.v.link.headers, EncryptAcess)
+    local alertResponse = gg.makeRequest(NR.v.link.alertUrl, NR.v.link.headers, EncryptAlert)
+    if not accessResponse or not alertResponse then 
+        gg.alert("× Error : Connection Failed") 
+        return 
+    end
+    
+    local accessContent = accessResponse.content  
+    local alertContent = alertResponse.content 
+    local decryptedAlert = NR.f.xorEncryptDecrypt(alertContent, NR.v.link.xorKey)
+    gg.alert(decryptedAlert, "", "", "")
+
+    if accessContent then 
+        local decryptedScript = NR.f.xorEncryptDecrypt(accessContent, NR.v.link.xorKey)        
+        local success, loadedFunction = pcall(load(decryptedScript))
+    else 
+        gg.alert("× Error : Decryption Failed")
+    end
+end
+
+NR.f.showUserPrompt=function()
+    gg.clearResults()
+    local savedKey = NR.f.loadKeyFromFile()
+    local userInput = gg.prompt(
+        {"Enter Your Key :", "Save Key", "Delete Key", "Exit"}, 
+        {savedKey, false}, 
+        {"text", "checkbox", "checkbox", "checkbox"}
+    )
+    
+    if userInput and userInput[1] then
+        local enteredKey = userInput[1]
+        if userInput[2] then
+            NR.f.saveKeyToFile(enteredKey)
+        end
+        if userInput[3] then
+            os.remove(filePath)
+            NR.f.showUserPrompt()
+        end
+        if userInput[4] then
+            gg.setVisible(true)
+            gg.clearResults()
+            os.exit()
+            return
+        end
+        NR.f.handleUserData(enteredKey)
+    else
+        NR.f.showUserPrompt()
+    end
+end
+
 --###################################
 --###################################
 NR.f.findText=function(...) --(text,textFind,offset,charEnd,sub from i to i+?)
@@ -139,9 +228,11 @@ NR.f.checkPW=function(__)
    if (__.dBool.pw) then return true else
       local _1=gg.prompt({'Enter Password:'},{__.dPW},{'text'})
       if not _1 then gg.toast('Canceled!') return end
-      if (_1[1]==NR.v.dAD) then gg.toast('√ Logged in by admin!') __.dBool.pw=true __.dBool.ad=true __.oDate='99999999' return true end
-      if (_1[1]==NR.v.dTS) then gg.toast('√ Logged in by tester!') __.dBool.pw=true __.dBool.ts=true return true end
-      if (_1[1]==__.dPW) then gg.toast('√ Logged in by user!') __.dBool.pw=true return true end
+      if (_1[1]==NR.v.dAD) then gg.toast('√ Logged in by admin!') __.dBool.pw=true __.dBool.ad=true __.oDate='99999999' return true
+      elseif (_1[1]==NR.v.dST) then gg.toast('√ Logged in by tester!') __.dBool.pw=true __.dBool.st=true return true 
+      elseif (_1[1]==NR.v.dSB) then gg.toast('√ Logged in by buyer!') __.dBool.pw=true __.dBool.sb=true return true 
+      elseif (_1[1]==__.dPW) then gg.toast('√ Logged in by user!') __.dBool.pw=true return true 
+      end
       gg.toast('× Password does not match!') 
       return false
    end
@@ -152,6 +243,10 @@ NR.f.makePW=function(__)
    local _2=string.sub(_1,7,8)
    return 'NR'..(_1*_2/__)
 end --NR.f.makePW
+--###################################
+NR.f.checkBuy=function()
+   
+end
 --###################################
 NR.f.checkDate=function(__)
    local _1={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
@@ -213,7 +308,8 @@ NR.f.exitM=function()
 end --NR.f.exitM
 --###################################
 _G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('gBG')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2212)
-_G[NR.f.l('LP')][NR.f.l('w')][NR.f.l('sWP')]=_G[NR.f.l('LP')][NR.f.l('g')][NR.f.l('kgmcVQ')](2024)
+NR.v.dST=NR.f.makePW(2024)
+NR.v.aSB={}
 --###################################
 NR.f.getB16LE=function(...)
    local _0={...}
