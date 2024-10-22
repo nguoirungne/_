@@ -61,11 +61,16 @@ NR.f.xorEncryptDecrypt=function(data, baseKey)
 end
 
 NR.f.handleUserData=function(inputKey)
+    print(inputKey, ' inputKey')
     local EncryptAcess = NR.f.xorEncryptDecrypt(inputKey, NR.v.link.xorKey)
+    print(EncryptAcess, ' EncryptAcess')
     local EncryptAlert = NR.f.xorEncryptDecrypt(inputKey, NR.v.link.xorKey)
-   
+    print(EncryptAlert, ' EncryptAlert')
+    
     local accessResponse = gg.makeRequest(NR.v.link.loginUrl, NR.v.link.headers, EncryptAcess)
+    print(accessResponse, ' accessResponse')
     local alertResponse = gg.makeRequest(NR.v.link.alertUrl, NR.v.link.headers, EncryptAlert)
+    print(alertResponse, ' alertResponse')
     if not accessResponse or not alertResponse then 
         gg.alert("× Error : Connection Failed") 
         return 
@@ -77,7 +82,8 @@ NR.f.handleUserData=function(inputKey)
     gg.alert(decryptedAlert..'   decryptedAlert ' , "", "", "")
 
     if accessContent then 
-        local decryptedScript = NR.f.xorEncryptDecrypt(accessContent, NR.v.link.xorKey)        
+        local decryptedScript = NR.f.xorEncryptDecrypt(accessContent, NR.v.link.xorKey)   
+        print( decryptedScript, '  decryptedScript')    
         local success, loadedFunction = pcall(load(decryptedScript))
     else 
         gg.alert("× Error : Decryption Failed")
