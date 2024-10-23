@@ -3,8 +3,8 @@
 NR.v.link={
    teleUZ='https://t.me/undeadzone',
    teleNR='https://t.me/nguoirungne',
-   loginUrl='https://nguoirungne.x10.mx/Login', 
-   alertUrl='https://nguoirungne.x10.mx/Info', 
+   loginUrl='https://nguoirungne.site/Login', 
+   alertUrl='https://nguoirungne.site/Info', 
    filePath='/sdcard/NR.cfg', 
    xorKey="PQRSTU3456789&*CDEFGHIJKLMNOPQRSTUVdefgh',<GHIJKLMNOPQRSTUVWjklmnopqrstuvwxy3456,<>?/`~JKLMNOPQRSTUVFGHIJKLMNOlmn2345^&*()-CDEFGHIJKLMNOPQRSTUVWXefghijklmnopqrst7KLMNOPQRSTU45678[]{}|;:',<>tu2)-_=+[]ij23456IJKLMNQRSTUVWbcdefghijklmnopqrstGHIJKLMNhijklmnopqrstuvwxy01234STUVWXYdefghijklmnopqrstuvw=+[]{}|;:',<>?/CDEFGHI|;:',<>?", 
    headers={['Content-Type']='application/x-www-form-urlencoded'}, 
