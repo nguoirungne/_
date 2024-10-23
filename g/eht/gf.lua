@@ -469,32 +469,14 @@ function postGLevel()
 end
 --###################################
 function gearOptions()
-   gg.alert('gearOptions Updated 3')
+   gg.alert('gearOptions Updated 4')
    local _0=true
    local _1={eht.var.dataG.descT[10],eht.var.dataG.descT[11], eht.var.dataG.descT[12], eht.var.dataG.descT[13], eht.var.dataG.descT[14], eht.var.dataG.descT[15], eht.var.dataG.descT[16], eht.var.dataG.descT[17]}
    local _2={eht.var.dataG.descT[18],eht.var.dataG.descT[19],eht.var.dataG.descT[20],eht.var.dataG.descT[21],eht.var.dataG.descT[22]}
    local _3={'B','A','S','SS','SSS','UNIQ'}
    local _4_2={' > ',' > ',' > ',' > ',' > '}
    local _4={eht.var.dataG.descT[1].._4_2[1], eht.var.dataG.descT[3].._4_2[2], eht.var.dataG.descT[4].._4_2[3], eht.var.dataG.descT[6].._4_2[4], eht.var.dataG.descT[8]..' #1'.._4_2[5], eht.paidM.desc[#eht.paidM.desc]}
-   local _0_w=function()
-      while gg.isVisible()==false then
-         gg.setVisible(false)
-         gg.sleep(1000)
-      end
-   end
-   local _0_s=function()
-      while _0 do
-         local __1=gg.choice(_4, nil, eht.var.dataG.descT[27])
-            if not __1 then _0_w() end
-            if (__1==1) then  end
-            if (__1==2) then  end
-            if (__1==3) then  end
-            if (__1==4) then  end
-            if (__1==5) then  end
-            if (__1==6) then gg.toast(NR.v.link.teleUZ) mainM() end
-      end --while
-   end
-   _0_s()
+   
 end
 --###################################
 --###################################
