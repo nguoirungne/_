@@ -394,6 +394,8 @@ function paidB(__)
       local _1=NR.f.allResults()
       NR.f.setScan()
       if (#_1<10) then gg.alert('× Base not found.') mainM() end
+      eht.getDesc(eht.var.dataG)
+      print(eht.var.dataG.descT)
       gearOptions()
    end --dataG
 end
