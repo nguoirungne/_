@@ -396,6 +396,7 @@ function paidB(__)
       if (#_1<10) then gg.alert('× Base not found.') mainM() end
       eht.var.dataG.classB=_1
       eht.getDesc(eht.var.dataG)
+      eht.var.dataG.gearMRun=true
       gearOptions()
    end --dataG
 end
