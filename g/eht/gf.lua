@@ -384,6 +384,7 @@ function paidB(__)
    end --dataASCB
    if (__==2) then postGLevel() end
    if (__==3) then
+      gg.alert('paidB __==3')
       if (eht.var.dataG.hasK==false) then
          eht.var.dataG.classK=NR.f.getB16LE(eht.class.dataG)
          eht.var.dataG.hasK=true
