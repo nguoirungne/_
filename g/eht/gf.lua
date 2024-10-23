@@ -383,6 +383,19 @@ function paidB(__)
       sBoxPack()
    end --dataASCB
    if (__==2) then postGLevel() end
+   if (__==3) then
+      if (eht.var.dataG.hasK==false) then
+         eht.var.dataG.classK=NR.f.getB16LE(eht.class.dataG)
+         eht.var.dataG.hasK=true
+      end
+      eht.var.dataG.classB={}
+      NR.f.setScan(32, false)
+      NR.f.scan(eht.var.dataG.classK, 32, nil, 0)
+      local _1=NR.f.allResults()
+      NR.f.setScan()
+      if (#_1<10) then gg.alert('× Base not found.') mainM() end
+      gearOptions()
+   end --dataG
 end
 --###################################
 function sBoxPack()
@@ -451,6 +464,52 @@ function postGLevel()
       gg.toast('! You need to buy first.')
       return
    end
+end
+--###################################
+function gearOptions()
+   eht.getDesc(eht.var.dataG)
+   local _1={eht.var.dataG.descT[10],eht.var.dataG.descT[11], eht.var.dataG.descT[12], eht.var.dataG.descT[13], eht.var.dataG.descT[14], eht.var.dataG.descT[15], eht.var.dataG.descT[16], eht.var.dataG.descT[17]}
+   local _2={eht.var.dataG.descT[18],eht.var.dataG.descT[19],eht.var.dataG.descT[20],eht.var.dataG.descT[21],eht.var.dataG.descT[22]}
+   local _3={'B','A','S','SS','SSS','UNIQ'}
+   ::startsetup::
+   local _4_2={' > ',' > ',' > ',' > ',' > '}
+   local _4__={}
+   local _4={eht.var.dataG.descT[1].._4_2[1], eht.var.dataG.descT[3].._4_2[2], eht.var.dataG.descT[4].._4_2[3], eht.var.dataG.descT[6].._4_2[4], eht.var.dataG.descT[8]..' #1'.._4_2[5], eht.paidM.desc[#eht.paidM.desc]}
+   local _5=gg.choice(_4, nil, eht.var.dataG.descT[27])
+      if not _5 then goto waituser end
+      if (_5==1) then goto setgeartype end
+      if (_5==2) then goto setquality end
+      if (_5==3) then goto setlevel end
+      if (_5==4) then goto setoptionvalue end
+      if (_5==5) then goto donesetup end
+      if (_5==6) then gg.toast(NR.v.link.teleUZ) mainM() end
+   ::setgeartype::
+   local _6=gg.choice(_1, nil, eht.var.dataG.descT[1])
+      if not _6 then goto startsetup end
+      if (_6==1) then _4_2[1]=' > '.._1[1] _4__[1]=0 goto startsetup end
+      if (_6==2) then _4_2[1]=' > '.._1[2] _4__[1]=1 goto startsetup end
+      if (_6==3) then _4_2[1]=' > '.._1[3] _4__[1]=2 goto startsetup end
+      if (_6==4) then _4_2[1]=' > '.._1[4] _4__[1]=3 goto startsetup end
+      if (_6==5) then _4_2[1]=' > '.._1[5] _4__[1]=4 goto startsetup end
+      if (_6==6) then _4_2[1]=' > '.._1[6] _4__[1]=5 goto startsetup end
+      if (_6==7) then _4_2[1]=' > '.._1[7] _4__[1]=6 goto startsetup end
+      if (_6==8) then _4_2[1]=' > '.._1[8] _4__[1]=7 goto startsetup end
+   ::setquality::
+   local _7=gg.choice(_2, nil, eht.var.dataG.descT[3])
+      if not _7 then goto startsetup end
+      if (_7==1) then _4_2[2]=' > '.._2[1] _4__[2]=0 goto startsetup end
+      if (_7==2) then _4_2[2]=' > '.._2[2] _4__[2]=1 goto startsetup end
+      if (_7==3) then _4_2[2]=' > '.._2[3] _4__[2]=2 goto startsetup end
+      if (_7==4) then _4_2[2]=' > '.._2[4] _4__[2]=3 goto startsetup end
+      if (_7==5) then _4_2[2]=' > '.._2[5] _4__[2]=4 goto startsetup end
+   ::setlevel::
+   ::setoptionvalue::
+   ::waituser::
+   while (gg.isVisible()==false) do
+      gg.setVisible(false)
+   end
+   goto startsetup
+   ::donesetup::
 end
 --###################################
 --###################################
