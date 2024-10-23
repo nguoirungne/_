@@ -469,7 +469,7 @@ function postGLevel()
 end
 --###################################
 function gearOptions()
-   gg.alert('gearOptions')
+   gg.alert('gearOptions Updated')
 end
 --###################################
 --###################################
