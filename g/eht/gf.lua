@@ -383,10 +383,19 @@ function paidB(__)
       sBoxPack()
    end --dataASCB
    if (__==2) then postGLevel() end
-   
-   
-   
-   
+   if (__==3) then
+      if (eht.var.dataG.hasK==false) then
+         eht.var.dataG.classK=NR.f.getB16LE(eht.class.dataG)
+         eht.var.dataG.hasK=true
+      end
+      eht.var.dataG.classB={}
+      NR.f.setScan(32, false)
+      NR.f.scan(eht.var.dataG.classK, 32, nil, 0)
+      local _1=NR.f.allResults()
+      NR.f.setScan()
+      if (#_1<10) then gg.alert('× Base not found.') mainM() end
+      gearOptions()
+   end --dataG
 end
 --###################################
 function sBoxPack()
@@ -457,7 +466,9 @@ function postGLevel()
    end
 end
 --###################################
-
+function gearOptions()
+   gg.alert('gearOptions')
+end
 --###################################
 --###################################
 function itemB()
