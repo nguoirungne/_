@@ -108,12 +108,15 @@ function hunGetB()
    eht.var.dataH.hasB=false
 end
 --###################################
---function hunGearList()
---   hunGetB()
---   eht.getDesc(eht.var.dataG)
-   
-   
---end
+
+
+
+
+
+
+
+
+
 --###################################
 function hunIdx()
    hunGetB()
@@ -391,23 +394,7 @@ function paidB(__)
       sBoxPack()
    end --dataASCB
    if (__==2) then postGLevel() end
-   if (__==3) then
-      hunterB(99)
-      --if (eht.var.dataG.hasK==false) then
-         --eht.var.dataG.classK=NR.f.getB16LE(eht.class.dataG)
-         --eht.var.dataG.hasK=true
-      --end
-      --eht.var.dataG.classB={}
-      --NR.f.setScan(32, false)
-      --NR.f.scan(eht.var.dataG.classK, 32, nil, 0)
-      --local _1=NR.f.allResults()
-      --NR.f.setScan()
-      --if (#_1<10) then gg.alert('× Base not found.') mainM() end
-      --eht.var.dataG.classB=_1
-      --eht.getDesc(eht.var.dataG)
-      --eht.var.dataG.gearMRun=true
-      --gearOptions()
-   end --dataG
+   if (__==3) then hunterB(99) end --dataG
 end
 --###################################
 function sBoxPack()
@@ -477,142 +464,6 @@ function postGLevel()
       return
    end
 end
---###################################
-function gearOptions(__)
-   local _1={eht.var.dataG.descT[10],eht.var.dataG.descT[11], eht.var.dataG.descT[12], eht.var.dataG.descT[13], eht.var.dataG.descT[14], eht.var.dataG.descT[15], eht.var.dataG.descT[16], eht.var.dataG.descT[17]}
-   local _2={eht.var.dataG.descT[18],eht.var.dataG.descT[19],eht.var.dataG.descT[20],eht.var.dataG.descT[21],eht.var.dataG.descT[22]}
-   local _3={'B','A','S','SS','SSS','UNIQ'}
-   if (__==0) then
-      gg.setVisible(false)
-      while (gg.isVisible()==false) do end
-   end
-   if (__==1) then
-      local _g1=gg.choice(_1, nil, '['..eht.var.dataG.descT[1]..']')
-      if not _g1 then eht.var.dataG.gearM() end
-      if (_g1==1) then eht.var.dataG.gearChoice[1]=' > '.._1[1] eht.var.dataG.gearDone[1]=0 eht.var.dataG.gearM() end
-      if (_g1==2) then eht.var.dataG.gearChoice[1]=' > '.._1[2] eht.var.dataG.gearDone[1]=1 eht.var.dataG.gearM() end
-      if (_g1==3) then eht.var.dataG.gearChoice[1]=' > '.._1[3] eht.var.dataG.gearDone[1]=2 eht.var.dataG.gearM() end
-      if (_g1==4) then eht.var.dataG.gearChoice[1]=' > '.._1[4] eht.var.dataG.gearDone[1]=3 eht.var.dataG.gearM() end
-      if (_g1==5) then eht.var.dataG.gearChoice[1]=' > '.._1[5] eht.var.dataG.gearDone[1]=4 eht.var.dataG.gearM() end
-      if (_g1==6) then eht.var.dataG.gearChoice[1]=' > '.._1[6] eht.var.dataG.gearDone[1]=5 eht.var.dataG.gearM() end
-      if (_g1==7) then eht.var.dataG.gearChoice[1]=' > '.._1[7] eht.var.dataG.gearDone[1]=6 eht.var.dataG.gearM() end
-      if (_g1==8) then eht.var.dataG.gearChoice[1]=' > '.._1[8] eht.var.dataG.gearDone[1]=7 eht.var.dataG.gearM() end
-   end
-   if (__==2) then
-      local _q1=gg.choice(_2, nil, '['..eht.var.dataG.descT[3]..']')
-      if not _q1 then eht.var.dataG.gearM() end
-      if (_q1==1) then eht.var.dataG.gearChoice[2]=' > '.._2[1] eht.var.dataG.gearDone[2]=0 eht.var.dataG.gearM() end
-      if (_q1==2) then eht.var.dataG.gearChoice[2]=' > '.._2[2] eht.var.dataG.gearDone[2]=1 eht.var.dataG.gearM() end
-      if (_q1==3) then eht.var.dataG.gearChoice[2]=' > '.._2[3] eht.var.dataG.gearDone[2]=2 eht.var.dataG.gearM() end
-      if (_q1==4) then eht.var.dataG.gearChoice[2]=' > '.._2[4] eht.var.dataG.gearDone[2]=3 eht.var.dataG.gearM() end
-      if (_q1==5) then eht.var.dataG.gearChoice[2]=' > '.._2[5] eht.var.dataG.gearDone[2]=4 eht.var.dataG.gearM() end
-   end
-   if (__==3) then
-      local _l1=gg.prompt({eht.var.dataG.descT[29]..' [0;25]'},{0},{'number'})
-      if not _l1 then eht.var.dataG.gearM() end
-      eht.var.dataG.gearChoice[3]=' > '.._l1[1] 
-      eht.var.dataG.gearDone[3]=tonumber(_l1[1])
-      eht.var.dataG.gearM()
-   end
-   if (__==4) then
-      local _gp=gg.choice(_3, nil, '['..eht.var.dataG.descT[6]..']')
-      if not _gp then eht.var.dataG.gearM() end
-      if (_gp==1) then eht.var.dataG.gearChoice[4]=' > '.._3[1] eht.var.dataG.gearDone[4]=0 eht.var.dataG.gearM() end
-      if (_gp==2) then eht.var.dataG.gearChoice[4]=' > '.._3[2] eht.var.dataG.gearDone[4]=1 eht.var.dataG.gearM() end
-      if (_gp==3) then eht.var.dataG.gearChoice[4]=' > '.._3[3] eht.var.dataG.gearDone[4]=2 eht.var.dataG.gearM() end
-      if (_gp==4) then eht.var.dataG.gearChoice[4]=' > '.._3[4] eht.var.dataG.gearDone[4]=3 eht.var.dataG.gearM() end
-      if (_gp==5) then eht.var.dataG.gearChoice[4]=' > '.._3[5] eht.var.dataG.gearDone[4]=4 eht.var.dataG.gearM() end
-      if (_gp==6) then eht.var.dataG.gearChoice[4]=' > '.._3[6] eht.var.dataG.gearDone[4]=5 eht.var.dataG.gearM() end
-   end
-   if (__==5) then
-      local _o1=gg.prompt({eht.var.dataG.descT[31]},{0},{'number'})
-      if not _o1 or (_o1[1]=='') then eht.var.dataG.gearM() end
-      eht.var.dataG.gearChoice[5]=' > '.._o1[1] 
-      eht.var.dataG.gearDone[5]=tonumber(_o1[1])
-      eht.var.dataG.gearM()
-   end
-   if (__==6) then
-      local _d1={}
-      for _,___ in ipairs(eht.var.dataG.classB) do
-         local __1=NR.f.copyItems(___.address+eht.var.dataG.offset.Index, 4)
-         local __2=NR.f.copyItems(___.address+eht.var.dataG.offset.Index+4, 4)
-         if (__1[1].value~__2[1].value==eht.var.dataG.gearDone[1]) then
-            _d1[#_d1+1]=___
-         end
-      end
-      if (#_d1==1) then eht.var.dataG.gearBase=_d1 gearModify()
-      elseif (#_d1<1) then
-         gg.alert(eht.var.dataG.descT[1]..eht.var.dataG.descT[33]) 
-         eht.var.dataG.gearMRun=false
-      else
-         local _d2={}
-         for _,___ in ipairs(_d1) do
-            local __1=NR.f.copyItems(___.address+eht.var.dataG.offset.quality, 4)
-            local __2=NR.f.copyItems(___.address+eht.var.dataG.offset.quality+4, 4)
-            if (__1[1].value~__2[1].value==eht.var.dataG.gearDone[2]) then
-               _d2[#_d2+1]=___
-            end
-         end
-         if (#_d2==1) then eht.var.dataG.gearBase=_d2 gearModify()
-         elseif (#_d2<1) then
-            gg.alert(eht.var.dataG.descT[3]..eht.var.dataG.descT[33])     
-            eht.var.dataG.gearMRun=false        
-         else
-            local _d3={}
-            for _,___ in ipairs(_d2) do
-               local __1=NR.f.copyItems(___.address+eht.var.dataG.offset.level, 4)
-               local __2=NR.f.copyItems(___.address+eht.var.dataG.offset.level+4, 4)
-               if (__1[1].value~__2[1].value==eht.var.dataG.gearDone[3]) then
-                  _d3[#_d3+1]=___
-               end
-            end
-            if (#_d3==1) then eht.var.dataG.gearBase=_d3 gearModify()
-            elseif (#_d3<1) then
-               gg.alert(eht.var.dataG.descT[4]..eht.var.dataG.descT[33]) 
-               eht.var.dataG.gearMRun=false
-            else
-               local _d4={}
-               for _,___ in ipairs(_d3) do
-                  local __1=NR.f.copyItems(___.address+eht.var.dataG.offset.group, 4)
-                  local __2=NR.f.copyItems(___.address+eht.var.dataG.offset.group+4, 4)
-                  if (__1[1].value~__2[1].value==eht.var.dataG.gearDone[4]) then
-                     _d4[#_d4+1]=___
-                  end
-               end
-               if (#_d4==1) then eht.var.dataG.gearBase=_d4 gearModify()
-               elseif (#_d4<1) then
-                  gg.alert(eht.var.dataG.descT[6]..eht.var.dataG.descT[33]) 
-                  eht.var.dataG.gearMRun=false
-               else
-                  local _d5={}
-                  for _,___ in ipairs(_d4) do
-                     local __1=NR.f.copyItems(___.address+eht.var.dataG.offset.plusValue, 32)
-                     local __2=NR.f.copyItems(__1[1].value+eht.var.dataG.offsetPlus.offset[1], 4)
-                     local __3=NR.f.copyItems(__1[1].value+eht.var.dataG.offsetPlus.offset[1]+4, 4)
-                     if (__2[1].value~__3[1].value==eht.var.dataG.gearDone[5]) then
-                        _d5[#_d5+1]=___
-                     end
-                  end
-                  if (#_d5==1) then eht.var.dataG.gearBase=_d5 gearModify()
-                  elseif (#_d5<1) then
-                     gg.alert(eht.var.dataG.descT[8]..eht.var.dataG.descT[33])
-                     eht.var.dataG.gearMRun=false
-                  else
-                     gg.alert(eht.var.dataG.descT[32])
-                     eht.var.dataG.gearMRun=false
-                  end
-               end              
-            end
-         end
-      end
-   end
-   eht.var.dataG.gearM()
-end
---###################################
-
-
-
-
 --###################################
 --###################################
 function itemB()
