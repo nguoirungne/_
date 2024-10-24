@@ -294,14 +294,15 @@ end --NR.f.checkLName
 --###################################
 NR.f.waitM=function()
    gg.setVisible(false)
-   while true do --NR.f.antiCapture() do
+   local _2=0
+   while true do 
       if (gg.isVisible()) then
          gg.setVisible(false)
          NR.f.scanRand()
-      break else
-         NR.f.scanRand()
-      end
-      gg.sleep(1000)
+      break end     
+      _2=_2+1
+      if (_2/5000==0) then NR.f.scanRand() end
+      if (_2/10000==0) then end --NR.f.antiCapture() do
    end
 end --NR.f.waitM
 --###################################
