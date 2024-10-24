@@ -499,7 +499,7 @@ function gearOptions(__)
       if (_q1==5) then eht.var.dataG.gearChoice[2]=' > '.._2[5] eht.var.dataG.gearDone[2]=4 eht.var.dataG.gearM() end
    end
    if (__==3) then
-      local _l1=gg.prompt({eht.var.dataG.descT[29]},{eht.var.dataG.descT[30]},{'number'})
+      local _l1=gg.prompt({eht.var.dataG.descT[29]..' [0;25]'},{0},{'number'})
       if not _l1 then eht.var.dataG.gearM() end
       eht.var.dataG.gearChoice[3]=' > '.._l1[1] 
       eht.var.dataG.gearDone[3]=tonumber(_l1[1])
@@ -516,8 +516,8 @@ function gearOptions(__)
       if (_gp==6) then eht.var.dataG.gearChoice[4]=' > '.._3[6] eht.var.dataG.gearDone[4]=5 eht.var.dataG.gearM() end
    end
    if (__==5) then
-      local _o1=gg.prompt({eht.var.dataG.descT[31]},{'%'},{'number'})
-      if not _o1 then eht.var.dataG.gearM() end
+      local _o1=gg.prompt({eht.var.dataG.descT[31]},{0},{'number'})
+      if not _o1 or (_o1[1]=='') then eht.var.dataG.gearM() end
       eht.var.dataG.gearChoice[5]=' > '.._o1[1] 
       eht.var.dataG.gearDone[5]=tonumber(_o1[1])
       eht.var.dataG.gearM()
