@@ -534,6 +534,7 @@ function gearOptions(__)
       if (#_d1==1) then eht.var.dataG.gearBase=_d1 gearModify()
       elseif (#_d1<1) then
          gg.alert(eht.var.dataG.descT[1]..eht.var.dataG.descT[33]) 
+         eht.var.dataG.gearMRun=false
       else
          local _d2={}
          for _,___ in ipairs(_d1) do
@@ -545,7 +546,8 @@ function gearOptions(__)
          end
          if (#_d2==1) then eht.var.dataG.gearBase=_d2 gearModify()
          elseif (#_d2<1) then
-            gg.alert(eht.var.dataG.descT[3]..eht.var.dataG.descT[33])             
+            gg.alert(eht.var.dataG.descT[3]..eht.var.dataG.descT[33])     
+            eht.var.dataG.gearMRun=false        
          else
             local _d3={}
             for _,___ in ipairs(_d2) do
@@ -558,6 +560,7 @@ function gearOptions(__)
             if (#_d3==1) then eht.var.dataG.gearBase=_d3 gearModify()
             elseif (#_d3<1) then
                gg.alert(eht.var.dataG.descT[4]..eht.var.dataG.descT[33]) 
+               eht.var.dataG.gearMRun=false
             else
                local _d4={}
                for _,___ in ipairs(_d3) do
@@ -570,6 +573,7 @@ function gearOptions(__)
                if (#_d4==1) then eht.var.dataG.gearBase=_d4 gearModify()
                elseif (#_d4<1) then
                   gg.alert(eht.var.dataG.descT[6]..eht.var.dataG.descT[33]) 
+                  eht.var.dataG.gearMRun=false
                else
                   local _d5={}
                   for _,___ in ipairs(_d4) do
@@ -583,6 +587,7 @@ function gearOptions(__)
                   if (#_d5==1) then eht.var.dataG.gearBase=_d5 gearModify()
                   elseif (#_d5<1) then
                      gg.alert(eht.var.dataG.descT[8]..eht.var.dataG.descT[33])
+                     eht.var.dataG.gearMRun=false
                   else
                      gg.alert(eht.var.dataG.descT[32])
                      eht.var.dataG.gearMRun=false
