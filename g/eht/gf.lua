@@ -87,6 +87,7 @@ function hunterB(__)
    if (__==4) then hunSTech() end
    if (__==5) then hunMaxA() end   
    if (__==6) then hunDSoul() end   
+   if (__==99) then hunGearList() end   
 end
 --###################################
 function hunGetB()
@@ -106,6 +107,13 @@ function hunGetB()
    if (eht.var.dataH.hasB==false) then gg.alert('× '..eht.var.dataH.descT[41]) mainM() end
    eht.var.dataH.hasB=false
 end
+--###################################
+--function hunGearList()
+--   hunGetB()
+--   eht.getDesc(eht.var.dataG)
+   
+   
+--end
 --###################################
 function hunIdx()
    hunGetB()
@@ -384,20 +392,21 @@ function paidB(__)
    end --dataASCB
    if (__==2) then postGLevel() end
    if (__==3) then
-      if (eht.var.dataG.hasK==false) then
-         eht.var.dataG.classK=NR.f.getB16LE(eht.class.dataG)
-         eht.var.dataG.hasK=true
-      end
-      eht.var.dataG.classB={}
-      NR.f.setScan(32, false)
-      NR.f.scan(eht.var.dataG.classK, 32, nil, 0)
-      local _1=NR.f.allResults()
-      NR.f.setScan()
-      if (#_1<10) then gg.alert('× Base not found.') mainM() end
-      eht.var.dataG.classB=_1
-      eht.getDesc(eht.var.dataG)
-      eht.var.dataG.gearMRun=true
-      gearOptions()
+      hunterB(99)
+      --if (eht.var.dataG.hasK==false) then
+         --eht.var.dataG.classK=NR.f.getB16LE(eht.class.dataG)
+         --eht.var.dataG.hasK=true
+      --end
+      --eht.var.dataG.classB={}
+      --NR.f.setScan(32, false)
+      --NR.f.scan(eht.var.dataG.classK, 32, nil, 0)
+      --local _1=NR.f.allResults()
+      --NR.f.setScan()
+      --if (#_1<10) then gg.alert('× Base not found.') mainM() end
+      --eht.var.dataG.classB=_1
+      --eht.getDesc(eht.var.dataG)
+      --eht.var.dataG.gearMRun=true
+      --gearOptions()
    end --dataG
 end
 --###################################
